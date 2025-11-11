@@ -1,67 +1,127 @@
+<!-- LANDING: clase gratis -->
 <!doctype html>
 <html lang="es">
 <head>
   <meta charset="utf-8" />
-  <title>Clase Gratis • CorteyConfeccion.online</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="../style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Clase Gratis • Costura Premium — Silvana</title>
+  <meta name="description" content="Clase gratis online de costura: aprende 60 diseños de blusas y recibe un libro en PDF de patronaje totalmente gratis.">
+  <style>
+    :root{--pink:#ff2d78;--bg:#fff}
+    body{font-family:Inter,system-ui,Arial;background:var(--bg);margin:0;color:#222}
+    .wrap{max-width:900px;margin:32px auto;padding:20px}
+    header{display:flex;gap:20px;align-items:center}
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:20px;align-items:center}
+    .cta{background:var(--pink);color:white;padding:16px 20px;border-radius:10px;text-decoration:none;display:inline-block}
+    .card{background:#f8f8fb;padding:18px;border-radius:12px}
+    input,button{font-size:16px;padding:12px;border-radius:8px;border:1px solid #ddd;width:100%}
+    .small{font-size:14px;color:#666}
+    iframe{width:100%;height:240px;border-radius:10px;border:none}
+  </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container nav">
-      <div class="logo-area">
-        <div class="logo-circle">CC</div>
-        <div class="logo-text">
-          <span class="logo-title">CorteyConfeccion.online</span>
-          <span class="logo-subtitle">Clase gratuita</span>
+  <div class="wrap">
+    <header>
+      <h1>Clase Gratis Online: Aprende 60 Diseños de Blusas</h1>
+    </header>
+
+    <section class="hero">
+      <div>
+        <p class="small">
+          Accede a una clase online totalmente gratis donde descubrirás cómo crear y adaptar hasta <strong>60 diseños de blusas</strong> paso a paso.  
+          Además, al registrarte recibirás un <strong>libro PDF gratuito de patronaje</strong> para empezar a coser con precisión profesional.
+        </p>
+        <ul>
+          <li>Aprende las bases del patronaje y costura</li>
+          <li>Trucos para acabados perfectos</li>
+          <li>Diseños adaptables a cualquier talla</li>
+        </ul>
+
+        <div class="card">
+          <form id="leadForm">
+            <label>Tu nombre</label><br/>
+            <input name="name" id="name" required /><br/><br/>
+            <label>Email</label><br/>
+            <input name="email" id="email" type="email" required /><br/><br/>
+            <input type="hidden" id="source" value="landing_clase_gratis">
+            <button id="submitBtn" class="cta" type="submit">Registrarme y recibir el libro gratis</button>
+            <p class="small">Solo toma 30 segundos. Recibirás la clase + libro PDF en tu correo.</p>
+          </form>
         </div>
       </div>
-      <nav class="nav-links">
-        <a href="../">Inicio</a>
-        <a href="../costura-premium/">Curso completo</a>
-      </nav>
-    </div>
-  </header>
 
-  <main>
-    <section class="hero">
-      <div class="container">
-        <h1>Clase gratuita: Cose tus primeras blusas desde casa 👗</h1>
-        <p>Aprende paso a paso con este video exclusivo de Costura Premium.</p>
-
-        <div style="max-width:700px;margin:auto;">
-          <iframe width="100%" height="400" src="https://www.youtube.com/embed/hPk2cCF60JU" 
-            title="Costura Premium - Clase Gratis" frameborder="0" 
-            allowfullscreen></iframe>
-        </div>
-
-        <p style="margin-top:25px;">
-          👉 Para descargar el libro gratuito y recibir mis correos con tips, 
-          deja tus datos aquí:
-        </p>
-
-        <!-- FORMULARIO -->
-        <form action="#" method="post" class="lead-form">
-          <input type="text" placeholder="Tu nombre" required />
-          <input type="email" placeholder="Tu correo electrónico" required />
-          <button class="btn primary" type="submit">Recibir libro gratis</button>
-        </form>
-
-        <p style="margin-top:20px;">
-          Ya viste la clase y quieres avanzar más rápido?  
-          <a href="../costura-premium/" class="btn ghost">Ver curso completo</a>
-        </p>
+      <div>
+        <!-- Video embebido de Google Drive -->
+        <iframe 
+          src="https://drive.google.com/file/d/1PbdrRkbfcbTw8Picqk0VY4d1_xqeYZdh/preview" 
+          allow="autoplay; encrypted-media" 
+          allowfullscreen>
+        </iframe>
+        <p class="small">Clase online gratuita de Costura Premium.</p>
       </div>
     </section>
-  </main>
 
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <p>© 2025 CorteyConfeccion.online · Todos los derechos reservados</p>
+    <footer style="margin-top:20px" class="small">
+      Si prefieres comprar directo: 
+      <a href="https://go.hotmart.com/Y27528309A?ap=f590" target="_blank" class="small">
+        Ir a Costura Premium
+      </a>
+    </footer>
+  </div>
+
+<script>
+document.getElementById('leadForm').addEventListener('submit', async function(e){
+  e.preventDefault();
+
+  const name   = document.getElementById('name').value.trim();
+  const email  = document.getElementById('email').value.trim();
+  const source = document.getElementById('source').value || 'landing_clase_gratis';
+
+  // ✅ CORREGIDO: el link va entre comillas
+  const FORM_ENDPOINT = "https://script.google.com/macros/s/AKfycbxOLiUqnZ0-GJcDFJ6ImOvKbz3r3zKauUXLuQxaUAtqHIqGEA8dVolz8Xhdb371xxyy/exec";
+
+  // ✨ Mostrar pantalla de carga
+  const loader = document.createElement('div');
+  loader.innerHTML = `
+    <div style="position:fixed;top:0;left:0;width:100%;height:100%;
+                background:white;display:flex;flex-direction:column;
+                align-items:center;justify-content:center;z-index:9999">
+      <div style="border:4px solid #f3f3f3;border-top:4px solid #ff2d78;
+                  border-radius:50%;width:60px;height:60px;
+                  animation:spin 1s linear infinite"></div>
+      <p style="margin-top:20px;font-size:18px;color:#333">
+        Registrando tus datos...
+      </p>
     </div>
-  </footer>
+    <style>
+      @keyframes spin { 0% {transform: rotate(0deg);} 100% {transform: rotate(360deg);} }
+    </style>
+  `;
+  document.body.appendChild(loader);
+
+  try {
+    const formData = new FormData();
+    formData.append('name', name);
+    formData.append('email', email);
+    formData.append('source', source);
+
+    await fetch(FORM_ENDPOINT, {
+      method: 'POST',
+      body: formData,
+      mode: 'no-cors'
+    });
+
+    // ⏳ Esperar un segundo antes de redirigir
+    setTimeout(() => {
+      window.location.href = "https://costurapremiuum.github.io/aprender/gracias.html";
+    }, 1200);
+
+  } catch (err) {
+    alert('Ocurrió un error. Intenta de nuevo.');
+    loader.remove();
+  }
+});
+</script>
+
 </body>
 </html>
