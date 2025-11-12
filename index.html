@@ -275,14 +275,20 @@
     <section id="lead" class="lead">
       <h3>📘 ¿Quieres que te envíe el libro directo a tu correo?</h3>
       <p>Déjame tus datos y te enviaré el libro de costura de regalo para que comiences a practicar desde hoy, aunque todavía no compres el curso.</p>
-      <form action="https://formsubmit.co/costurapremiuum2026@gmail.com" method="POST">
-        <input type="text" name="nombre" placeholder="Tu nombre" required>
-        <input type="email" name="email" placeholder="Tu correo" required>
-        <input type="text" name="whatsapp" placeholder="Tu WhatsApp (opcional)">
-        <!-- Después de enviar, también irá a la página de gracias con la oferta de 89 -->
-        <input type="hidden" name="_next" value="https://corteyconfeccion.online/gracias.html">
-        <button type="submit" class="btn-primary">Recibir mi libro gratis 🎁</button>
-      </form>
+     <form action="https://formsubmit.co/costurapremiuum2026@gmail.com" method="POST">
+  <input type="text" name="nombre" placeholder="Tu nombre" required>
+  <input type="email" name="email" placeholder="Tu correo" required>
+  <input type="text" name="whatsapp" placeholder="Tu WhatsApp (opcional)">
+  
+  <!-- Redirección después del envío -->
+  <input type="hidden" name="_next" value="https://corteyconfeccion.online/gracias.html">
+
+  <!-- Evita spam bots -->
+  <input type="hidden" name="_captcha" value="false">
+
+  <button type="submit" class="btn-primary">Recibir mi libro gratis 🎁</button>
+</form>
+
       <p class="privacy">Tu información está segura y solo será usada para enviarte el libro y las oportunidades del curso.</p>
     </section>
 
