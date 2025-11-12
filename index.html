@@ -107,9 +107,7 @@
       animation: fadeIn 1s ease forwards;
     }
 
-    .hero h2 span {
-      color: var(--color-primary);
-    }
+    .hero h2 span { color: var(--color-primary); }
 
     .hero p {
       color: var(--color-muted);
@@ -194,10 +192,7 @@
       margin-top: 4px;
     }
 
-    .cta-final {
-      text-align: center;
-      margin-top: 50px;
-    }
+    .cta-final { text-align: center; margin-top: 50px; }
 
     .footer {
       text-align: center;
@@ -231,12 +226,6 @@
       transform: scale(1.08);
       color: var(--color-primary);
     }
-
-    @media (max-width: 600px) {
-      .hero h2 { font-size: 1.4rem; }
-      .btn-primary { font-size: 0.95rem; }
-      .lead { padding: 16px; }
-    }
   </style>
 </head>
 
@@ -261,38 +250,47 @@
       <a href="video.html" class="btn-primary">Quiero aprender corte y confección 💕</a>
     </section>
 
-    <!-- FORMULARIO FUNCIONAL -->
+    <!-- FORMULARIO FUNCIONAL PARA DONWEB -->
     <section id="lead" class="lead">
       <h3>📘 ¿Quieres que te envíe el libro directo a tu correo?</h3>
-      <p>Déjame tus datos y te enviaré el libro de costura de regalo para que comiences a practicar desde hoy, aunque todavía no compres el curso.</p>
-      
-      <form id="costuraForm">
+      <p>Déjame tus datos y te enviaré el libro de costura de regalo para que comiences a practicar desde hoy 💕</p>
+
+      <form id="costuraForm" method="POST" target="hidden_iframe" onsubmit="enviarFormulario(event)">
         <input type="text" name="nombre" placeholder="Tu nombre" required>
         <input type="email" name="email" placeholder="Tu correo" required>
         <input type="text" name="whatsapp" placeholder="Tu WhatsApp (opcional)">
         <button type="submit" class="btn-primary">Recibir mi libro gratis 🎁</button>
       </form>
 
+      <iframe name="hidden_iframe" style="display:none;"></iframe>
+
       <p class="privacy">Tu información está segura y solo será usada para enviarte el libro y futuras oportunidades de costura.</p>
 
       <script>
-        const form = document.getElementById('costuraForm');
-        form.addEventListener('submit', async (e) => {
+        function enviarFormulario(e) {
           e.preventDefault();
-          const data = {
-            nombre: form.nombre.value,
-            email: form.email.value,
-            whatsapp: form.whatsapp.value
-          };
+          const form = document.getElementById('costuraForm');
 
-          await fetch(https://script.google.com/macros/s/AKfycbzXCCO3rU7GbEnKQ_Z3tI2PNsvk6M6szVaTyutFgu0g_LDO88sKqB94-Q4EhrR46Dac4Q/exec, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(data)
+          const formData = document.createElement('form');
+          formData.method = 'POST';
+          formData.action = 'https://script.google.com/macros/s/AKfycbzXCCO3rU7GbEnKQ_Z3tI2PNsvk6M6szVaTyutFgu0g_LDO88sKqB94-Q4EhrR46Dac4Q/exec';
+          formData.target = 'hidden_iframe';
+
+          ['nombre', 'email', 'whatsapp'].forEach(name => {
+            const input = document.createElement('input');
+            input.type = 'hidden';
+            input.name = name;
+            input.value = form[name].value;
+            formData.appendChild(input);
           });
 
-          window.location.href = 'https://corteyconfeccion.online/gracias.html';
-        });
+          document.body.appendChild(formData);
+          formData.submit();
+
+          setTimeout(() => {
+            window.location.href = 'https://corteyconfeccion.online/gracias.html';
+          }, 800);
+        }
       </script>
     </section>
 
@@ -321,3 +319,4 @@
   </script>
 </body>
 </html>
+
