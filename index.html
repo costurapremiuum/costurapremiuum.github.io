@@ -272,35 +272,40 @@
     </section>
 
     <!-- OPCIONAL: LEADS DIRECTOS DESDE LA PÁGINA PRINCIPAL -->
-    <section id="lead" class="lead">
-      <form id="costuraForm">
-  <input type="text" name="nombre" placeholder="Tu nombre" required>
-  <input type="email" name="email" placeholder="Tu correo" required>
-  <input type="text" name="whatsapp" placeholder="Tu WhatsApp (opcional)">
-  <button type="submit" class="btn-primary">Recibir mi libro gratis 🎁</button>
-</form>
-
-<script>
-  const form = document.getElementById('costuraForm');
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const data = {
-      nombre: form.nombre.value,
-      email: form.email.value,
-      whatsapp: form.whatsapp.value
-    };
-
-    await fetch('https://script.google.com/macros/s/AKfycbzxoge_JA8SxrP2mE9cLa4CdLJNlzl1PfWNmIbBmQEQFq_kVKEXDUCDpPluge9vcsoeFw/exec', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data)
-    });
-
-    window.location.href = 'https://corteyconfeccion.online/gracias.html';
-  });
-</script>
-
+  <section id="lead" class="lead">
+  <h3>📘 ¿Quieres que te envíe el libro directo a tu correo?</h3>
+  <p>Déjame tus datos y te enviaré el libro de costura de regalo para que comiences a practicar desde hoy, aunque todavía no compres el curso.</p>
   
+  <form id="costuraForm">
+    <input type="text" name="nombre" placeholder="Tu nombre" required>
+    <input type="email" name="email" placeholder="Tu correo" required>
+    <input type="text" name="whatsapp" placeholder="Tu WhatsApp (opcional)">
+    <button type="submit" class="btn-primary">Recibir mi libro gratis 🎁</button>
+  </form>
+
+  <p class="privacy">Tu información está segura y solo será usada para enviarte el libro y futuras oportunidades de costura.</p>
+
+  <script>
+    const form = document.getElementById('costuraForm');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const data = {
+        nombre: form.nombre.value,
+        email: form.email.value,
+        whatsapp: form.whatsapp.value
+      };
+
+      await fetch('https://script.google.com/macros/s/AKfycbzxoge_JA8SxrP2mE9cLa4CdLJNlzl1PfWNmIbBmQEQFq_kVKEXDUCDpPluge9vcsoeFw/exec', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+
+      window.location.href = 'https://corteyconfeccion.online/gracias.html';
+    });
+  </script>
+</section>
+
   <!-- Redirección después del envío -->
   <input type="hidden" name="_next" value="https://corteyconfeccion.online/gracias.html">
 
