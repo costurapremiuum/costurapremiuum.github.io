@@ -1,10 +1,10 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Gracias - Costurando Ando</title>
-  <meta name="description" content="Gracias por unirte a Costurando Ando. Descubre la oferta especial y continúa tu camino en la costura.">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>🎁 Gracias por unirte • Costurando Ando</title>
+  <meta name="description" content="Gracias por registrarte en Costura Premium con Costurando Ando. Descarga tu libro gratuito y comienza tu camino en la costura.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,82 +22,124 @@
 
     body {
       font-family: "Poppins", sans-serif;
-      background: var(--color-bg) url('https://images.unsplash.com/photo-1603251579431-8041402bdc32?auto=format&fit=crop&w=1200&q=80') repeat;
-      background-size: cover;
+      background: var(--color-bg);
       color: var(--color-text);
-      margin: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      opacity: 0;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: auto;
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: var(--shadow-soft);
+      padding: 40px 24px;
       animation: fadeIn 1s ease forwards;
     }
 
     @keyframes fadeIn {
-      from {opacity:0; transform:translateY(20px);}
-      to {opacity:1; transform:translateY(0);}
-    }
-
-    .card {
-      background: #fff;
-      max-width: 600px;
-      padding: 30px 24px;
-      border-radius: 20px;
-      box-shadow: var(--shadow-soft);
-      text-align: center;
-      margin: 20px;
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     h1 {
       color: var(--color-primary);
-      font-size: 1.7rem;
-      margin-bottom: 10px;
+      font-size: 1.8rem;
+      margin-bottom: 12px;
     }
 
     p {
       color: var(--color-muted);
-      font-size: 0.95rem;
       margin-bottom: 18px;
+      font-size: 1rem;
     }
 
-    .btn-primary {
+    a.btn-primary {
       background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+      border: none;
       color: #fff;
       padding: 12px 22px;
       border-radius: 999px;
-      text-decoration: none;
       font-weight: 600;
-      box-shadow: 0 8px 18px rgba(255,102,178,0.35);
-      transition: all 0.3s ease;
+      text-decoration: none;
       display: inline-block;
+      margin-top: 16px;
+      box-shadow: 0 8px 18px rgba(255, 102, 178, 0.35);
+      transition: all 0.3s ease;
     }
 
-    .btn-primary:hover {
+    a.btn-primary:hover {
       background: linear-gradient(135deg, var(--color-secondary), var(--color-primary));
-      transform: scale(1.03);
-      box-shadow: 0 10px 25px rgba(255,102,178,0.45);
+      transform: scale(1.05);
+      box-shadow: 0 10px 25px rgba(255, 102, 178, 0.45);
     }
 
-    footer {
-      margin-top: 20px;
-      font-size: 0.8rem;
+    .footer {
+      margin-top: 40px;
+      font-size: 0.9rem;
       color: var(--color-muted);
+    }
+
+    .socials {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      margin-top: 16px;
+      flex-wrap: wrap;
+    }
+
+    .socials a {
+      text-decoration: none;
+      font-size: 1.05rem;
+      color: var(--color-text);
+      background: rgba(255,255,255,0.6);
+      padding: 6px 10px;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+    }
+
+    .socials a:hover {
+      background: rgba(255,102,178,0.1);
+      color: var(--color-primary);
+      transform: scale(1.08);
     }
   </style>
 </head>
 
 <body>
-  <div class="card">
-    <h1>¡Qué emoción tenerte aquí 💕!</h1>
-    <p>Te acabo de enviar el libro a tu correo. Revisa tu bandeja de entrada o la carpeta de spam.</p>
-    <p>Si realmente quieres aprender corte y confección desde casa, esta es tu oportunidad de acceder al curso completo con un <strong>precio especial de $89 USD</strong>.</p>
-    <a href="https://go.hotmart.com/Y27528309A?ap=0320" target="_blank" class="btn-primary">Acceder a la oferta especial 💖</a>
-    <footer>© <span id="year"></span> Costurando Ando • corteyconfeccion.online</footer>
+  <div class="container">
+    <h1>💖 ¡Gracias por unirte a Costurando Ando!</h1>
+    <p>Tu registro fue exitoso. Como prometido, aquí tienes tu <b>Libro de Costura Premium</b> para que comiences a crear tus propias prendas.</p>
+
+    <a href="https://drive.google.com/file/d/1u2VcrSmQM0Vpi-WzSLgiUmX32njBhaly/view?usp=sharing" class="btn-primary" target="_blank">
+      📘 Descargar libro gratis
+    </a>
+
+    <p>Y si deseas ir directo al curso completo, con todos los módulos, videos y patrones incluidos:</p>
+
+    <a href="https://go.hotmart.com/Y27528309A?ap=f590" class="btn-primary" target="_blank">
+      💕 Ir al curso completo
+    </a>
+  </div>
+
+  <div class="footer">
+    <p>© 2025 Costurando Ando • corteyconfeccion.online</p>
+    <div class="socials">
+      <a href="https://www.instagram.com/costuraindustrial_/" target="_blank">📸 Instagram</a>
+      <a href="https://web.facebook.com/Costurindustrial" target="_blank">📘 Facebook</a>
+      <a href="https://www.tiktok.com/@costurando_ando" target="_blank">🎬 TikTok</a>
+      <a href="https://go.hotmart.com/Y27528309A?pad=https://www.youtube.com/@PremiumAcademy" target="_blank">▶️ YouTube</a>
+      <a href="https://go.hotmart.com/Y27528309A?pad=https://wa.me/573175420828" target="_blank">💬 WhatsApp</a>
+    </div>
   </div>
 
   <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
+    // Auto-descarga del libro después de 3 segundos
+    setTimeout(() => {
+      window.open("https://drive.google.com/uc?export=download&id=1u2VcrSmQM0Vpi-WzSLgiUmX32njBhaly", "_blank");
+    }, 3000);
   </script>
 </body>
 </html>
+
