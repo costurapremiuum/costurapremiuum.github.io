@@ -177,10 +177,33 @@
       <div class="form-text">
         <h2>📘 Recibe tu libro de costura gratis 🎁</h2>
         <p>Déjame tus datos y te enviaré el libro directamente a tu correo. Es un regalo para que empieces a crear tus propias prendas desde hoy 💕</p>
-       <form action="https://formsubmit.co/costurapremiuum2026@gmail.com" method="POST">
+      <form id="costuraForm">
   <input type="text" name="nombre" placeholder="Tu nombre" required>
   <input type="email" name="email" placeholder="Tu correo" required>
   <input type="text" name="whatsapp" placeholder="Tu WhatsApp (opcional)">
+  <button type="submit" class="btn-primary">Recibir mi libro gratis 🎁</button>
+</form>
+
+<script>
+  const form = document.getElementById('costuraForm');
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const data = {
+      nombre: form.nombre.value,
+      email: form.email.value,
+      whatsapp: form.whatsapp.value
+    };
+
+    await fetch('https://script.google.com/macros/s/AKfycbzxoge_JA8SxrP2mE9cLa4CdLJNlzl1PfWNmIbBmQEQFq_kVKEXDUCDpPluge9vcsoeFw/exec', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    });
+
+    window.location.href = 'https://corteyconfeccion.online/gracias.html';
+  });
+</script>
+
   
   <!-- Redirección después del envío -->
   <input type="hidden" name="_next" value="https://corteyconfeccion.online/gracias.html">
