@@ -18,7 +18,6 @@
       --color-secondary: #c6b7ff;
       --color-text: #2b2333;
       --color-muted: #7a6f80;
-      --radius-lg: 18px;
       --shadow-soft: 0 10px 25px rgba(0,0,0,0.06);
     }
 
@@ -47,7 +46,6 @@
 
     header {
       display: flex;
-      justify-content: flex-start;
       align-items: center;
       margin-bottom: 20px;
       flex-wrap: wrap;
@@ -126,9 +124,7 @@
       margin-bottom: 16px;
     }
 
-    .hero .bullets p {
-      margin-bottom: 4px;
-    }
+    .hero .bullets p { margin-bottom: 4px; }
 
     .btn-primary {
       background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
@@ -189,9 +185,7 @@
       font-size: 0.9rem;
     }
 
-    input:focus {
-      border-color: var(--color-secondary);
-    }
+    input:focus { border-color: var(--color-secondary); }
 
     .privacy {
       font-size: 0.75rem;
@@ -248,7 +242,6 @@
 
 <body>
   <div class="page">
-    <!-- HEADER SIN "PLAZAS ABIERTAS" -->
     <header>
       <div class="brand">
         <img src="https://i.postimg.cc/HnsnPCpT/logo-costurando.png" alt="Costurando Ando logo">
@@ -256,7 +249,6 @@
       </div>
     </header>
 
-    <!-- HERO: PRIMER BOTÓN VA AL VIDEO + FORMULARIO -->
     <section class="hero">
       <img src="https://images.unsplash.com/photo-1587614295999-6a5e7d3dfd8b?auto=format&fit=crop&w=900&q=80" alt="Curso de costura online">
       <h2>Aprende <span>corte y confección</span> desde casa y convierte tu talento en ingresos 💖</h2>
@@ -266,69 +258,52 @@
         <p>✔ Más de 60 blusas paso a paso + 1 libro de regalo.</p>
         <p>✔ Pago seguro por Hotmart y acceso inmediato al curso.</p>
       </div>
-
-      <!-- ESTE BOTÓN AHORA LLEVA A video.html -->
       <a href="video.html" class="btn-primary">Quiero aprender corte y confección 💕</a>
     </section>
 
-    <!-- OPCIONAL: LEADS DIRECTOS DESDE LA PÁGINA PRINCIPAL -->
-  <section id="lead" class="lead">
-  <h3>📘 ¿Quieres que te envíe el libro directo a tu correo?</h3>
-  <p>Déjame tus datos y te enviaré el libro de costura de regalo para que comiences a practicar desde hoy, aunque todavía no compres el curso.</p>
-  
-  <form id="costuraForm">
-    <input type="text" name="nombre" placeholder="Tu nombre" required>
-    <input type="email" name="email" placeholder="Tu correo" required>
-    <input type="text" name="whatsapp" placeholder="Tu WhatsApp (opcional)">
-    <button type="submit" class="btn-primary">Recibir mi libro gratis 🎁</button>
-  </form>
+    <!-- FORMULARIO FUNCIONAL -->
+    <section id="lead" class="lead">
+      <h3>📘 ¿Quieres que te envíe el libro directo a tu correo?</h3>
+      <p>Déjame tus datos y te enviaré el libro de costura de regalo para que comiences a practicar desde hoy, aunque todavía no compres el curso.</p>
+      
+      <form id="costuraForm">
+        <input type="text" name="nombre" placeholder="Tu nombre" required>
+        <input type="email" name="email" placeholder="Tu correo" required>
+        <input type="text" name="whatsapp" placeholder="Tu WhatsApp (opcional)">
+        <button type="submit" class="btn-primary">Recibir mi libro gratis 🎁</button>
+      </form>
 
-  <p class="privacy">Tu información está segura y solo será usada para enviarte el libro y futuras oportunidades de costura.</p>
+      <p class="privacy">Tu información está segura y solo será usada para enviarte el libro y futuras oportunidades de costura.</p>
 
-  <script>
-    const form = document.getElementById('costuraForm');
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const data = {
-        nombre: form.nombre.value,
-        email: form.email.value,
-        whatsapp: form.whatsapp.value
-      };
+      <script>
+        const form = document.getElementById('costuraForm');
+        form.addEventListener('submit', async (e) => {
+          e.preventDefault();
+          const data = {
+            nombre: form.nombre.value,
+            email: form.email.value,
+            whatsapp: form.whatsapp.value
+          };
 
-      await fetch('https://script.google.com/macros/s/AKfycbzxoge_JA8SxrP2mE9cLa4CdLJNlzl1PfWNmIbBmQEQFq_kVKEXDUCDpPluge9vcsoeFw/exec', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data)
-      });
+          await fetch('https://script.google.com/macros/s/AKfycbzXCCO3rU7GbEnKQ_Z3tI2PNsvk6M6szVaTyutFgu0g_LDO88sKqB94-Q4EhrR46Dac4Q/exec', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+          });
 
-      window.location.href = 'https://corteyconfeccion.online/gracias.html';
-    });
-  </script>
-</section>
-
-  <!-- Redirección después del envío -->
-  <input type="hidden" name="_next" value="https://corteyconfeccion.online/gracias.html">
-
-  <!-- Evita spam bots -->
-  <input type="hidden" name="_captcha" value="false">
-
-  <button type="submit" class="btn-primary">Recibir mi libro gratis 🎁</button>
-</form>
-
-      <p class="privacy">Tu información está segura y solo será usada para enviarte el libro y las oportunidades del curso.</p>
+          window.location.href = 'https://corteyconfeccion.online/gracias.html';
+        });
+      </script>
     </section>
 
-    <!-- SEGUNDA LLAMADA A LA ACCIÓN: VENTA DIRECTA 95 USD -->
-   <section class="cta-final">
-  <h2>✨ Si sientes que este es tu momento...</h2>
-  <p>Si sientes que este es tu momento para aprender y crear con tus propias manos, entra al curso completo y comienza hoy mismo tu camino en la costura.</p>
-  <a href="https://go.hotmart.com/Y27528309A?ap=f590" class="btn-primary" target="_blank">
-    Comenzar mi camino en la costura 💕
-  </a>
-</section>
+    <section class="cta-final">
+      <h2>✨ Si sientes que este es tu momento...</h2>
+      <p>Si sientes que este es tu momento para aprender y crear con tus propias manos, entra al curso completo y comienza hoy mismo tu camino en la costura.</p>
+      <a href="https://go.hotmart.com/Y27528309A?ap=f590" class="btn-primary" target="_blank">
+        Comenzar mi camino en la costura 💕
+      </a>
+    </section>
 
-
-    <!-- FOOTER CON EMOJIS DE REDES -->
     <footer class="footer">
       <p>© <span id="year"></span> Costurando Ando • corteyconfeccion.online</p>
       <div class="socials">
@@ -346,4 +321,3 @@
   </script>
 </body>
 </html>
-
