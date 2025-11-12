@@ -3,9 +3,10 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Video - Costurando Ando</title>
-  <meta name="description" content="Mira el video completo y recibe tu libro de costura gratis de Costurando Ando. Aprende a confeccionar desde casa con Silvana.">
+  <title>Costurando Ando • Corte y Confección Online</title>
+  <meta name="description" content="Aprende corte y confección desde casa con Silvana de Costurando Ando. Curso paso a paso para crear, coser y vender tus propias prendas.">
 
+  <!-- Fuente moderna -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -39,72 +40,137 @@
     }
 
     .page {
-      max-width: 1000px;
+      max-width: 1100px;
       margin: 0 auto;
       padding: 20px 16px 60px;
     }
 
     header {
-      text-align: center;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
       margin-bottom: 20px;
+      flex-wrap: wrap;
     }
 
-    header h1 {
-      font-size: 1.6rem;
-      color: var(--color-primary);
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand img {
+      height: 55px;
+      border-radius: 12px;
+      animation: fadeInDown 1s ease forwards;
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .brand h1 {
+      font-size: 1.5rem;
       font-weight: 700;
+      color: var(--color-primary);
     }
 
-    .video-container {
-      position: relative;
-      overflow: hidden;
-      border-radius: 18px;
-      box-shadow: var(--shadow-soft);
-      margin-bottom: 28px;
-      animation: fadeIn 1s ease forwards;
-    }
-
-    iframe {
-      width: 100%;
-      height: 480px;
-      border: none;
-      border-radius: 18px;
-    }
-
-    @media (max-width: 600px) {
-      iframe { height: 230px; }
-    }
-
-    .form-section {
+    .hero {
       background: #ffffff;
       border-radius: 22px;
       box-shadow: var(--shadow-soft);
-      padding: 24px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
       align-items: center;
-      gap: 20px;
+      gap: 18px;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .hero img {
+      width: 100%;
+      border-radius: 16px;
+      max-height: 360px;
+      object-fit: cover;
+      animation: fadeInUp 1s ease forwards;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero h2 {
+      font-size: 1.8rem;
+      line-height: 1.3;
+      margin-top: 10px;
       animation: fadeIn 1s ease forwards;
     }
 
-    @media (max-width: 800px) {
-      .form-section { grid-template-columns: 1fr; text-align: center; }
-    }
-
-    .form-section img {
-      width: 100%;
-      border-radius: 18px;
-      box-shadow: var(--shadow-soft);
-    }
-
-    .form-text h2 {
-      font-size: 1.3rem;
+    .hero h2 span {
       color: var(--color-primary);
-      margin-bottom: 10px;
     }
 
-    .form-text p {
+    .hero p {
+      color: var(--color-muted);
       font-size: 0.95rem;
+      margin-bottom: 8px;
+      animation: fadeIn 1s ease forwards;
+    }
+
+    .hero .bullets {
+      font-size: 0.9rem;
+      color: var(--color-muted);
+      margin-bottom: 16px;
+    }
+
+    .hero .bullets p {
+      margin-bottom: 4px;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+      border: none;
+      color: #fff;
+      padding: 12px 22px;
+      border-radius: 999px;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 1rem;
+      box-shadow: 0 8px 18px rgba(255, 102, 178, 0.35);
+      transition: all 0.3s ease;
+      display: inline-block;
+      margin-bottom: 10px;
+      animation: fadeIn 1s ease forwards;
+    }
+
+    .btn-primary:hover {
+      background: linear-gradient(135deg, var(--color-secondary), var(--color-primary));
+      transform: scale(1.03);
+      box-shadow: 0 10px 25px rgba(255, 102, 178, 0.45);
+    }
+
+    .lead {
+      background: #ffffff;
+      border-radius: 20px;
+      box-shadow: var(--shadow-soft);
+      padding: 20px;
+      margin: 30px auto;
+      max-width: 700px;
+      animation: fadeIn 1s ease forwards;
+    }
+
+    .lead h3 {
+      font-size: 1.2rem;
+      color: var(--color-primary);
+      text-align: center;
+    }
+
+    .lead p {
+      text-align: center;
+      font-size: 0.9rem;
       color: var(--color-muted);
       margin-bottom: 16px;
     }
@@ -127,73 +193,118 @@
       border-color: var(--color-secondary);
     }
 
-    .btn-primary {
-      background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
-      border: none;
-      color: #fff;
-      padding: 12px 22px;
-      border-radius: 999px;
-      font-weight: 600;
-      text-decoration: none;
-      font-size: 1rem;
-      box-shadow: 0 8px 18px rgba(255, 102, 178, 0.35);
-      transition: all 0.3s ease;
-      display: inline-block;
-    }
-
-    .btn-primary:hover {
-      background: linear-gradient(135deg, var(--color-secondary), var(--color-primary));
-      transform: scale(1.03);
-      box-shadow: 0 10px 25px rgba(255, 102, 178, 0.45);
-    }
-
     .privacy {
       font-size: 0.75rem;
       color: var(--color-muted);
-      margin-top: 4px;
       text-align: center;
+      margin-top: 4px;
     }
 
-    footer {
+    .cta-final {
       text-align: center;
-      font-size: 0.8rem;
+      margin-top: 50px;
+    }
+
+    .footer {
+      text-align: center;
+      font-size: 0.9rem;
       color: var(--color-muted);
-      margin-top: 30px;
+      border-top: 1px dashed rgba(0,0,0,0.1);
+      padding-top: 16px;
+      margin-top: 40px;
+    }
+
+    .socials {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    .socials a {
+      text-decoration: none;
+      font-size: 1.05rem;
+      padding: 6px 10px;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+      color: var(--color-text);
+      background: rgba(255,255,255,0.5);
+    }
+
+    .socials a:hover {
+      background: rgba(255,102,178,0.1);
+      transform: scale(1.08);
+      color: var(--color-primary);
+    }
+
+    @media (max-width: 600px) {
+      .hero h2 { font-size: 1.4rem; }
+      .btn-primary { font-size: 0.95rem; }
+      .lead { padding: 16px; }
     }
   </style>
 </head>
 
 <body>
   <div class="page">
+    <!-- HEADER SIN "PLAZAS ABIERTAS" -->
     <header>
-      <h1>🎬 Mira el video y recibe tu libro gratis</h1>
+      <div class="brand">
+        <img src="https://i.postimg.cc/HnsnPCpT/logo-costurando.png" alt="Costurando Ando logo">
+        <h1>Costurando Ando</h1>
+      </div>
     </header>
 
-    <div class="video-container">
-      <iframe src="https://drive.google.com/file/d/1PbdrRkbfcbTw8Picqk0VY4d1_xqeYZdh/preview" allow="autoplay"></iframe>
-    </div>
-
-    <section class="form-section">
-      <div class="form-text">
-        <h2>📘 Recibe tu libro de costura gratis 🎁</h2>
-        <p>Déjame tus datos y te enviaré el libro directamente a tu correo. Es un regalo para que empieces a crear tus propias prendas desde hoy 💕</p>
-        <form action="https://formsubmit.co/costurapremiuum2026@gmail.com" method="POST">
-          <input type="text" name="nombre" placeholder="Tu nombre" required>
-          <input type="email" name="email" placeholder="Tu correo" required>
-          <input type="text" name="whatsapp" placeholder="Tu WhatsApp (opcional)">
-          <input type="hidden" name="_next" value="https://corteyconfeccion.online/gracias.html">
-          <button type="submit" class="btn-primary">Recibir mi libro 🎁</button>
-        </form>
-        <p class="privacy">Tu información está segura y solo será usada para enviarte el libro y futuras oportunidades de costura.</p>
+    <!-- HERO: PRIMER BOTÓN VA AL VIDEO + FORMULARIO -->
+    <section class="hero">
+      <img src="https://images.unsplash.com/photo-1587614295999-6a5e7d3dfd8b?auto=format&fit=crop&w=900&q=80" alt="Curso de costura online">
+      <h2>Aprende <span>corte y confección</span> desde casa y convierte tu talento en ingresos 💖</h2>
+      <p>Te muestro cómo pasar de solo tener una máquina en casa a confeccionar prendas que la gente quiera pagar.</p>
+      <div class="bullets">
+        <p>✔ Curso completo de Costura Premium recomendado por Costurando Ando.</p>
+        <p>✔ Más de 60 blusas paso a paso + 1 libro de regalo.</p>
+        <p>✔ Pago seguro por Hotmart y acceso inmediato al curso.</p>
       </div>
 
-      <div class="form-image">
-        <img src="https://images.unsplash.com/photo-1609883242644-9e310d9c35b9?auto=format&fit=crop&w=800&q=80" alt="Libro y máquina de coser">
-      </div>
+      <!-- ESTE BOTÓN AHORA LLEVA A video.html -->
+      <a href="video.html" class="btn-primary">Quiero aprender corte y confección 💕</a>
     </section>
 
-    <footer>
-      © <span id="year"></span> Costurando Ando • corteyconfeccion.online
+    <!-- OPCIONAL: LEADS DIRECTOS DESDE LA PÁGINA PRINCIPAL -->
+    <section id="lead" class="lead">
+      <h3>📘 ¿Quieres que te envíe el libro directo a tu correo?</h3>
+      <p>Déjame tus datos y te enviaré el libro de costura de regalo para que comiences a practicar desde hoy, aunque todavía no compres el curso.</p>
+      <form action="https://formsubmit.co/costurapremiuum2026@gmail.com" method="POST">
+        <input type="text" name="nombre" placeholder="Tu nombre" required>
+        <input type="email" name="email" placeholder="Tu correo" required>
+        <input type="text" name="whatsapp" placeholder="Tu WhatsApp (opcional)">
+        <!-- Después de enviar, también irá a la página de gracias con la oferta de 89 -->
+        <input type="hidden" name="_next" value="https://corteyconfeccion.online/gracias.html">
+        <button type="submit" class="btn-primary">Recibir mi libro gratis 🎁</button>
+      </form>
+      <p class="privacy">Tu información está segura y solo será usada para enviarte el libro y las oportunidades del curso.</p>
+    </section>
+
+    <!-- SEGUNDA LLAMADA A LA ACCIÓN: VENTA DIRECTA 95 USD -->
+    <section class="cta-final">
+      <h2>🎀 Lista para ir directo al curso completo</h2>
+      <p>Si ya sabes que quieres aprender en serio y avanzar rápido, puedes entrar directo al curso con el precio estándar.</p>
+      <a href="https://go.hotmart.com/Y27528309A?ap=f590" class="btn-primary" target="_blank">
+        Ir directo al curso por $95 USD
+      </a>
+    </section>
+
+    <!-- FOOTER CON EMOJIS DE REDES -->
+    <footer class="footer">
+      <p>© <span id="year"></span> Costurando Ando • corteyconfeccion.online</p>
+      <div class="socials">
+        <a href="https://www.instagram.com/costuraindustrial_/" target="_blank">📸 Instagram</a>
+        <a href="https://web.facebook.com/Costurindustrial" target="_blank">📘 Facebook</a>
+        <a href="https://www.tiktok.com/@costurando_ando" target="_blank">🎬 TikTok</a>
+        <a href="https://go.hotmart.com/Y27528309A?pad=https://www.youtube.com/@PremiumAcademy" target="_blank">▶️ YouTube</a>
+        <a href="https://go.hotmart.com/Y27528309A?pad=https://wa.me/573175420828" target="_blank">💬 WhatsApp</a>
+      </div>
     </footer>
   </div>
 
@@ -202,3 +313,4 @@
   </script>
 </body>
 </html>
+
