@@ -6,7 +6,6 @@
   <title>Costurando Ando • Corte y Confección Online</title>
   <meta name="description" content="Aprende corte y confección desde casa con Silvana de Costurando Ando. Curso paso a paso para crear, coser y vender tus propias prendas.">
   
-  <!-- Fuentes y estilos -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -26,8 +25,8 @@
 
     body {
       font-family: "Poppins", sans-serif;
-      background: var(--color-bg) url('https://i.imgur.com/TVq8QbT.png') repeat;
-      background-size: 300px;
+      background: var(--color-bg) url('https://i.postimg.cc/FKv5VRdG/textura-tela-clara.jpg') repeat;
+      background-size: 250px;
       color: var(--color-text);
       line-height: 1.6;
     }
@@ -140,9 +139,14 @@
     }
 
     .course-logo {
-      display: flex;
-      justify-content: center;
-      margin-top: 10px;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .course-logo p {
+      font-size: 0.9rem;
+      color: var(--color-muted);
+      margin-bottom: 8px;
     }
 
     .course-logo img {
@@ -189,4 +193,79 @@
     }
 
     .footer {
-      text-align: cente
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--color-muted);
+      border-top: 1px dashed rgba(0,0,0,0.1);
+      padding-top: 10px;
+      margin-top: 30px;
+    }
+
+    .socials {
+      margin-top: 8px;
+    }
+
+    .socials a {
+      color: var(--color-primary);
+      margin: 0 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+    <header>
+      <div class="brand">
+        <img src="https://i.postimg.cc/HnsnPCpT/logo-costurando.png" alt="Costurando Ando logo">
+        <h1>Costurando Ando</h1>
+      </div>
+      <div class="badge-live">Plazas abiertas hoy 🪡</div>
+    </header>
+
+    <section class="hero">
+      <div>
+        <h2>Aprende <span>corte y confección</span> desde casa y empieza a cobrar por tus primeras prendas 💖</h2>
+        <p>Con este curso online paso a paso, vas a aprender a dominar tu máquina, confeccionar más de 60 modelos y transformar tu talento en ingresos.</p>
+        <a href="https://go.hotmart.com/Y27528309A?ap=f590" class="btn-primary" target="_blank">Entrar al curso por $95 USD</a>
+        <a href="#lead" class="btn-secondary">Ver clase gratis</a>
+      </div>
+      <img src="https://i.postimg.cc/FRP7zhTp/curso-costura-premium.jpg" alt="curso costura premium">
+    </section>
+
+    <div class="course-logo">
+      <p>Curso recomendado por</p>
+      <img src="costura premium logo.png" alt="Costura Premium">
+    </div>
+
+    <section id="lead" class="lead">
+      <h3>💌 Obtén una clase de muestra gratis</h3>
+      <p>Déjame tus datos y te enviaré una clase de muestra, además de información personalizada sobre cómo comenzar paso a paso.</p>
+      <form action="https://formsubmit.co/costurapremiuum2026@gmail.com" method="POST">
+        <input type="text" name="nombre" placeholder="Tu nombre" required>
+        <input type="email" name="email" placeholder="Tu correo" required>
+        <input type="text" name="whatsapp" placeholder="Tu WhatsApp (opcional)">
+        <input type="hidden" name="_next" value="https://corteyconfeccion.online/gracias.html">
+        <button type="submit" class="btn-primary">Recibir clase gratis</button>
+      </form>
+    </section>
+
+    <footer class="footer">
+      <p>© <span id="year"></span> Costurando Ando • corteyconfeccion.online</p>
+      <div class="socials">
+        <a href="https://www.instagram.com/costuraindustrial_/" target="_blank">Instagram</a> |
+        <a href="https://web.facebook.com/Costurindustrial" target="_blank">Facebook</a> |
+        <a href="https://www.tiktok.com/@costurando_ando" target="_blank">TikTok</a> |
+        <a href="https://go.hotmart.com/Y27528309A?pad=https://www.youtube.com/@PremiumAcademy" target="_blank">YouTube</a> |
+        <a href="https://go.hotmart.com/Y27528309A?pad=https://wa.me/573175420828" target="_blank">WhatsApp</a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
