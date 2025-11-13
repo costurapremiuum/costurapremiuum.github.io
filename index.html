@@ -267,31 +267,25 @@
       <p class="privacy">Tu información está segura y solo será usada para enviarte el libro y futuras oportunidades de costura.</p>
 
       <script>
-        function enviarFormulario(e) {
-          e.preventDefault();
-          const form = document.getElementById('costuraForm');
+  const form = document.getElementById('costuraForm');
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const data = {
+      nombre: form.nombre.value,
+      email: form.email.value,
+      whatsapp: form.whatsapp.value
+    };
 
-          const formData = document.createElement('form');
-          formData.method = 'POST';
-          formData.action = 'https://script.google.com/macros/s/AKfycbzXCCO3rU7GbEnKQ_Z3tI2PNsvk6M6szVaTyutFgu0g_LDO88sKqB94-Q4EhrR46Dac4Q/exec';
-          formData.target = 'hidden_iframe';
+    await fetch('https://script.google.com/macros/s/AKfycbzXCCO3rU7GbEnKQ_Z3tI2PNsvk6M6szVaTyutFgu0g_LDO88sKqB94-Q4EhrR46Dac4Q/exec', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    });
 
-          ['nombre', 'email', 'whatsapp'].forEach(name => {
-            const input = document.createElement('input');
-            input.type = 'hidden';
-            input.name = name;
-            input.value = form[name].value;
-            formData.appendChild(input);
-          });
+    window.location.href = 'https://corteyconfeccion.online/gracias.html';
+  });
+</script>
 
-          document.body.appendChild(formData);
-          formData.submit();
-
-          setTimeout(() => {
-            window.location.href = 'https://corteyconfeccion.online/gracias.html';
-          }, 800);
-        }
-      </script>
     </section>
 
     <section class="cta-final">
