@@ -1,38 +1,219 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Descarga Gratuita | Costura Premium</title>
-    <style>
-        /* Estilos CSS Simples y Limpios */
-        body { font-family: 'Arial', sans-serif; background-color: #f7f7f7; color: #333; margin: 0; padding: 20px; text-align: center; }
-        .container { max-width: 600px; margin: 40px auto; background-color: #fff; padding: 30px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
-        h1 { color: #8B4513; font-size: 2em; line-height: 1.2; margin-bottom: 10px; }
-        h2 { color: #555; font-size: 1.2em; margin-bottom: 30px; }
-        .lead-magnet-image { max-width: 80%; height: auto; margin-bottom: 25px; border: 2px solid #ddd; border-radius: 5px; }
-        form { display: flex; flex-direction: column; align-items: center; }
-        input[type="text"], input[type="email"] { width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box; }
-        .cta-button { background-color: #008080; color: white; padding: 15px 30px; border: none; border-radius: 5px; font-size: 1.1em; font-weight: bold; cursor: pointer; transition: background-color 0.3s; width: 100%; text-transform: uppercase; }
-        .cta-button:hover { background-color: #006666; }
-        .garantia { font-size: 0.85em; color: #777; margin-top: 20px; }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Costurando Ando • Corte y Confección Online</title>
+  <meta name="description" content="Aprende corte y confección desde casa con Silvana de Costurando Ando. Curso paso a paso para crear, coser y vender tus propias prendas.">
+
+  <!-- Fuente moderna -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --color-bg: #fffafc;
+      --color-primary: #ff66b2;
+      --color-secondary: #c6b7ff;
+      --color-text: #2b2333;
+      --color-muted: #7a6f80;
+      --shadow-soft: 0 10px 25px rgba(0,0,0,0.06);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background: var(--color-bg);
+      color: var(--color-text);
+      line-height: 1.6;
+    }
+
+    .page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 20px 16px 60px;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+
+    .brand img {
+      height: 55px;
+      border-radius: 12px;
+    }
+
+    .brand h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--color-primary);
+    }
+
+    .hero {
+      background: #ffffff;
+      border-radius: 22px;
+      box-shadow: var(--shadow-soft);
+      padding: 18px;
+      text-align: center;
+    }
+
+    .hero img {
+      width: 100%;
+      border-radius: 16px;
+      max-height: 360px;
+      object-fit: cover;
+    }
+
+    .hero h2 {
+      font-size: 1.8rem;
+      line-height: 1.3;
+      margin-top: 10px;
+    }
+
+    .hero h2 span {
+      color: var(--color-primary);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+      color: #fff;
+      padding: 12px 22px;
+      border-radius: 999px;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 1rem;
+      display: inline-block;
+      margin-top: 15px;
+      box-shadow: 0 8px 18px rgba(255, 102, 178, 0.35);
+      transition: 0.3s;
+    }
+
+    .btn-primary:hover {
+      transform: scale(1.05);
+    }
+
+    .lead {
+      background: #ffffff;
+      border-radius: 20px;
+      box-shadow: var(--shadow-soft);
+      padding: 20px;
+      margin: 30px auto;
+      max-width: 700px;
+    }
+
+    form { display: flex; flex-direction: column; gap: 10px; }
+
+    input {
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: 1px solid #e2d6f0;
+    }
+
+    input:focus { border-color: var(--color-secondary); outline: none; }
+
+    .footer {
+      text-align: center;
+      padding-top: 16px;
+      margin-top: 40px;
+      font-size: 0.9rem;
+      color: var(--color-muted);
+    }
+
+    .socials {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    .socials a {
+      text-decoration: none;
+      font-size: 1rem;
+      color: var(--color-text);
+      padding: 6px 10px;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.5);
+    }
+
+    .socials a:hover { color: var(--color-primary); }
+  </style>
 </head>
+
 <body>
-    <div class="container">
-        <img src="[URL_DE_IMAGEN_DE_LA_GUIA_PDF]" alt="Guía de 5 Secretos de Costura Premium" class="lead-magnet-image">
+<div class="page">
 
-        <h1>¿Cansada de costuras con apariencia casera?</h1>
-        
-        <h2>Descarga GRATIS la guía que te revelará los **5 Secretos de un acabado Premium** y empieza a coser como Pro.</h2>
-
-        <form action="[URL_DE_TU_SERVICIO_DE_EMAIL_MARKETING]" method="POST">
-            <input type="text" name="name" placeholder="Tu Nombre" required>
-            <input type="email" name="email" placeholder="Tu Mejor Email" required>
-            <button type="submit" class="cta-button">¡SÍ, QUIERO MIS 5 SECRETOS AHORA!</button>
-        </form>
-
-        <p class="garantia">No compartiremos tu email con nadie. Descarga instantánea.</p>
+  <header>
+    <div class="brand">
+      <img src="https://i.postimg.cc/HnsnPCpT/logo-costurando.png">
+      <h1>Costurando Ando</h1>
     </div>
+  </header>
+
+  <section class="hero">
+    <img src="https://images.unsplash.com/photo-1587614295999-6a5e7d3dfd8b">
+    <h2>Aprende <span>corte y confección</span> desde casa y convierte tu talento en ingresos 💖</h2>
+
+    <a href="video.html" class="btn-primary">Quiero aprender corte y confección 💕</a>
+  </section>
+
+  <!-- FORMULARIO -->
+  <section class="lead">
+    <h3>📘 ¿Quieres tu libro de costura gratis?</h3>
+    <p>Déjame tus datos y te lo enviaré al instante.</p>
+
+    <form id="costuraForm">
+      <input type="text" name="nombre" placeholder="Tu nombre" required>
+      <input type="email" name="email" placeholder="Tu correo" required>
+      <input type="text" name="whatsapp" placeholder="Tu WhatsApp (opcional)">
+      <button type="submit" class="btn-primary">Recibir mi libro gratis 🎁</button>
+    </form>
+
+    <script>
+      const form = document.getElementById("costuraForm");
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const data = {
+          nombre: form.nombre.value,
+          email: form.email.value,
+          whatsapp: form.whatsapp.value
+        };
+
+        await fetch("https://script.google.com/macros/s/AKfycbwKVeOUzwYWqd-D_xYpsM3JhWZco-KFt7WKvNEPmr8XIbFPgUrcwT3KsVIgWQU45BJ5ZA/exec", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data)
+        });
+
+        window.location.href = "https://corteyconfeccion.online/gracias.html";
+      });
+    </script>
+  </section>
+
+  <footer class="footer">
+    © <span id="year"></span> Costurando Ando • corteyconfeccion.online
+    <div class="socials">
+      <a href="https://www.instagram.com/costuraindustrial_/">📸 Instagram</a>
+      <a href="https://web.facebook.com/Costurindustrial">📘 Facebook</a>
+      <a href="https://www.tiktok.com/@costurando_ando">🎬 TikTok</a>
+      <a href="https://go.hotmart.com/Y27528309A?pad=https://www.youtube.com/@PremiumAcademy">▶️ YouTube</a>
+      <a href="https://go.hotmart.com/Y27528309A?pad=https://wa.me/573175420828">💬 WhatsApp</a>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
 </body>
 </html>
+
