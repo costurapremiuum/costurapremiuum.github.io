@@ -6,7 +6,7 @@
   <title>Costurando Ando • Corte y Confección Online</title>
   <meta name="description" content="Aprende corte y confección desde casa con Silvana de Costurando Ando. Curso paso a paso para crear, coser y vender tus propias prendas.">
 
-  <!-- Fuente moderna -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -21,13 +21,12 @@
       --shadow-soft: 0 10px 25px rgba(0,0,0,0.06);
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-
     body {
       font-family: "Poppins", sans-serif;
       background: var(--color-bg);
+      margin: 0;
+      padding: 0;
       color: var(--color-text);
-      line-height: 1.6;
     }
 
     .page {
@@ -39,8 +38,7 @@
     header {
       display: flex;
       align-items: center;
-      gap: 10px;
-      margin-bottom: 30px;
+      margin-bottom: 20px;
     }
 
     .brand img {
@@ -49,11 +47,12 @@
     }
 
     .brand h1 {
+      margin-left: 10px;
       font-size: 1.5rem;
-      font-weight: 700;
       color: var(--color-primary);
     }
 
+    /* HERO */
     .hero {
       background: #ffffff;
       border-radius: 22px;
@@ -71,7 +70,6 @@
 
     .hero h2 {
       font-size: 1.8rem;
-      line-height: 1.3;
       margin-top: 10px;
     }
 
@@ -88,130 +86,128 @@
       text-decoration: none;
       font-size: 1rem;
       display: inline-block;
-      margin-top: 15px;
-      box-shadow: 0 8px 18px rgba(255, 102, 178, 0.35);
-      transition: 0.3s;
+      margin-top: 10px;
     }
 
-    .btn-primary:hover {
-      transform: scale(1.05);
-    }
-
+    /* FORM */
     .lead {
       background: #ffffff;
       border-radius: 20px;
       box-shadow: var(--shadow-soft);
       padding: 20px;
-      margin: 30px auto;
-      max-width: 700px;
+      margin-top: 40px;
     }
 
-    form { display: flex; flex-direction: column; gap: 10px; }
+    .lead h3 {
+      text-align: center;
+      color: var(--color-primary);
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
 
     input {
       padding: 10px 12px;
       border-radius: 999px;
       border: 1px solid #e2d6f0;
+      outline: none;
     }
 
-    input:focus { border-color: var(--color-secondary); outline: none; }
-
-    .footer {
+    .privacy {
+      font-size: 0.75rem;
       text-align: center;
-      padding-top: 16px;
-      margin-top: 40px;
-      font-size: 0.9rem;
       color: var(--color-muted);
+      margin-top: 4px;
     }
 
-    .socials {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-top: 10px;
+    .cta-final {
+      text-align: center;
+      margin-top: 50px;
     }
 
-    .socials a {
-      text-decoration: none;
-      font-size: 1rem;
-      color: var(--color-text);
-      padding: 6px 10px;
-      border-radius: 12px;
-      background: rgba(255,255,255,0.5);
+    footer {
+      margin-top: 40px;
+      text-align: center;
+      color: var(--color-muted);
+      font-size: 0.9rem;
     }
-
-    .socials a:hover { color: var(--color-primary); }
   </style>
 </head>
 
 <body>
-<div class="page">
+  <div class="page">
 
-  <header>
-    <div class="brand">
-      <img src="https://i.postimg.cc/HnsnPCpT/logo-costurando.png">
-      <h1>Costurando Ando</h1>
-    </div>
-  </header>
+    <!-- LOGO -->
+    <header>
+      <div class="brand">
+        <img src="https://i.postimg.cc/HnsnPCpT/logo-costurando.png" alt="Costurando Ando logo">
+        <h1>Costurando Ando</h1>
+      </div>
+    </header>
 
-  <section class="hero">
-    <img src="https://images.unsplash.com/photo-1587614295999-6a5e7d3dfd8b">
-    <h2>Aprende <span>corte y confección</span> desde casa y convierte tu talento en ingresos 💖</h2>
+    <!-- HERO -->
+    <section class="hero">
+      <img src="https://images.unsplash.com/photo-1587614295999-6a5e7d3dfd8b?auto=format&fit=crop&w=900&q=80" alt="Curso de costura online">
+      <h2>Aprende <span>corte y confección</span> desde casa y convierte tu talento en ingresos 💖</h2>
+      
+      <a href="video.html" class="btn-primary">Quiero aprender corte y confección 💕</a>
+    </section>
 
-    <a href="video.html" class="btn-primary">Quiero aprender corte y confección 💕</a>
-  </section>
+    <!-- FORMULARIO -->
+    <section class="lead">
+      <h3>📘 ¿Quieres que te envíe el libro directo a tu correo?</h3>
+      <p style="text-align:center;">Déjame tus datos y te enviaré el libro gratuito para que empieces hoy mismo.</p>
 
-  <!-- FORMULARIO -->
-  <section class="lead">
-    <h3>📘 ¿Quieres tu libro de costura gratis?</h3>
-    <p>Déjame tus datos y te lo enviaré al instante.</p>
+      <form id="costuraForm">
+        <input type="text" name="nombre" placeholder="Tu nombre" required>
+        <input type="email" name="email" placeholder="Tu correo" required>
+        <input type="text" name="whatsapp" placeholder="Tu WhatsApp (opcional)">
+        <button type="submit" class="btn-primary">Recibir mi libro gratis 🎁</button>
+      </form>
 
-    <form id="costuraForm">
-      <input type="text" name="nombre" placeholder="Tu nombre" required>
-      <input type="email" name="email" placeholder="Tu correo" required>
-      <input type="text" name="whatsapp" placeholder="Tu WhatsApp (opcional)">
-      <button type="submit" class="btn-primary">Recibir mi libro gratis 🎁</button>
-    </form>
+      <p class="privacy">Tu información está segura.</p>
+    </section>
 
-    <script>
-      const form = document.getElementById("costuraForm");
+    <!-- CTA FINAL -->
+    <section class="cta-final">
+      <h2>✨ Si sientes que este es tu momento...</h2>
+      <p>Entra al curso completo y comienza hoy mismo tu camino en la costura.</p>
+      <a href="https://go.hotmart.com/Y27528309A?ap=f590" class="btn-primary" target="_blank">
+        Comenzar mi camino en la costura 💕
+      </a>
+    </section>
 
-      form.addEventListener("submit", async (e) => {
-        e.preventDefault();
-
-        const data = {
-          nombre: form.nombre.value,
-          email: form.email.value,
-          whatsapp: form.whatsapp.value
-        };
-
-        await fetch("https://script.google.com/macros/s/AKfycbwKVeOUzwYWqd-D_xYpsM3JhWZco-KFt7WKvNEPmr8XIbFPgUrcwT3KsVIgWQU45BJ5ZA/exec", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(data)
-        });
-
-        window.location.href = "https://corteyconfeccion.online/gracias.html";
-      });
-    </script>
-  </section>
-
-  <footer class="footer">
-    © <span id="year"></span> Costurando Ando • corteyconfeccion.online
-    <div class="socials">
-      <a href="https://www.instagram.com/costuraindustrial_/">📸 Instagram</a>
-      <a href="https://web.facebook.com/Costurindustrial">📘 Facebook</a>
-      <a href="https://www.tiktok.com/@costurando_ando">🎬 TikTok</a>
-      <a href="https://go.hotmart.com/Y27528309A?pad=https://www.youtube.com/@PremiumAcademy">▶️ YouTube</a>
-      <a href="https://go.hotmart.com/Y27528309A?pad=https://wa.me/573175420828">💬 WhatsApp</a>
-    </div>
-  </footer>
-
-</div>
+    <!-- FOOTER -->
+    <footer>
+      © <span id="year"></span> Costurando Ando • corteyconfeccion.online
+    </footer>
+  </div>
 
 <script>
   document.getElementById("year").textContent = new Date().getFullYear();
+
+  const form = document.getElementById('costuraForm');
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const data = {
+      nombre: form.nombre.value,
+      email: form.email.value,
+      whatsapp: form.whatsapp.value
+    };
+
+    await fetch("https://script.google.com/macros/s/AKfycbz_KkctnbFwKm-JswjyriB3PhMpxB52a6jMrwxP7v8zi-quFzEE6KB3mP3GtIUl78rE/exec", {
+      method: "POST",
+      mode: "no-cors",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data)
+    });
+
+    window.location.href = "https://corteyconfeccion.online/gracias.html";
+  });
 </script>
 
 </body>
