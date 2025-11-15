@@ -195,11 +195,13 @@
 
     const formData = new FormData(form);
 
-    await fetch("https://script.google.com/macros/s/AKfycbzFC0hCT9mGX9Xn-UverkYiT600S474yqYy1lCvLyXwLTgofC_JzEyxNBkJqi2jFJqMug/exec", {
+    // Enviar datos sin esperar respuesta (modo clásico)
+    fetch("https://script.google.com/macros/s/AKfycbzFC0hCT9mGX9Xn-UverkYiT600S474yqYy1lCvLyXwLTgofC_JzEyxNBkJqi2jFJqMug/exec", {
       method: "POST",
       body: formData
     });
 
+    // Redirigir inmediatamente
     window.location.href = "https://corteyconfeccion.online/gracias.html";
   });
 </script>
