@@ -11,30 +11,16 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
- .learn-box {
-  margin-top: 50px;
-  text-align: center;
-}
+  <style>
+    :root {
+      --color-bg: #fffafc;
+      --color-primary: #ff66b2;
+      --color-secondary: #c6b7ff;
+      --color-text: #2b2333;
+      --color-muted: #7a6f80;
+      --shadow-soft: 0 10px 25px rgba(0,0,0,0.06);
+    }
 
-.learn-title {
-  color: var(--color-primary);
-  font-size: 1.7rem;
-  margin-bottom: 20px;
-}
-
-.learn-list {
-  list-style: none;
-  padding: 0;
-  max-width: 600px;
-  margin: 0 auto;
-  text-align: left;
-}
-
-.learn-list li {
-  margin: 10px 0;
-  font-size: 1rem;
-  color: var(--color-text);
-}
     body {
       font-family: "Poppins", sans-serif;
       background: var(--color-bg);
@@ -75,13 +61,13 @@
       text-align: center;
     }
 
-.hero img {
-  width: 100%;
-  border-radius: 22px;
-  max-height: 420px;
-  object-fit: cover;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-}
+    .hero img {
+      width: 100%;
+      border-radius: 22px;
+      max-height: 420px;
+      object-fit: cover;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    }
 
     .hero h2 {
       font-size: 1.8rem;
@@ -138,6 +124,33 @@
       margin-top: 4px;
     }
 
+    /* SECCIÓN ¿QUÉ VAS A APRENDER? */
+    .learn-box {
+      margin-top: 50px;
+      text-align: center;
+    }
+
+    .learn-title {
+      color: var(--color-primary);
+      font-size: 1.7rem;
+      margin-bottom: 20px;
+    }
+
+    .learn-list {
+      list-style: none;
+      padding: 0;
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    .learn-list li {
+      margin: 10px 0;
+      font-size: 1rem;
+      color: var(--color-text);
+    }
+
+    /* CTA FINAL */
     .cta-final {
       text-align: center;
       margin-top: 50px;
@@ -155,50 +168,58 @@
 <body>
   <div class="page">
 
-    <!-- LOGO -->
+    <!-- LOGO RESTAURADO -->
     <header>
-  <div class="brand">
-   <img src="https://i.ibb.co/sHGqz4K/costura-premium-mockup.png" alt="Curso Costura Premium" class="premium-img">
-    <h1>Costurando Ando</h1>
-  </div>
-</header>
+      <div class="brand">
+        <img src="AQUI_PONDREMOS_TU_LOGO_FINAL" alt="Costurando Ando logo">
+        <h1>Costurando Ando</h1>
+      </div>
+    </header>
 
-    <!-- HERO -->
-   <section class="premium-box">
-  <h2 class="premium-title">✨ Recomendado por Costurando Ando</h2>
-  <p class="premium-sub">
-    Si quieres avanzar aún más rápido, te recomiendo el <strong>Curso Costura Premium</strong>, 
-    ideal para aprender a coser blusas, vestidos, crop tops y prendas profesionales desde cero.
-  </p>
+    <!-- HERO RESTAURADO -->
+    <section class="hero">
+      <img src="AQUI_PONDREMOS_LA_IMAGEN_DEL_HERO" alt="Curso de costura online">
+      <h2>Aprende <span>corte y confección</span> desde casa y convierte tu talento en ingresos 💖</h2>
+      
+      <a href="video.html" class="btn-primary">Quiero aprender corte y confección 💕</a>
+    </section>
 
-  <div class="premium-content">
-    <img src="https://i.postimg.cc/TPR9pZnD/costura-premium-mockup.png" alt="Curso Costura Premium" class="premium-img">
+    <!-- FORMULARIO RESTAURADO -->
+    <section class="lead">
+      <h3>📘 ¿Quieres que te envíe el libro directo a tu correo?</h3>
+      <p style="text-align:center;">Déjame tus datos y te enviaré el libro gratuito para que empieces hoy mismo.</p>
 
-    <div class="premium-info">
-      <h3>📚 ¿Qué vas a aprender?</h3>
-      <ul>
+      <form id="costuraForm">
+        <input type="text" name="nombre" placeholder="Tu nombre" required>
+        <input type="email" name="email" placeholder="Tu correo" required>
+        <input type="text" name="whatsapp" placeholder="Tu WhatsApp (opcional)">
+        <button type="submit" class="btn-primary">Recibir mi libro gratis 🎁</button>
+      </form>
+
+      <p class="privacy">Tu información está segura.</p>
+    </section>
+
+    <!-- SECCIÓN QUE VAS A APRENDER -->
+    <section class="learn-box">
+      <h2 class="learn-title">✨ ¿Qué vas a aprender?</h2>
+
+      <ul class="learn-list">
         <li>✂ Más de <strong>60 blusas paso a paso</strong></li>
         <li>🧵 Técnicas profesionales de confección</li>
         <li>🎥 Videos HD para principiantes y avanzados</li>
-        <li>💰 Aprende a <strong>ganar dinero</strong> con tu máquina</li>
+        <li>💰 Cómo <strong>ganar dinero</strong> con tu máquina</li>
         <li>📱 Acceso desde el celular o computadora</li>
       </ul>
-      <a href="https://go.hotmart.com/Y27528309A?ap=f590" class="btn-primary" target="_blank">
-        Ir al Curso Costura Premium 💕
-      </a>
-    </div>
-  </div>
-<section class="learn-box">
-  <h2 class="learn-title">✨ ¿Qué vas a aprender?</h2>
+    </section>
 
-  <ul class="learn-list">
-    <li>✂ Más de <strong>60 blusas paso a paso</strong></li>
-    <li>🧵 Técnicas profesionales de confección</li>
-    <li>🎥 Videos HD para principiantes y avanzados</li>
-    <li>💰 Cómo <strong>ganar dinero</strong> con tu máquina</li>
-    <li>📱 Acceso desde el celular o computadora</li>
-  </ul>
-</section>
+    <!-- CTA FINAL RESTAURADO -->
+    <section class="cta-final">
+      <h2>✨ Si sientes que este es tu momento...</h2>
+      <p>Entra al curso completo y comienza hoy mismo tu camino en la costura.</p>
+      <a href="https://go.hotmart.com/Y27528309A?ap=f590" class="btn-primary" target="_blank">
+        Comenzar mi camino en la costura 💕
+      </a>
+    </section>
 
     <!-- FOOTER -->
     <footer>
@@ -215,17 +236,14 @@
 
     const formData = new FormData(form);
 
-    // Enviar datos sin esperar respuesta (modo clásico)
     fetch("https://script.google.com/macros/s/AKfycbzFC0hCT9mGX9Xn-UverkYiT600S474yqYy1lCvLyXwLTgofC_JzEyxNBkJqi2jFJqMug/exec", {
       method: "POST",
       body: formData
     });
 
-    // Redirigir inmediatamente
     window.location.href = "https://corteyconfeccion.online/gracias.html";
   });
 </script>
 
 </body>
 </html>
-
