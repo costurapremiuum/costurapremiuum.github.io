@@ -193,17 +193,11 @@
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    const data = {
-      nombre: form.nombre.value,
-      email: form.email.value,
-      whatsapp: form.whatsapp.value
-    };
+    const formData = new FormData(form);
 
-    await fetch("https://script.google.com/macros/s/AKfycbz_KkctnbFwKm-JswjyriB3PhMpxB52a6jMrwxP7v8zi-quFzEE6KB3mP3GtIUl78rE/exec", {
+    await fetch("https://script.google.com/macros/s/AKfycbzFC0hCT9mGX9Xn-UverkYiT600S474yqYy1lCvLyXwLTgofC_JzEyxNBkJqi2jFJqMug/exec", {
       method: "POST",
-      mode: "no-cors",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data)
+      body: formData
     });
 
     window.location.href = "https://corteyconfeccion.online/gracias.html";
