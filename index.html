@@ -12,13 +12,57 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <style>
-    :root {
-      --color-bg: #fffafc;
-      --color-primary: #ff66b2;
-      --color-secondary: #c6b7ff;
-      --color-text: #2b2333;
-      --color-muted: #7a6f80;
-      --shadow-soft: 0 10px 25px rgba(0,0,0,0.06);
+   .premium-box {
+  background: #ffffff;
+  padding: 40px 20px;
+  border-radius: 25px;
+  margin-top: 60px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+}
+
+.premium-title {
+  text-align: center;
+  color: var(--color-primary);
+  margin-bottom: 10px;
+  font-size: 1.8rem;
+}
+
+.premium-sub {
+  text-align: center;
+  color: var(--color-muted);
+  max-width: 700px;
+  margin: 0 auto 30px;
+}
+
+.premium-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+.premium-img {
+  max-width: 320px;
+  border-radius: 16px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+}
+
+.premium-info {
+  max-width: 450px;
+}
+
+.premium-info ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 25px;
+}
+
+.premium-info li {
+  margin: 8px 0;
+  color: var(--color-text);
+  font-size: 1rem;
+}
     }
 
     body {
