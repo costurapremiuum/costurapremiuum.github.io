@@ -37,20 +37,63 @@ body {
 }
 
 /* Hero principal */
-.hero {
-  padding: 50px 0;
+.hero-course {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #FFD9EB, #C6B7FF);
+  padding: 40px 20px;
+  border-radius: 22px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+  margin-bottom: 40px;
+}
+
+.hero-video-container {
+  flex: 1;
+  min-width: 280px;
+  max-width: 500px;
+}
+
+.hero-video {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.hero-text {
+  flex: 1;
+  min-width: 280px;
+  padding: 20px;
   text-align: center;
-  background: #fff;
 }
 
-.hero h1 {
-  color: #222;
-  font-size: 1.8rem;
+.hero-text h1 {
+  font-size: 2rem;
+  color: #2b2333;
+  margin-bottom: 10px;
 }
 
-.hero .accent {
-  color: #f54291;
-  font-weight: 700;
+.hero-text p {
+  font-size: 1.1rem;
+  color: #2b2333;
+  margin-bottom: 20px;
+}
+
+.btn-buy {
+  background: #ff66b2;
+  padding: 12px 25px;
+  color: white;
+  font-weight: bold;
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 1.1rem;
+  display: inline-block;
+  transition: 0.3s;
+}
+
+.btn-buy:hover {
+  background: #d94d92;
 }
 
 .btn {
