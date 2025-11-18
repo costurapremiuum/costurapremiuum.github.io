@@ -181,6 +181,28 @@
         grid-template-columns: 1fr;
       }
     }
+/* Contenedor para el efecto */
+.certificado-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease;
+}
+
+/* Imagen del certificado con hover suave */
+.certificado-container img {
+  width: 100%;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+/* EFECTO ZOOM */
+.certificado-container:hover img {
+  transform: scale(1.05);
+}
 
 </style>
 </head>
@@ -209,7 +231,10 @@ setInterval(actualizarCuentaRegresiva, 1000);
 
 <body>
 
-<div class="container">
+<div class="certificado-container">
+  <img src="https://raw.githubusercontent.com/costurapremiuum/costurapremiuum.github.io/main/Certificado%20dise%C3%B1o.jpg" 
+       alt="Certificado Costura Premium">
+</div>
 
   <!-- HERO -->
  <section class="hero">
