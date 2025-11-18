@@ -1,9 +1,10 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Curso Costura Premium • Costurando Ando</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Costurando Ando • Corte y Confección Online</title>
+  <meta name="description" content="Aprende corte y confección desde casa con Silvana de Costurando Ando. Curso paso a paso para crear, coser y vender tus propias prendas.">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,12 +12,21 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <style>
+    :root {
+      --color-bg: #fffafc;
+      --color-primary: #ff66b2;
+      --color-secondary: #c6b7ff;
+      --color-text: #2b2333;
+      --color-muted: #7a6f80;
+      --shadow-soft: 0 10px 25px rgba(0,0,0,0.06);
+    }
+
     body {
       font-family: "Poppins", sans-serif;
-      background: #fffafc;
+      background: var(--color-bg);
       margin: 0;
       padding: 0;
-      color: #2b2333;
+      color: var(--color-text);
     }
 
     .page {
@@ -25,249 +35,176 @@
       padding: 20px 16px 60px;
     }
 
-    /* ------------------ HERO ------------------ */
-
-    .hero-course {
+    header {
       display: flex;
-      flex-wrap: wrap;
       align-items: center;
-      justify-content: center;
-      background: linear-gradient(135deg, #FFD9EB, #C6B7FF);
-      padding: 40px 20px;
-      border-radius: 22px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.06);
-      margin-bottom: 50px;
-    }
-
-    .hero-video-container {
-      flex: 1;
-      min-width: 280px;
-      max-width: 500px;
-    }
-
-    .hero-video {
-      width: 100%;
-      border-radius: 22px;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-    }
-
-    .hero-text {
-      flex: 1;
-      min-width: 280px;
-      padding: 20px;
-      text-align: center;
-    }
-
-    .hero-text h1 {
-      font-size: 2.2rem;
-      color: #2b2333;
-      margin-bottom: 10px;
-    }
-
-    .hero-text p {
-      font-size: 1.1rem;
       margin-bottom: 20px;
     }
 
-    .btn-buy {
-      background: #ff66b2;
-      padding: 12px 25px;
-      color: white;
-      font-weight: bold;
-      border-radius: 999px;
-      text-decoration: none;
-      font-size: 1.1rem;
-      display: inline-block;
-      transition: 0.3s;
+    .brand img {
+      height: 55px;
+      border-radius: 12px;
     }
 
-    .btn-buy:hover {
-      background: #d94d92;
+    .brand h1 {
+      margin-left: 10px;
+      font-size: 1.5rem;
+      color: var(--color-primary);
     }
 
-    /* ------------------ RESUMEN ------------------ */
-
-    .section-box {
+    /* HERO */
+    .hero {
       background: #ffffff;
-      padding: 30px;
       border-radius: 22px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.06);
-      margin-bottom: 40px;
-    }
-
-    .section-box h2 {
+      box-shadow: var(--shadow-soft);
+      padding: 18px;
       text-align: center;
-      color: #ff66b2;
+    }
+
+    .hero img {
+      width: 100%;
+      border-radius: 22px;
+      max-height: 420px;
+      object-fit: cover;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    }
+
+    .hero h2 {
       font-size: 1.8rem;
-      margin-bottom: 15px;
+      margin-top: 10px;
     }
 
-    .section-box p {
-      line-height: 1.6;
-      margin-bottom: 15px;
+    .hero h2 span {
+      color: var(--color-primary);
     }
 
-    .section-box ul {
-      list-style: none;
-      padding-left: 0;
-    }
-
-    .section-box ul li {
-      margin: 10px 0;
+    .btn-primary {
+      background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+      color: #fff;
+      padding: 12px 22px;
+      border-radius: 999px;
+      font-weight: 600;
+      text-decoration: none;
       font-size: 1rem;
+      display: inline-block;
+      margin-top: 10px;
     }
 
-    /* ------------------ TESTIMONIOS ------------------ */
-
-    .testimonio {
-      background: #fff;
-      padding: 15px;
-      border-left: 4px solid #ff66b2;
-      border-radius: 12px;
-      margin-bottom: 15px;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.05);
+    /* FORM */
+    .lead {
+      background: #ffffff;
+      border-radius: 20px;
+      box-shadow: var(--shadow-soft);
+      padding: 20px;
+      margin-top: 40px;
     }
 
-    /* ------------------ PREGUNTAS ------------------ */
-
-    details {
-      background: #fff;
-      padding: 15px;
-      border-radius: 12px;
-      margin-bottom: 10px;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.05);
+    .lead h3 {
+      text-align: center;
+      color: var(--color-primary);
     }
 
-    summary {
-      font-weight: bold;
-      cursor: pointer;
-      color: #2b2333;
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
     }
 
-    /* ------------------ CTA FINAL ------------------ */
+    input {
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: 1px solid #e2d6f0;
+      outline: none;
+    }
+
+    .privacy {
+      font-size: 0.75rem;
+      text-align: center;
+      color: var(--color-muted);
+      margin-top: 4px;
+    }
 
     .cta-final {
       text-align: center;
       margin-top: 50px;
     }
 
+    footer {
+      margin-top: 40px;
+      text-align: center;
+      color: var(--color-muted);
+      font-size: 0.9rem;
+    }
   </style>
 </head>
 
 <body>
-  <!-- ENCABEZADO CON LOGO -->
-<header class="top-header">
-  <div class="header-container">
-    <a href="https://corteyconfeccion.online">
-      <img src="https://drive.google.com/uc?export=view&id=19vW3yiAXGfHK9CS7-liPQClWto57THh8"
-           alt="Logo Costurando Ando"
-           class="header-logo">
-    </a>
+  <div class="page">
+
+    <!-- LOGO -->
+    <header>
+      <div class="brand">
+        <img src="https://i.postimg.cc/HnsnPCpT/logo-costurando.png" alt="Costurando Ando logo">
+        <h1>Costurando Ando</h1>
+      </div>
+    </header>
+
+    <!-- HERO ORIGINAL -->
+    <section class="hero">
+      <img src="https://images.unsplash.com/photo-1587614295999-6a5e7d3dfd8b?auto=format&fit=crop&w=900&q=80" alt="Curso de costura online">
+      <h2>Aprende <span>corte y confección</span> desde casa y convierte tu talento en ingresos 💖</h2>
+      
+      <a href="video.html" class="btn-primary">Quiero aprender corte y confección 💕</a>
+    </section>
+
+    <!-- FORMULARIO ORIGINAL -->
+    <section class="lead">
+      <h3>📘 ¿Quieres que te envíe el libro directo a tu correo?</h3>
+      <p style="text-align:center;">Déjame tus datos y te enviaré el libro gratuito para que empieces hoy mismo.</p>
+
+      <form id="costuraForm">
+        <input type="text" name="nombre" placeholder="Tu nombre" required>
+        <input type="email" name="email" placeholder="Tu correo" required>
+        <input type="text" name="whatsapp" placeholder="Tu WhatsApp (opcional)">
+        <button type="submit" class="btn-primary">Recibir mi libro gratis 🎁</button>
+      </form>
+
+      <p class="privacy">Tu información está segura.</p>
+    </section>
+
+    <!-- CTA FINAL ORIGINAL -->
+    <section class="cta-final">
+      <h2>✨ Si sientes que este es tu momento...</h2>
+      <p>Entra al curso completo y comienza hoy mismo tu camino en la costura.</p>
+      <a href="https://go.hotmart.com/Y27528309A?ap=f590" class="btn-primary" target="_blank">
+        Comenzar mi camino en la costura 💕
+      </a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      © <span id="year"></span> Costurando Ando • corteyconfeccion.online
+    </footer>
   </div>
-</header>
 
-<div class="page">
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
 
-  <!-- HERO CON VIDEO -->
-  <section class="hero-course">
-  <div class="hero-video-container">
-    <iframe width="100%" height="315"
-      src="https://www.youtube.com/embed/jN8lVzH-tGU"
-      title="Video Costura Premium"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen
-      style="border-radius: 22px; box-shadow: 0 10px 20px rgba(0,0,0,0.15);">
-    </iframe>
-  </div>
+  const form = document.getElementById('costuraForm');
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
 
-  <div class="hero-text">
-    <img src="https://drive.google.com/uc?export=view&id=19vW3yiAXGfHK9CS7-liPQClWto57THh8"
-         alt="Logo Costura Premium"
-         style="max-width: 250px; margin-bottom: 15px;">
+    const formData = new FormData(form);
 
-    <p>Aprende confección profesional desde cero con más de <strong>1.100 clases paso a paso</strong>.</p>
+    fetch("https://script.google.com/macros/s/AKfycbzFC0hCT9mGX9Xn-UverkYiT600S474yqYy1lCvLyXwLTgofC_JzEyxNBkJqi2jFJqMug/exec", {
+      method: "POST",
+      body: formData
+    });
 
-    <a href="https://go.hotmart.com/Y27528309A?ap=f590"
-       class="btn-buy"
-       target="_blank">
-       Ir al Curso 💕
-    </a>
-  </div>
-</section>
+    window.location.href = "https://corteyconfeccion.online/gracias.html";
+  });
+</script>
 
-  <!-- RESUMEN -->
-  <section class="section-box">
-    <h2>✨ Aprende costura profesional desde cero</h2>
-
-    <p>Costura Premium es un programa online con más de <strong>1.100 clases</strong> que te enseña todo sobre corte, confección, patronaje y transformación de prendas. Ideal para quienes quieren aprender a coser desde cero o perfeccionar su técnica.</p>
-
-    <p>Aprenderás a tomar medidas exactas, crear patrones base, modificarlos según tus diseños y confeccionar blusas, vestidos, faldas, pantalones y ropa infantil con acabados profesionales.</p>
-  </section>
-
-  <!-- QUE APRENDERÁS -->
-  <section class="section-box">
-    <h2>🧵 ¿Qué aprenderás?</h2>
-    <ul>
-      <li>✂ Más de <strong>60 blusas paso a paso</strong></li>
-      <li>📐 Cómo tomar medidas exactas</li>
-      <li>📏 Patrones básicos y transformaciones</li>
-      <li>👗 Confección de prendas completas</li>
-      <li>🧵 Técnicas profesionales de costura</li>
-      <li>🪡 Cómo usar la máquina de coser</li>
-      <li>📱 Acceso desde celular, tablet o computador</li>
-    </ul>
-  </section>
-
-  <!-- VENTAJAS -->
-  <section class="section-box">
-    <h2>💎 Ventajas del curso</h2>
-    <ul>
-      <li>⭐ Acceso ilimitado de por vida</li>
-      <li>⭐ Grupo privado de Facebook y WhatsApp</li>
-      <li>⭐ Certificado PDF al finalizar</li>
-      <li>⭐ Materiales descargables</li>
-      <li>⭐ Curso extra de emprendimiento GRATIS</li>
-      <li>⭐ 92% de evaluaciones positivas</li>
-    </ul>
-  </section>
-
-  <!-- TESTIMONIOS -->
-  <section class="section-box">
-    <h2>❤️ Testimonios reales</h2>
-
-    <div class="testimonio">"La profe Isabel explica excelente, hace muy fácil aprender." – Felicia</div>
-    <div class="testimonio">"Compré Blusas Premium y me encantó, ahora quiero avanzar con Costura Premium." – Diosiera</div>
-    <div class="testimonio">"He aprendido bastante, gracias a Dios y a la profe Isabel." – Yarledy</div>
-  </section>
-
-  <!-- PREGUNTAS FRECUENTES -->
-  <section class="section-box">
-    <h2>❓ Preguntas frecuentes</h2>
-
-    <details>
-      <summary>¿Necesito saber costura para comenzar?</summary>
-      <p>No, el curso está diseñado para principiantes desde cero.</p>
-    </details>
-
-    <details>
-      <summary>¿El acceso es para siempre?</summary>
-      <p>Sí, tienes acceso ilimitado de por vida.</p>
-    </details>
-
-    <details>
-      <summary>¿Incluye certificado?</summary>
-      <p>Sí, obtienes un certificado digital PDF.</p>
-    </details>
-  </section>
-
-  <!-- CTA FINAL -->
-  <section class="cta-final">
-    <h2>✨ Este puede ser tu momento…</h2>
-    <p>Únete a las más de 100.000 personas que ya aprenden con Premium Academy.</p>
-    <a href="https://go.hotmart.com/Y27528309A?ap=f590" class="btn-buy" target="_blank">Acceder al curso ahora 💕</a>
-  </section>
-
-</div>
 </body>
 </html>
+
