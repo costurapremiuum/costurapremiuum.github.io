@@ -168,9 +168,13 @@
     <iframe height="315" src="https://www.youtube.com/embed/jN8lVzH-tGU"
       allowfullscreen frameborder="0"></iframe>
 
-    <a href="https://go.hotmart.com/Y27528309A?ap=f590" target="_blank" class="btn">
-      Quiero inscribirme ahora 💕
-    </a>
+   <a href="https://go.hotmart.com/Y27528309A?dp=1" target="_blank" class="btn">
+  80 cupos disponibles — Inscribirme ahora 💕
+</a>
+
+<!-- RELOJ -->
+<p id="countdown" style="margin-top:15px; font-size:1rem; color:#ff66b2; font-weight:600;"></p>
+
   </section>
 
   <!-- LO QUE INCLUYE -->
@@ -230,5 +234,28 @@
   </footer>
 
 </div>
+  <script>
+function actualizarCuentaRegresiva() {
+  const ahora = new Date();
+  const finDia = new Date();
+  finDia.setHours(23, 59, 59, 999);
+
+  const diferencia = finDia - ahora;
+
+  const horas = Math.floor((diferencia / (1000 * 60 * 60)) % 24);
+  const minutos = Math.floor((diferencia / (1000 * 60)) % 60);
+  const segundos = Math.floor((diferencia / 1000) % 60);
+
+  document.getElementById("countdown").innerHTML =
+    `⏳ Oferta disponible hoy — ${horas}h ${minutos}m ${segundos}s`;
+
+  if (diferencia < 0) {
+    document.getElementById("countdown").innerHTML = "⏳ Actualizando oferta...";
+  }
+}
+
+setInterval(actualizarCuentaRegresiva, 1000);
+</script>
+
 </body>
 </html>
