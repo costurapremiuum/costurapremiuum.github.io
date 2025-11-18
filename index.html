@@ -144,6 +144,28 @@
 
   </style>
 </head>
+<script>
+function actualizarCuentaRegresiva() {
+  const ahora = new Date();
+  const finDia = new Date();
+  finDia.setHours(23, 59, 59, 999);
+
+  const diferencia = finDia - ahora;
+
+  const horas = Math.floor((diferencia / (1000 * 60 * 60)) % 24);
+  const minutos = Math.floor((diferencia / (1000 * 60)) % 60);
+  const segundos = Math.floor((diferencia / 1000) % 60);
+
+  document.getElementById("countdown").innerHTML =
+    `⏳ Oferta disponible hoy — ${horas}h ${minutos}m ${segundos}s`;
+
+  if (diferencia < 0) {
+    document.getElementById("countdown").innerHTML = "⏳ Actualizando oferta...";
+  }
+}
+
+setInterval(actualizarCuentaRegresiva, 1000);
+</script>
 
 <body>
 
