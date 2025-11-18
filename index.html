@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-  <style>
+ <style>
 
     :root {
       --primary: #ff66b2;
@@ -86,6 +86,46 @@
       font-size: 1rem;
     }
 
+    /* CAJA DE CUPOS */
+    .cupos-box {
+      background: #ffe6f3;
+      color: #ff3c8d;
+      padding: 10px 18px;
+      border-radius: 14px;
+      font-size: 1rem;
+      font-weight: 600;
+      box-shadow: 0 4px 12px rgba(255, 102, 178, 0.25);
+      margin-bottom: 15px;
+      display: inline-block;
+      animation: pulse 2.5s infinite ease-in-out;
+    }
+
+    /* ANIMACIÓN PULSE */
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.04); opacity: 0.9; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    /* RELOJ ELEGANTE */
+    .countdown-box {
+      margin-top: 15px;
+      font-size: 1.1rem;
+      color: #ff3c8d;
+      font-weight: 700;
+      background: #ffe6f7;
+      padding: 10px 18px;
+      border-radius: 14px;
+      display: inline-block;
+      box-shadow: 0 4px 12px rgba(255, 102, 178, 0.12);
+      animation: fadeIn 1s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
     /* SECTION TITLES */
     h2.section-title {
       text-align: center;
@@ -142,7 +182,7 @@
       }
     }
 
-  </style>
+</style>
 </head>
 <script>
 function actualizarCuentaRegresiva() {
