@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Libro Gratis • Costura Premium</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --pink: #ff66b2;
+    --lavender: #c6b7ff;
+    --bg: #fff7fb;
+    --text: #2b2333;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    font-family: "Poppins", sans-serif;
+    color: var(--text);
+  }
+
+  .container {
+    max-width: 500px;
+    margin: auto;
+    padding: 25px;
+  }
+
+  h1 {
+    font-size: 28px;
+    font-weight: 700;
+    text-align: center;
+    color: var(--pink);
+    margin-bottom: 10px;
+  }
+
+  p {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 16px;
+  }
+
+  form {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  }
+
+  input {
+    width: 100%;
+    padding: 14px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 16px;
+  }
+
+  button {
+    width: 100%;
+    padding: 15px;
+    background: var(--pink);
+    border: none;
+    color: white;
+    font-size: 18px;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  button:hover {
+    opacity: 0.9;
+  }
+
+  .footer {
+    margin-top: 25px;
+    text-align: center;
+    font-size: 14px;
+  }
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+  <h1>Descarga tu Libro Gratis 📘✨</h1>
+  <p>Regístrate y recibe el libro <strong>"Guía Básica de Costura Profesional"</strong> totalmente gratis.</p>
+
+  <form onsubmit="enviar()">
+    <input type="text" id="nombre" placeholder="Tu nombre" required>
+    <input type="email" id="email" placeholder="Tu email" required>
+    <button type="submit">Quiero mi libro gratis</button>
+  </form>
+
+  <p id="msg" class="footer"></p>
+
+</div>
+
+<script>
+function enviar() {
+  event.preventDefault();
+  document.getElementById("msg").innerHTML = 
+    "✔️ Listo, tu libro está descargando...";
+  
+  // Cambia el link del PDF
+  window.location.href = "https://TU-LINK-AQUI.com/libro.pdf";
+}
+</script>
+
+</body>
+</html>
