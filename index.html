@@ -175,6 +175,32 @@
       font-weight: 600;
       margin: 0 8px;
     }
+/* CARRUSEL DE MÓDULOS */
+.modulos-carousel {
+  margin: 25px auto 10px;
+  max-width: 900px;
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding: 10px 5px 15px;
+  scroll-snap-type: x mandatory;
+}
+
+.modulo-card {
+  flex: 0 0 260px;
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+  scroll-snap-align: start;
+  padding: 12px;
+  text-align: center;
+}
+
+.modulo-card img {
+  width: 100%;
+  border-radius: 14px;
+  margin-bottom: 8px;
+}
 }
 .certificado-container {
   width: 100%;
