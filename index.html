@@ -178,51 +178,39 @@
 
 /* Contenedor para el efecto */
 /* CARRUSEL DE MÓDULOS */
-.modulos-carousel {
-  margin: 25px auto 10px;
-  max-width: 900px;
-  display: flex;
-  gap: 16px;
-  overflow-x: auto;
-  padding: 10px 5px 15px;
-  scroll-snap-type: x mandatory;
-}
+<div class="modulos-carousel">
 
-.modulos-carousel::-webkit-scrollbar {
-  height: 6px;
-}
+  <div class="modulo-card">
+    <img src="imag/modulo-introduccion.png" alt="Introducción a la costura">
+    <h3>Introducción a la costura</h3>
+    <p>Aprende lo esencial para comenzar desde cero.</p>
+  </div>
 
-.modulos-carousel::-webkit-scrollbar-thumb {
-  background: #f3b3da;
-  border-radius: 999px;
-}
+  <div class="modulo-card">
+    <img src="imag/modulo-introduccion.png" alt="Técnicas básicas de costura">
+    <h3>Técnicas básicas</h3>
+    <p>Puntadas, curvas, rectas y acabados limpios.</p>
+  </div>
 
-.modulo-card {
-  flex: 0 0 260px;
-  background: #ffffff;
-  border-radius: 18px;
-  box-shadow: var(--shadow);
-  scroll-snap-align: start;
-  padding: 12px;
-  text-align: center;
-}
+  <div class="modulo-card">
+    <img src="imag/modulo-introduccion.png" alt="Confección de prendas">
+    <h3>Confección de prendas</h3>
+    <p>Blusas, faldas, vestidos y piezas completas.</p>
+  </div>
 
-.modulo-card img {
-  width: 100%;
-  border-radius: 14px;
-  margin-bottom: 8px;
-}
+  <div class="modulo-card">
+    <img src="imag/modulo-introduccion.png" alt="Elaboración de patrones">
+    <h3>Elaboración de patrones</h3>
+    <p>Trazo, medidas, moldes base y transformaciones.</p>
+  </div>
 
-.modulo-card h3 {
-  font-size: 1rem;
-  color: var(--primary);
-  margin: 4px 0 6px;
-}
+  <div class="modulo-card">
+    <img src="imag/modulo-introduccion.png" alt="Selección de materiales textiles">
+    <h3>Materiales textiles</h3>
+    <p>Telas, agujas, máquinas y cómo elegir lo correcto.</p>
+  </div>
 
-.modulo-card p {
-  font-size: 0.85rem;
-  color: var(--muted);
-  margin: 0;
+</div>
 }
 .certificado-container {
   width: 100%;
