@@ -182,6 +182,53 @@
       }
     }
 /* Contenedor para el efecto */
+/* CARRUSEL DE MÓDULOS */
+.modulos-carousel {
+  margin: 25px auto 10px;
+  max-width: 900px;
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding: 10px 5px 15px;
+  scroll-snap-type: x mandatory;
+}
+
+.modulos-carousel::-webkit-scrollbar {
+  height: 6px;
+}
+
+.modulos-carousel::-webkit-scrollbar-thumb {
+  background: #f3b3da;
+  border-radius: 999px;
+}
+
+.modulo-card {
+  flex: 0 0 260px;
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+  scroll-snap-align: start;
+  padding: 12px;
+  text-align: center;
+}
+
+.modulo-card img {
+  width: 100%;
+  border-radius: 14px;
+  margin-bottom: 8px;
+}
+
+.modulo-card h3 {
+  font-size: 1rem;
+  color: var(--primary);
+  margin: 4px 0 6px;
+}
+
+.modulo-card p {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin: 0;
+}
 .certificado-container {
   width: 100%;
   max-width: 600px;
@@ -205,6 +252,11 @@
 }
 
 </style>
+@media(max-width:800px){
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+}
 </head>
 <script>
 function actualizarCuentaRegresiva() {
@@ -306,7 +358,39 @@ setInterval(actualizarCuentaRegresiva, 1000);
 
   <!-- MÓDULOS -->
   <h2 class="section-title">Módulos del curso</h2>
-  <ul>
+   <!-- CARRUSEL DE MÓDULOS -->
+  <div class="modulos-carousel">
+    <div class="modulo-card">
+      <img src="imag/modulo-introduccion.jpg" alt="Introducción a la costura">
+      <h3>Introducción a la costura</h3>
+      <p>Conoce las partes de la máquina, tipos de puntadas y cuidados básicos.</p>
+    </div>
+
+    <div class="modulo-card">
+      <img src="imag/modulo-maquina-recta.jpg" alt="Manejo de máquina recta">
+      <h3>Manejo de máquina recta</h3>
+      <p>Aprende a manejar la máquina como una profesional, sin miedo ni enredos.</p>
+    </div>
+
+    <div class="modulo-card">
+      <img src="imag/modulo-blusas.jpg" alt="Blusas desde cero">
+      <h3>Blusas desde cero</h3>
+      <p>Trazo, corte y confección de blusas básicas, modernas y elegantes.</p>
+    </div>
+
+    <div class="modulo-card">
+      <img src="imag/modulo-vestidos.jpg" alt="Vestidos y faldas">
+      <h3>Vestidos y faldas</h3>
+      <p>Crea faldas y vestidos con caída bonita y terminaciones limpias.</p>
+    </div>
+
+    <div class="modulo-card">
+      <img src="imag/modulo-pantalones.jpg" alt="Pantalones y transformaciones">
+      <h3>Pantalones y transformaciones</h3>
+      <p>Molde de pantalón, ajustes y transformaciones para distintos estilos.</p>
+    </div>
+  </div>
+ <ul>
     <li>Introducción a la costura</li>
     <li>Manejo de máquina recta</li>
     <li>Telas y materiales</li>
