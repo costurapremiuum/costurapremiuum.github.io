@@ -37,15 +37,30 @@
         </ul>
 
         <div class="card">
-          <form id="leadForm">
-            <label>Tu nombre</label><br/>
-            <input name="name" id="name" required /><br/><br/>
-            <label>Email</label><br/>
-            <input name="email" id="email" type="email" required /><br/><br/>
-            <input type="hidden" id="source" value="landing_clase_gratis">
-            <button id="submitBtn" class="cta" type="submit">Registrarme y recibir el libro gratis</button>
-            <p class="small">Solo toma 30 segundos. Recibirás la clase + libro PDF en tu correo.</p>
-          </form>
+      <form 
+  id="cp-lead-form"
+  action="https://script.google.com/macros/s/AKfycbwSdoTSTw-SgMEn6AlMV-MJBdxsHPhbqQBWW97F1iwxrX-Uj-CsVywzCghrHDbhEsy4_Q/exec"
+  method="POST"
+>
+  <input 
+    type="text" 
+    name="nombre" 
+    placeholder="Tu nombre"
+    required
+  >
+
+  <input 
+    type="email" 
+    name="email" 
+    placeholder="Tu correo"
+    required
+  >
+
+  <button type="submit">
+    Quiero mi clase + libro gratis
+  </button>
+</form>
+
         </div>
       </div>
 
