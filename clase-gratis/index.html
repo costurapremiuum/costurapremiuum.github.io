@@ -72,9 +72,9 @@
       </div>
     </section>
 
-   <footer style="margin-top:20px" class="small">
-  Cada puntada cuenta: empieza hoy y verás resultados increíbles en tu costura ✂️✨
-</footer>
+    <footer style="margin-top:20px" class="small">
+      Cada puntada cuenta: empieza hoy y verás resultados increíbles en tu costura ✂️✨
+    </footer>
   </div>
 
 <script>
@@ -103,10 +103,7 @@ document.getElementById('leadForm').addEventListener('submit', function(e){
   `;
   document.body.appendChild(loader);
 
-  // ⚡ Redirigir inmediatamente al agradecimiento
-  window.location.href = "https://corteyconfeccion.online/clase-gratis/gracias.html";
-
-  // Enviar datos al Form Endpoint (sin bloquear la redirección)
+  // Enviar datos al Form Endpoint en segundo plano
   const formData = new FormData();
   formData.append('name', name);
   formData.append('email', email);
@@ -118,24 +115,12 @@ document.getElementById('leadForm').addEventListener('submit', function(e){
     body: formData,
     mode: 'no-cors'
   }).catch(err => console.log('Error enviando datos:', err));
-});
 
-    });
-
-    // Redirigir después de 1.2 segundos
-    setTimeout(() => {
-      window.location.href = "https://costurapremiuum.github.io/clase-gratis/gracias.html";
-      // Cuando tu dominio esté activo, reemplaza la URL por:
-      // window.location.href = "https://corteyconfeccion.online/clase-gratis/gracias.html";
-    }, 1200);
-
-  } catch (err) {
-    alert('Ocurrió un error. Intenta de nuevo.');
-  } finally {
-    loader.remove();
-  }
+  // ⚡ Redirigir inmediatamente a la página de Gracias
+  window.location.href = "https://corteyconfeccion.online/clase-gratis/gracias.html";
 });
 </script>
 
 </body>
 </html>
+
