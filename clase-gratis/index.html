@@ -83,60 +83,36 @@
   </div>
 
 <script>
-document.getElementById('leadForm').addEventListener('submit', async function(e){
+<script>
+document.getElementById('leadForm').addEventListener('submit', function(e) {
   e.preventDefault();
 
-  const name     = document.getElementById('name').value.trim();
-const whatsapp = document.getElementById('whatsapp').value.trim();
-const email    = document.getElementById('email').value.trim() || '';
-const source   = document.getElementById('source').value || 'landing_clase_gratis';
+  const nombre   = document.getElementById('name').value.trim();
+  const email    = document.getElementById('email').value.trim();
+  const whatsapp = document.getElementById('whatsapp') 
+                   ? document.getElementById('whatsapp').value.trim()
+                   : '';
+  const source   = document.getElementById('source').value || 'landing_clase_gratis';
 
+  const FORM_ENDPOINT = "PEGA_AQUI_TU_LINK_DE_APPS_SCRIPT";
 
-  // ✅ CORREGIDO: el link va entre comillas
-  const FORM_ENDPOINT = "https://script.google.com/macros/s/AKfycbxk2MK5Jl4puk5VekGV02aKbWTNFGHNKnzGRfWZSVqiVwPN-v8IkrMPrfAc-OO81rY28Q/exec";
-
-  // ✨ Mostrar pantalla de carga
-  const loader = document.createElement('div');
-  loader.innerHTML = `
-    <div style="position:fixed;top:0;left:0;width:100%;height:100%;
-                background:white;display:flex;flex-direction:column;
-                align-items:center;justify-content:center;z-index:9999">
-      <div style="border:4px solid #f3f3f3;border-top:4px solid #ff2d78;
-                  border-radius:50%;width:60px;height:60px;
-                  animation:spin 1s linear infinite"></div>
-      <p style="margin-top:20px;font-size:18px;color:#333">
-        Registrando tus datos...
-      </p>
-    </div>
-    <style>
-      @keyframes spin { 0% {transform: rotate(0deg);} 100% {transform: rotate(360deg);} }
-    </style>
-  `;
-  document.body.appendChild(loader);
-
-  try {
   const formData = new FormData();
-formData.append('nombre', name);
-formData.append('whatsapp', whatsapp);
-formData.append('email', email);
-formData.append('source', source);
+  formData.append('nombre', nombre);
+  formData.append('email', email);
+  formData.append('whatsapp', whatsapp);
+  formData.append('source', source);
 
-    await fetch(FORM_ENDPOINT, {
-      method: 'POST',
-      body: formData,
-      mode: 'no-cors'
-    });
-
-    // ⏳ Esperar un segundo antes de redirigir
-    setTimeout(() => {
-      window.location.href = "https://costurapremiuum.github.io/aprender/gracias.html";
-    }, 1200);
-
-  } catch (err) {
-    alert('Ocurrió un error. Intenta de nuevo.');
-    loader.remove();
-  }
+  fetch(FORM_ENDPOINT, {
+    method: 'POST',
+    body: formData,
+    mode: 'no-cors'
+  }).then(() => {
+    window.location.href = "https://costurapremiuum.github.io/aprender/gracias.html";
+  }).catch(() => {
+    alert('Error al enviar. Intenta nuevamente.');
+  });
 });
+</script>
 </script>
 
 </body>
