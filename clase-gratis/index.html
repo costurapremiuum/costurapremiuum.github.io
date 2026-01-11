@@ -41,24 +41,24 @@
         </ul>
 
         <div class="card">
-         <form id="leadForm">
-  <label for="name">Tu nombre</label><br/>
-  <input name="name" id="name" required placeholder="Ej: Silvana" /><br/><br/>
+          <form id="leadForm">
+            <label for="name">Tu nombre</label><br/>
+            <input name="name" id="name" required placeholder="Ej: Silvana" /><br/><br/>
 
-  <label for="email">Email (opcional)</label><br/>
-  <input name="email" id="email" type="email" placeholder="ejemplo@mail.com" /><br/><br/>
+            <label for="email">Email (opcional)</label><br/>
+            <input name="email" id="email" type="email" placeholder="ejemplo@mail.com" /><br/><br/>
 
-  <label for="whatsapp">Número de WhatsApp</label><br/>
-  <input name="whatsapp" id="whatsapp" type="tel" required 
-         placeholder="+56 9 1234 5678" pattern="^\+?\d{7,15}$"
-         title="Ingresa tu número de WhatsApp, ejemplo: +56912345678" /><br/><br/>
+            <label for="whatsapp">Número de WhatsApp</label><br/>
+            <input name="whatsapp" id="whatsapp" type="tel" required 
+                   placeholder="+56 9 1234 5678" pattern="^\+?\d{7,15}$"
+                   title="Ingresa tu número de WhatsApp, ejemplo: +56912345678" /><br/><br/>
 
-  <input type="hidden" id="source" value="landing_clase_gratis">
-  <button id="submitBtn" class="cta" type="submit">Registrarme y recibir el libro gratis</button>
-  <p class="small">
-    Solo toma 30 segundos. Recibirás la clase + libro PDF en tu WhatsApp (y en tu correo si lo dejas).
-  </p>
-</form>
+            <input type="hidden" id="source" value="landing_clase_gratis">
+            <button id="submitBtn" class="cta" type="submit">Registrarme y recibir el libro gratis</button>
+            <p class="small">
+              Solo toma 30 segundos. Recibirás la clase + libro PDF en tu WhatsApp (y en tu correo si lo dejas).
+            </p>
+          </form>
         </div>
       </div>
 
@@ -121,19 +121,20 @@ document.getElementById('leadForm').addEventListener('submit', async function(e)
       mode: 'no-cors'
     });
 
-    // ⏳ Redirigir después de 1.2 segundos
+    // Redirigir después de 1.2 segundos
     setTimeout(() => {
-      window.location.href = "https://corteyconfeccion.online/clase-gratis/gracias.html";
+      window.location.href = "https://costurapremiuum.github.io/clase-gratis/gracias.html";
+      // Cuando tu dominio esté activo, reemplaza la URL por:
+      // window.location.href = "https://corteyconfeccion.online/clase-gratis/gracias.html";
     }, 1200);
 
   } catch (err) {
     alert('Ocurrió un error. Intenta de nuevo.');
+  } finally {
     loader.remove();
   }
 });
-
-  }
-});
 </script>
+
 </body>
 </html>
