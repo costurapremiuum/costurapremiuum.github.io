@@ -1,64 +1,114 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <title>¡Gracias! 💕</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      background: #fff;
-      color: #222;
-      text-align: center;
-      padding: 40px 20px;
-    }
-    h1 {
-      color: #ff2d78;
-      font-size: 28px;
-    }
-    p {
-      font-size: 16px;
-      margin-bottom: 30px;
-    }
-    a {
-      display: block;
-      margin: 14px auto;
-      padding: 15px;
-      max-width: 360px;
-      background: #ff2d78;
-      color: #fff;
-      text-decoration: none;
-      font-size: 18px;
-      font-weight: 600;
-      border-radius: 12px;
-    }
-    a:hover {
-      opacity: 0.9;
-    }
-  </style>
+<meta charset="utf-8">
+<title>¡Gracias! 💕</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  body {
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    background: linear-gradient(135deg, #ffe0ec, #fff);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+
+  .card {
+    background: #fff;
+    padding: 40px 30px;
+    max-width: 400px;
+    width: 90%;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    text-align: center;
+    animation: fadeIn 0.8s ease-out;
+  }
+
+  h1 {
+    color: #ff2d78;
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 30px;
+    color: #333;
+  }
+
+  .social-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 10px auto;
+    padding: 14px;
+    max-width: 260px;
+    background: #ff2d78;
+    color: #fff;
+    font-weight: 600;
+    font-size: 16px;
+    border-radius: 12px;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    transition: all 0.3s ease;
+  }
+
+  .social-btn:hover {
+    background: #e52a6c;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+  }
+
+  .social-btn img {
+    width: 20px;
+    height: 20px;
+  }
+
+  footer {
+    margin-top: 40px;
+    font-size: 13px;
+    color: #999;
+    text-align: center;
+  }
+
+  @keyframes fadeIn {
+    from {opacity:0; transform: translateY(20px);}
+    to {opacity:1; transform: translateY(0);}
+  }
+</style>
 </head>
 <body>
 
-  <h1>¡Registro listo! 💖</h1>
+  <div class="card">
+    <h1>¡Registro listo! 💖</h1>
+    <p>
+      Gracias por registrarte.<br>
+      Ahora recibirás la clase + libro PDF directamente en tu WhatsApp.<br>
+      Sígueme en mis redes para tips reales de costura, patronaje y oportunidades para aprender más ✂️✨
+    </p>
 
-  <p>
-    Gracias por registrarte.<br>
-    Sígueme ahora en mis redes donde comparto tips reales de costura,
-    patronaje y oportunidades para aprender más ✂️✨
-  </p>
+    <a class="social-btn" href="https://web.facebook.com/Costurindustrial" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/145/145802.png" alt="Facebook"> Facebook
+    </a>
 
-  <a href="https://web.facebook.com/Costurindustrial" target="_blank">
-    👉 Facebook
-  </a>
+    <a class="social-btn" href="https://www.instagram.com/costuraindustrial_" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram"> Instagram
+    </a>
 
-  <a href="https://www.instagram.com/costuraindustrial_" target="_blank">
-    👉 Instagram
-  </a>
+    <a class="social-btn" href="https://www.tiktok.com/@costurando_ando" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/3046/3046123.png" alt="TikTok"> TikTok
+    </a>
 
-  <a href="https://www.tiktok.com/@costurando_ando" target="_blank">
-    👉 TikTok
-  </a>
+    <footer>
+      &copy; 2026 Costura Premium. Todos los derechos reservados.
+    </footer>
+  </div>
 
 </body>
 </html>
-
