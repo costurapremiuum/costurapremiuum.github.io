@@ -90,26 +90,44 @@
   <h1>Descarga tu Libro Gratis 📘✨</h1>
   <p>Regístrate y recibe el libro <strong>"Guía Básica de Costura Profesional"</strong> totalmente gratis.</p>
 
-  <form onsubmit="enviar()">
-    <input type="text" id="nombre" placeholder="Tu nombre" required>
-    <input type="email" id="email" placeholder="Tu email" required>
-    <button type="submit">Quiero mi libro gratis</button>
-  </form>
+<form id="formulario">
+  <input type="text" id="nombre" placeholder="Tu nombre" required>
+  <input type="email" id="email" placeholder="Tu email" required>
+  <button type="submit">Quiero mi libro gratis</button>
+</form>
 
-  <p id="msg" class="footer"></p>
+<p id="msg" class="footer"></p>
 
 </div>
 
 <script>
-function enviar() {
-  event.preventDefault();
-  document.getElementById("msg").innerHTML = 
-    "✔️ Listo, tu libro está descargando...";
-  
-  // Cambia el link del PDF
-  window.location.href = "https://TU-LINK-AQUI.com/libro.pdf";
-}
-</script>
+document.getElementById("formulario").addEventListener("submit", function(e) {
+  e.preventDefault();
 
-</body>
-</html>
+  const nombre = document.getElementById("nombre").value;
+  const email = document.getElementById("email").value;
+  const msg = document.getElementById("msg");
+
+  msg.innerHTML = "⏳ Enviando tus datos...";
+
+ https://script.google.com/macros/s/AKfycbzFC0hCT9mGX9Xn-UverkYiT600S474yqYy1lCvLyXwLTgofC_JzEyxNBkJqi2jFJqMug/exec
+    body: JSON.stringify({ nombre, email }),
+    headers: { "Content-Type": "application/json" }
+  })
+  .then(response => response.json())
+  .then(data => {
+    if (data.status === "ok") {
+      msg.innerHTML = "✔️ ¡Gracias! Tu libro se está descargando 💕";
+
+      setTimeout(() => {
+        window.location.href = "https://TU-LINK-AQUI.com/libro.pdf";
+      }, 2000);
+    } else {
+      msg.innerHTML = "❌ Algo salió mal, intenta nuevamente.";
+    }
+  })
+  .catch(() => {
+    msg.innerHTML = "❌ Error de conexión. Intenta más tarde.";
+  });
+});
+</script>
