@@ -1,1 +1,111 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Clase Gratis • Costura Premium — Silvana</title>
+
+  <style>
+    :root { --pink:#ff2d78; }
+    body {
+      font-family: system-ui, Arial;
+      background: #fff;
+      margin: 0;
+      padding: 30px;
+      color: #222;
+      text-align: center;
+    }
+    .container {
+      max-width: 480px;
+      margin: auto;
+    }
+    .card {
+      background: #f8f8fb;
+      padding: 22px;
+      border-radius: 14px;
+      margin-top: 20px;
+    }
+    input, button {
+      width: 100%;
+      padding: 14px;
+      margin-top: 10px;
+      font-size: 16px;
+      border-radius: 10px;
+      border: 1px solid #ddd;
+    }
+    button {
+      background: var(--pink);
+      color: white;
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 16px;
+    }
+    .small {
+      font-size: 14px;
+      color: #666;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+  <h1>Clase Gratis Online</h1>
+  <p>
+    Aprende 60 diseños de blusas paso a paso.<br>
+    Te enviamos el acceso directo por WhatsApp 💬
+  </p>
+
+  <div class="card">
+    <form id="leadForm">
+
+      <input id="nombre" placeholder="Tu nombre" required>
+
+      <input id="whatsapp" placeholder="WhatsApp con código país (+569…)" required>
+
+      <input id="email" type="email" placeholder="Email (opcional)">
+
+      <button type="submit">Registrarme gratis</button>
+
+      <p class="small">
+        El acceso llega por WhatsApp.<br>
+        El correo es solo si quieres el PDF ahí también.
+      </p>
+    </form>
+  </div>
+</div>
+
+<script>
+document.getElementById("leadForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const data = {
+    nombre: document.getElementById("nombre").value.trim(),
+    whatsapp: document.getElementById("whatsapp").value.trim(),
+    email: document.getElementById("email").value.trim(),
+    source: "landing_clase_gratis"
+  };
+
+  fetch("https://script.google.com/macros/s/AKfycbxk2MK5Jl4puk5VekGV02aKbWTNFGHNKnzGRfWZSVqiVwPN-v8IkrMPrfAc-OO81rY28Q/exec", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(data)
+  })
+  .then(response => {
+    if (!response.ok) throw new Error("No se guardó");
+    window.location.href = "gracias.html";
+  })
+  .catch(err => {
+    alert("No se pudo enviar el formulario. Intenta nuevamente.");
+    console.error(err);
+  });
+});
+</script>
+
+</body>
+</html>
 
