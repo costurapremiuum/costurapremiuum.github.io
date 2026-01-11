@@ -13,23 +13,17 @@
       margin: 0;
       padding: 30px;
       color: #222;
+      text-align: center;
     }
-    .wrap {
-      max-width: 900px;
+    .container {
+      max-width: 480px;
       margin: auto;
-    }
-    h1 { text-align: center; }
-    .hero {
-      display: grid;
-      grid-template-columns: 1fr 420px;
-      gap: 25px;
-      margin-top: 25px;
-      align-items: start;
     }
     .card {
       background: #f8f8fb;
       padding: 22px;
       border-radius: 14px;
+      margin-top: 20px;
     }
     input, button {
       width: 100%;
@@ -52,99 +46,46 @@
       color: #666;
       margin-top: 10px;
     }
-    iframe {
-      width: 100%;
-      height: 240px;
-      border-radius: 14px;
-      border: none;
-    }
-
-    @media (max-width: 768px) {
-      .hero {
-        grid-template-columns: 1fr;
-      }
-    }
   </style>
 </head>
 
 <body>
 
-<div class="wrap">
-  <h1>Clase Gratis Online: Aprende 60 Diseños de Blusas</h1>
-
-  <div class="hero">
-
-    <!-- TEXTO + FORM -->
-    <div>
-      <p>
-        Accede a una clase online totalmente gratis donde aprenderás a crear y adaptar
-        <strong>60 diseños de blusas</strong>.  
-        Te enviamos el acceso directo por WhatsApp 💬
-      </p>
-
-      <ul>
-        <li>Bases del patronaje y costura</li>
-        <li>Trucos para acabados perfectos</li>
-        <li>Diseños adaptables a cualquier talla</li>
-      </ul>
-
-      <div class="card">
-       <form 
-  action="https://script.google.com/macros/s/AKfycbyPDbhd6MSlWdJeKdYWNNwq_uVKTVBV2cwPCOUcAXW14I-PWiV9GjQm6InqR8GbdRi1/exec"
-  method="POST"
->
-
-  <input name="nombre" placeholder="Tu nombre" required>
-
-  <input name="whatsapp" placeholder="WhatsApp con código país (+569...)" required>
-
-  <input name="email" type="email" placeholder="Email (opcional)">
-
-  <input type="hidden" name="source" value="landing_clase_gratis">
-
-  <button type="submit">Registrarme gratis</button>
-
-  <p class="small">
-    El acceso llega por WhatsApp.  
-    El correo es solo si quieres recibir el PDF ahí también.
+<div class="container">
+  <h1>Clase Gratis Online</h1>
+  <p>
+    Aprende 60 diseños de blusas paso a paso.<br>
+    Te enviamos el acceso directo por WhatsApp 💬
   </p>
 
-</form>
-      </div>
-    </div>
+  <div class="card">
 
-    <!-- VIDEO -->
-    <div>
-      <iframe
-        src="https://drive.google.com/file/d/1PbdrRkbfcbTw8Picqk0VY4d1_xqeYZdh/preview"
-        allow="autoplay; encrypted-media"
-        allowfullscreen>
-      </iframe>
-      <p class="small">Clase online gratuita de Costura Premium.</p>
-    </div>
+    <form
+      method="POST"
+      action="https://script.google.com/macros/s/AKfycbyPDbhd6MSlWdJeKdYWNNwq_uVKTVBV2cwPCOUcAXW14I-PWiV9GjQm6InqR8GbdRi1/exec"
+    >
+
+      <input name="nombre" placeholder="Tu nombre" required>
+
+      <input name="whatsapp" placeholder="WhatsApp con código país (+569...)" required>
+
+      <input name="email" type="email" placeholder="Email (opcional)">
+
+      <input type="hidden" name="source" value="landing_clase_gratis">
+
+      <button type="submit">
+        Registrarme gratis
+      </button>
+
+      <p class="small">
+        El acceso llega por WhatsApp.  
+        El correo es solo si quieres el PDF ahí también.
+      </p>
+    </form>
 
   </div>
 </div>
 
-<script>
-document.getElementById("leadForm").addEventListener("submit", function(e) {
-  e.preventDefault();
-
-  const formData = new FormData(this);
-
-  fetch(
-    "https://script.google.com/macros/s/AKfycbxk2MK5Jl4puk5VekGV02aKbWTNFGHNKnzGRfWZSVqiVwPN-v8IkrMPrfAc-OO81rY28Q/exec",
-    {
-      method: "POST",
-      body: formData,
-      mode: "no-cors"
-    }
-  );
-
-  window.location.href =
-    "https://costurapremiuum.github.io/aprender/gracias.html";
-});
-</script>
-
 </body>
 </html>
+
