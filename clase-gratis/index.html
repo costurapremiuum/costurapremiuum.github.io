@@ -89,7 +89,7 @@ document.getElementById('leadForm').addEventListener('submit', async function(e)
   const whatsapp = document.getElementById('whatsapp').value.trim();
   const source   = document.getElementById('source').value || 'landing_clase_gratis';
 
-  const FORM_ENDPOINT = "https://script.google.com/macros/s/AKfycbwWteIe7uKuqE3uh1tieWQ0yTo-c4G-GMuodgNdX775xCGAAQ4V9JVdpwuos7224uMf-g/exec"; // <-- reemplaza con tu web app URL
+  const FORM_ENDPOINT = "https://script.google.com/macros/s/AKfycbwWteIe7uKuqE3uh1tieWQ0yTo-c4G-GMuodgNdX775xCGAAQ4V9JVdpwuos7224uMf-g/exec";
 
   // Mostrar pantalla de carga
   const loader = document.createElement('div');
@@ -121,13 +121,17 @@ document.getElementById('leadForm').addEventListener('submit', async function(e)
       mode: 'no-cors'
     });
 
-   setTimeout(() => {
-    window.location.href = "https://corteyconfeccion.online/clase-gratis/gracias.html";
-}, 1200); // 1.2 segundos de delay
+    // ⏳ Redirigir después de 1.2 segundos
+    setTimeout(() => {
+      window.location.href = "https://corteyconfeccion.online/clase-gratis/gracias.html";
+    }, 1200);
 
   } catch (err) {
     alert('Ocurrió un error. Intenta de nuevo.');
     loader.remove();
+  }
+});
+
   }
 });
 </script>
