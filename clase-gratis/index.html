@@ -1,4 +1,4 @@
-<!-- LANDING: clase gratis -->
+<!-- LANDING: Clase Gratis con WhatsApp -->
 <!doctype html>
 <html lang="es">
 <head>
@@ -12,9 +12,12 @@
     .wrap{max-width:900px;margin:32px auto;padding:20px}
     header{display:flex;gap:20px;align-items:center}
     .hero{display:grid;grid-template-columns:1fr 420px;gap:20px;align-items:center}
-    .cta{background:var(--pink);color:white;padding:16px 20px;border-radius:10px;text-decoration:none;display:inline-block}
+    @media(max-width:767px){.hero{grid-template-columns:1fr}}
+    .cta{background:var(--pink);color:white;padding:16px 20px;border-radius:10px;text-decoration:none;display:inline-block;font-weight:bold;cursor:pointer;transition:background 0.3s}
+    .cta:hover{background:#e52a6c}
     .card{background:#f8f8fb;padding:18px;border-radius:12px}
-    input,button{font-size:16px;padding:12px;border-radius:8px;border:1px solid #ddd;width:100%}
+    input,button{font-size:16px;padding:12px;border-radius:8px;border:1px solid #ddd;width:100%;box-sizing:border-box;max-width:400px}
+    input:focus{outline:2px solid var(--pink);border-color:var(--pink)}
     .small{font-size:14px;color:#666}
     iframe{width:100%;height:240px;border-radius:10px;border:none}
   </style>
@@ -39,10 +42,17 @@
 
         <div class="card">
           <form id="leadForm">
-            <label>Tu nombre</label><br/>
-            <input name="name" id="name" required /><br/><br/>
-            <label>Email</label><br/>
-            <input name="email" id="email" type="email" required /><br/><br/>
+            <label for="name">Tu nombre</label><br/>
+            <input name="name" id="name" required placeholder="Ej: Silvana" /><br/><br/>
+
+            <label for="email">Email</label><br/>
+            <input name="email" id="email" type="email" required placeholder="ejemplo@mail.com" /><br/><br/>
+
+            <label for="whatsapp">Número de WhatsApp</label><br/>
+            <input name="whatsapp" id="whatsapp" type="tel" required 
+                   placeholder="+56 9 1234 5678" pattern="^\+?\d{7,15}$"
+                   title="Ingresa tu número de WhatsApp, ejemplo: +56912345678" /><br/><br/>
+
             <input type="hidden" id="source" value="landing_clase_gratis">
             <button id="submitBtn" class="cta" type="submit">Registrarme y recibir el libro gratis</button>
             <p class="small">Solo toma 30 segundos. Recibirás la clase + libro PDF en tu correo.</p>
@@ -51,7 +61,6 @@
       </div>
 
       <div>
-        <!-- Video embebido de Google Drive -->
         <iframe 
           src="https://drive.google.com/file/d/1PbdrRkbfcbTw8Picqk0VY4d1_xqeYZdh/preview" 
           allow="autoplay; encrypted-media" 
@@ -73,25 +82,23 @@
 document.getElementById('leadForm').addEventListener('submit', async function(e){
   e.preventDefault();
 
-  const name   = document.getElementById('name').value.trim();
-  const email  = document.getElementById('email').value.trim();
-  const source = document.getElementById('source').value || 'landing_clase_gratis';
+  const name     = document.getElementById('name').value.trim();
+  const email    = document.getElementById('email').value.trim();
+  const whatsapp = document.getElementById('whatsapp').value.trim();
+  const source   = document.getElementById('source').value || 'landing_clase_gratis';
 
-  // ✅ CORREGIDO: el link va entre comillas
-  const FORM_ENDPOINT = "https://script.google.com/macros/s/AKfycbwWteIe7uKuqE3uh1tieWQ0yTo-c4G-GMuodgNdX775xCGAAQ4V9JVdpwuos7224uMf-g/exec";
+  const FORM_ENDPOINT = "https://script.google.com/macros/s/AKfycbwWteIe7uKuqE3uh1tieWQ0yTo-c4G-GMuodgNdX775xCGAAQ4V9JVdpwuos7224uMf-g/exec"; // <-- reemplaza con tu web app URL
 
-  // ✨ Mostrar pantalla de carga
+  // Mostrar pantalla de carga
   const loader = document.createElement('div');
   loader.innerHTML = `
     <div style="position:fixed;top:0;left:0;width:100%;height:100%;
                 background:white;display:flex;flex-direction:column;
-                align-items:center;justify-content:center;z-index:9999">
-      <div style="border:4px solid #f3f3f3;border-top:4px solid #ff2d78;
+                align-items:center;justify-content:center;z-index:9999;cursor:wait">
+      <div style="border:4px solid #f3f3f3;border-top:4px solid var(--pink);
                   border-radius:50%;width:60px;height:60px;
                   animation:spin 1s linear infinite"></div>
-      <p style="margin-top:20px;font-size:18px;color:#333">
-        Registrando tus datos...
-      </p>
+      <p style="margin-top:20px;font-size:18px;color:#333">Registrando tus datos...</p>
     </div>
     <style>
       @keyframes spin { 0% {transform: rotate(0deg);} 100% {transform: rotate(360deg);} }
@@ -103,6 +110,7 @@ document.getElementById('leadForm').addEventListener('submit', async function(e)
     const formData = new FormData();
     formData.append('name', name);
     formData.append('email', email);
+    formData.append('whatsapp', whatsapp);
     formData.append('source', source);
 
     await fetch(FORM_ENDPOINT, {
@@ -111,7 +119,6 @@ document.getElementById('leadForm').addEventListener('submit', async function(e)
       mode: 'no-cors'
     });
 
-    // ⏳ Esperar un segundo antes de redirigir
     setTimeout(() => {
       window.location.href = "https://costurapremiuum.github.io/aprender/gracias.html";
     }, 1200);
@@ -122,7 +129,5 @@ document.getElementById('leadForm').addEventListener('submit', async function(e)
   }
 });
 </script>
-
 </body>
 </html>
-
