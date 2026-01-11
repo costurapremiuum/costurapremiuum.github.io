@@ -38,14 +38,27 @@
         </ul>
 
         <div class="card">
-          <form id="leadForm">
-            <label>Tu nombre</label><br/>
-            <input name="name" id="name" required /><br/><br/>
-            <label>Email</label><br/>
-            <input name="email" id="email" type="email" required /><br/><br/>
-            <input type="hidden" id="source" value="landing_clase_gratis">
-            <button id="submitBtn" class="cta" type="submit">Registrarme y recibir el libro gratis</button>
-            <p class="small">Solo toma 30 segundos. Recibirás la clase + libro PDF en tu correo.</p>
+         <form id="leadForm">
+  <label>Tu nombre</label><br/>
+  <input name="nombre" id="name" required /><br/><br/>
+
+  <label>WhatsApp (con código país)</label><br/>
+  <input name="whatsapp" id="whatsapp" placeholder="+56912345678" required /><br/><br/>
+
+  <label>Email (opcional)</label><br/>
+  <input name="email" id="email" type="email" /><br/><br/>
+
+  <input type="hidden" id="source" value="landing_clase_gratis">
+
+  <button id="submitBtn" class="cta" type="submit">
+    Registrarme gratis
+  </button>
+
+  <p class="small">
+    Te enviaremos el acceso por WhatsApp.  
+    El correo es solo si quieres recibir el PDF ahí también.
+  </p>
+</form>
           </form>
         </div>
       </div>
