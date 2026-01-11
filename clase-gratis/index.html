@@ -86,9 +86,11 @@
 document.getElementById('leadForm').addEventListener('submit', async function(e){
   e.preventDefault();
 
-  const name   = document.getElementById('name').value.trim();
-  const email  = document.getElementById('email').value.trim();
-  const source = document.getElementById('source').value || 'landing_clase_gratis';
+  const name     = document.getElementById('name').value.trim();
+const whatsapp = document.getElementById('whatsapp').value.trim();
+const email    = document.getElementById('email').value.trim() || '';
+const source   = document.getElementById('source').value || 'landing_clase_gratis';
+
 
   // ✅ CORREGIDO: el link va entre comillas
   const FORM_ENDPOINT = "https://script.google.com/macros/s/AKfycbxOLiUqnZ0-GJcDFJ6ImOvKbz3r3zKauUXLuQxaUAtqHIqGEA8dVolz8Xhdb371xxyy/exec";
@@ -113,10 +115,11 @@ document.getElementById('leadForm').addEventListener('submit', async function(e)
   document.body.appendChild(loader);
 
   try {
-    const formData = new FormData();
-    formData.append('name', name);
-    formData.append('email', email);
-    formData.append('source', source);
+  const formData = new FormData();
+formData.append('nombre', name);
+formData.append('whatsapp', whatsapp);
+formData.append('email', email);
+formData.append('source', source);
 
     await fetch(FORM_ENDPOINT, {
       method: 'POST',
