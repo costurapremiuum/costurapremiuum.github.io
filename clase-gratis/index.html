@@ -52,9 +52,10 @@
 
         <div class="card">
           <form id="leadForm">
-            <input type="text" id="name" name="name" placeholder="Tu nombre" required />
-            <input type="email" id="email" name="email" placeholder="Email (opcional)" />
-            <input type="tel" id="whatsapp" name="whatsapp" placeholder="+56 9 1234 5678" pattern="^\+?\d{7,15}$" title="Ingresa tu número de WhatsApp, ejemplo: +56912345678" required />
+            <input type="text" id="nombre" placeholder="Tu nombre" required>
+<input type="email" id="email" placeholder="Email (opcional)">
+<input type="tel" id="whatsapp" placeholder="+56912345678" required>
+
             <input type="hidden" id="source" value="landing_clase_gratis" />
             <button type="submit" class="cta">Registrarme y recibir el libro gratis</button>
             <p class="small">Solo toma 30 segundos. Recibirás la clase + libro PDF en tu WhatsApp (y en tu correo si lo dejas).</p>
@@ -75,13 +76,14 @@
   </div>
 
 <script>
+<script>
 const FORM_ENDPOINT = "https://script.google.com/macros/s/AKfycbwitY6vvQqPt_WUuMmylcnueOUGRI3pZV0pQud_B9g_RCjKycYosHDIptV3FqcQ1aE5/exec";
 
 document.getElementById("leadForm").addEventListener("submit", function(e) {
   e.preventDefault();
 
   const formData = new FormData();
-  formData.append("nombre", document.getElementById("name").value);
+  formData.append("nombre", document.getElementById("nombre").value);
   formData.append("email", document.getElementById("email").value);
   formData.append("whatsapp", document.getElementById("whatsapp").value);
   formData.append("fuente", "landing_clase_gratis");
@@ -90,9 +92,7 @@ document.getElementById("leadForm").addEventListener("submit", function(e) {
     method: "POST",
     body: formData
   })
-  .then(response => response.text())
   .then(() => {
-    // ✅ AHORA SÍ REDIRIGE
     window.location.href = "gracias.html";
   })
   .catch(error => {
