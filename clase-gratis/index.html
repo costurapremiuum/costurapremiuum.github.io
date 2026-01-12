@@ -82,22 +82,23 @@
 <script>
 const FORM_ENDPOINT = "https://script.google.com/macros/s/AKfycbx0TAbnAOvl5y7lwAgXAtpOfS-Fw8NET7mhQB9abtKgQ2rzK2uIa49hyMXKq5wGM0dnvw/exec";
 
-
-document.getElementById("leadForm").addEventListener("submit", function(e){
+document.getElementById("leadForm").addEventListener("submit", function(e) {
   e.preventDefault();
 
-  const formData = new FormData(this);
+  const formData = new FormData();
+  formData.append("name", document.getElementById("nombre").value);
+  formData.append("email", document.getElementById("email").value);
+  formData.append("whatsapp", document.getElementById("whatsapp").value);
+  formData.append("source", "landing_clase_gratis");
 
   fetch(FORM_ENDPOINT, {
     method: "POST",
-    body: formData
-  })
-  .then(() => {
-    window.location.href = "gracias.html";
-  })
-  .catch(() => {
-    alert("Error al enviar, intenta nuevamente");
+    body: formData,
+    mode: "no-cors"
   });
+
+  // Redirección directa (sin esperar respuesta)
+  window.location.href = "https://corteyconfeccion.online/clase-gratis/gracias.html";
 });
 </script>
 
