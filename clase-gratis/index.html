@@ -74,19 +74,21 @@
     </footer>
   </div>
 
-  <script>
-  <script>
+ <script>
 const FORM_ENDPOINT = "https://script.google.com/macros/s/AKfycbwitY6vvQqPt_WUuMmylcnueOUGRI3pZV0pQud_B9g_RCjKycYosHDIptV3FqcQ1aE5/exec";
 
 document.getElementById("leadForm").addEventListener("submit", function(e) {
   e.preventDefault();
 
-  const nombre = document.getElementById("nombre").value;
+  const nombre = document.getElementById("name").value;
   const email = document.getElementById("email").value;
   const whatsapp = document.getElementById("whatsapp").value;
 
   fetch(FORM_ENDPOINT, {
     method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
     body: JSON.stringify({
       nombre: nombre,
       email: email,
@@ -94,17 +96,15 @@ document.getElementById("leadForm").addEventListener("submit", function(e) {
       fuente: "landing_clase_gratis"
     })
   })
-  .then(res => res.text())
-  .then(data => {
-    alert("Registro exitoso 💖 Revisa tu correo");
-    document.getElementById("leadForm").reset();
+  .then(() => {
+    // 🔥 REDIRECCIÓN DIRECTA
+    window.location.href = "gracias.html";
   })
   .catch(err => {
-    alert("Error, intenta nuevamente");
+    alert("Error al enviar, intenta nuevamente");
     console.error(err);
   });
 });
 </script>
-  </script>
 </body>
 </html>
