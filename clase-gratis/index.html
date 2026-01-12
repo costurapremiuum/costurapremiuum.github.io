@@ -75,44 +75,36 @@
   </div>
 
   <script>
-    document.getElementById('leadForm').addEventListener('submit', function(e){
-      e.preventDefault();
+  <script>
+const FORM_ENDPOINT = "https://script.google.com/macros/s/AKfycbwitY6vvQqPt_WUuMmylcnueOUGRI3pZV0pQud_B9g_RCjKycYosHDIptV3FqcQ1aE5/exec";
 
-      const name     = document.getElementById('name').value.trim();
-      const email    = document.getElementById('email').value.trim();
-      const whatsapp = document.getElementById('whatsapp').value.trim();
-      const source   = document.getElementById('source').value || 'landing_clase_gratis';
+document.getElementById("leadForm").addEventListener("submit", function(e) {
+  e.preventDefault();
 
-      const FORM_ENDPOINT = "https://script.google.com/macros/s/AKfycbwWteIe7uKuqE3uh1tieWQ0yTo-c4G-GMuodgNdX775xCGAAQ4V9JVdpwuos7224uMf-g/exec";
+  const nombre = document.getElementById("nombre").value;
+  const email = document.getElementById("email").value;
+  const whatsapp = document.getElementById("whatsapp").value;
 
-      // Mostrar loader
-      const loader = document.createElement('div');
-      loader.innerHTML = `
-        <div style="position:fixed;top:0;left:0;width:100%;height:100%;
-                    background:white;display:flex;flex-direction:column;
-                    align-items:center;justify-content:center;z-index:9999;cursor:wait">
-          <div style="border:4px solid #f3f3f3;border-top:4px solid var(--pink);
-                      border-radius:50%;width:60px;height:60px;
-                      animation:spin 1s linear infinite"></div>
-          <p style="margin-top:20px;font-size:18px;color:#333">Registrando tus datos...</p>
-        </div>
-        <style>@keyframes spin {0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}</style>
-      `;
-      document.body.appendChild(loader);
-
-      // Redirigir de inmediato
-      window.location.href = "https://corteyconfeccion.online/clase-gratis/gracias.html";
-
-      // Enviar datos al Sheet (sin bloquear la redirección)
-      const formData = new FormData();
-      formData.append('name', name);
-      formData.append('email', email);
-      formData.append('whatsapp', whatsapp);
-      formData.append('source', source);
-
-      fetch(FORM_ENDPOINT, {method:'POST',body:formData,mode:'no-cors'})
-        .catch(err=>console.log('Error enviando datos:', err));
-    });
+  fetch(FORM_ENDPOINT, {
+    method: "POST",
+    body: JSON.stringify({
+      nombre: nombre,
+      email: email,
+      whatsapp: whatsapp,
+      fuente: "landing_clase_gratis"
+    })
+  })
+  .then(res => res.text())
+  .then(data => {
+    alert("Registro exitoso 💖 Revisa tu correo");
+    document.getElementById("leadForm").reset();
+  })
+  .catch(err => {
+    alert("Error, intenta nuevamente");
+    console.error(err);
+  });
+});
+</script>
   </script>
 </body>
 </html>
