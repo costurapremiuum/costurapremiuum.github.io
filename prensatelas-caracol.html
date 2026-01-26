@@ -1,169 +1,169 @@
-<!DOCTYPE html>
+
+<!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Prensatelas Caracol | Corte y Confección</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prensatelas Caracol • Corte y Confección</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial;
-      background: #faf7f2;
-      color: #2b2b2b;
-    }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-    .wrap {
-      max-width: 900px;
-      margin: auto;
-      background: #ffffff;
-    }
+<style>
+:root{
+  --primary:#ff66b2;
+  --secondary:#c6b7ff;
+  --bg:#fffafc;
+  --text:#2b2333;
+  --muted:#7a6f80;
+  --shadow:0 10px 25px rgba(0,0,0,.08);
+}
 
-    header {
-      padding: 20px;
-      border-bottom: 1px solid #eee;
-    }
+body{
+  margin:0;
+  font-family:"Poppins",sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
 
-    header h1 {
-      margin: 0;
-      font-size: 24px;
-    }
+.container{
+  max-width:1100px;
+  margin:0 auto;
+  padding:20px 16px;
+}
 
-    header p {
-      margin: 5px 0 0;
-      color: #777;
-      font-size: 14px;
-    }
+.hero{
+  background:#fff;
+  padding:28px 20px;
+  border-radius:24px;
+  box-shadow:var(--shadow);
+  margin-top:20px;
+  text-align:center;
+}
 
-    .gallery {
-      padding: 20px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 15px;
-    }
+.hero h1{
+  color:var(--primary);
+  font-size:2rem;
+  margin-bottom:8px;
+}
 
-    .gallery img {
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-      background: #f0f0f0;
-    }
+.price{
+  font-size:1.8rem;
+  font-weight:700;
+  margin:10px 0;
+}
 
-    .content {
-      padding: 0 20px 20px;
-    }
+.btn{
+  display:inline-block;
+  background:linear-gradient(135deg,var(--primary),var(--secondary));
+  padding:14px 28px;
+  border-radius:999px;
+  color:#fff;
+  font-weight:600;
+  text-decoration:none;
+  box-shadow:0 10px 25px rgba(255,102,178,.35);
+}
 
-    .price {
-      font-size: 26px;
-      color: #c0392b;
-      font-weight: bold;
-      margin: 15px 0;
-    }
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:16px;
+  margin-top:30px;
+}
 
-    ul {
-      padding-left: 18px;
-    }
+.gallery img{
+  width:100%;
+  height:280px;
+  object-fit:contain;
+  background:#fff;
+  border-radius:18px;
+  box-shadow:var(--shadow);
+  padding:12px;
+}
 
-    li {
-      margin-bottom: 8px;
-    }
+.section{
+  background:#fff;
+  border-radius:24px;
+  padding:24px;
+  margin-top:30px;
+  box-shadow:var(--shadow);
+}
 
-    .story {
-      background: #fdf3e7;
-      padding: 20px;
-      border-radius: 10px;
-      margin: 25px 0;
-      font-size: 15px;
-    }
+.section h2{
+  color:var(--primary);
+  margin-bottom:10px;
+}
 
-    .cta {
-      background: #1f1f1f;
-      color: #fff;
-      padding: 25px 20px;
-      text-align: center;
-    }
+ul{
+  padding-left:18px;
+  line-height:1.8;
+}
 
-    .cta a {
-      display: inline-block;
-      margin-top: 15px;
-      background: #f1c40f;
-      color: #000;
-      padding: 14px 26px;
-      font-size: 18px;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: bold;
-    }
-
-    .cta a:hover {
-      background: #e1b90f;
-    }
-
-    footer {
-      text-align: center;
-      font-size: 13px;
-      color: #888;
-      padding: 15px;
-    }
-  </style>
+footer{
+  text-align:center;
+  margin:50px 0 20px;
+  color:var(--muted);
+  font-size:.9rem;
+}
+</style>
 </head>
 
 <body>
+<div class="container">
 
-<div class="wrap">
+<section class="hero">
+  <h1>Prensatelas Caracol para Cintas</h1>
+  <p>Recubridor profesional para terminaciones limpias y parejas</p>
 
-  <header>
-    <h1>Prensatelas Caracol</h1>
-    <p>Corte y Confección · Herramientas que sí sirven</p>
-  </header>
+  <div class="price">$44.900 CLP</div>
 
-  <!-- IMÁGENES -->
-  <section class="gallery">
-    <img src="imag/prensatelas1.jpeg" alt="Prensatelas caracol vista general">
-    <img src="imag/prensatelas2.jpeg" alt="Prensatelas caracol detalle">
-    <img src="imag/prensatelas3.jpeg" alt="Prensatelas caracol en uso">
-  </section>
+  <a href="https://www.flow.cl/uri/5PNDkh9bm" class="btn">
+    Comprar ahora con Flow 💳
+  </a>
+</section>
 
-  <!-- TEXTO -->
-  <section class="content">
+<section class="gallery">
+  <img src="/imag/prensatelas1.jpeg" alt="Prensatelas caracol vista 1">
+  <img src="/imag/prensatelas2.jpeg" alt="Prensatelas caracol vista 2">
+  <img src="/imag/prensatelas3.jpeg" alt="Prensatelas caracol vista 3">
+</section>
 
-    <p>
-      Este prensatelas es de esos datos buenos que te facilitan la vida
-      cuando coses curvas, bordes o terminaciones delicadas.
-    </p>
+<section class="section">
+  <h2>¿Qué es este prensatelas?</h2>
+  <p>
+    El prensatelas caracol permite aplicar cintas tipo adidas o ribetes
+    de forma continua, prolija y profesional en máquinas recubridoras.
+  </p>
 
-    <div class="price">$44.900 CLP</div>
+  <ul>
+    <li>Terminaciones rectas y parejas</li>
+    <li>Ahorra tiempo en producción</li>
+    <li>Ideal para poleras, buzos y ropa deportiva</li>
+  </ul>
+</section>
 
-    <ul>
-      <li>✔ Ideal para costura curva y recta</li>
-      <li>✔ Mejora la terminación sin esfuerzo</li>
-      <li>✔ Compatible con máquinas domésticas</li>
-      <li>✔ Liviano y fácil de instalar</li>
-    </ul>
+<section class="section">
+  <h2>Compatibilidad</h2>
+  <ul>
+    <li>Máquinas recubridoras industriales</li>
+    <li>Modelos con sistema estándar de prensatelas</li>
+    <li>Consulta antes si tu máquina es doméstica</li>
+  </ul>
+</section>
 
-    <div class="story">
-      💬 <strong>Dato de taller:</strong>  
-      Si te cuesta que las curvas te queden parejas o se te desarma la tela,
-      este prensatelas te ordena el trabajo y te ahorra tiempo (y rabia).
-    </div>
+<section class="section" style="text-align:center">
+  <h2>Compra segura</h2>
+  <p>Pago protegido con Flow • Envíos a todo Chile</p>
+  <a href="https://www.flow.cl/uri/5PNDkh9bm" class="btn">
+    Ir a pagar 💕
+  </a>
+</section>
 
-  </section>
-
-  <!-- PAGO -->
-  <section class="cta">
-    <h2>Compra segura con Flow</h2>
-    <p>Serás redirigida a la plataforma de pago</p>
-
-    <a href="https://www.flow.cl/uri/5PNDkh9bm" target="_blank">
-      Ir a pagar
-    </a>
-  </section>
-
-  <footer>
-    © 2026 · corteyconfeccion.online
-  </footer>
+<footer>
+  © 2025 corteyconfeccion.online · Costurando Ando
+</footer>
 
 </div>
-
 </body>
 </html>
