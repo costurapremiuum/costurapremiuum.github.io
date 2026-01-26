@@ -1,258 +1,187 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Prensatelas Caracol Profesional • Corte y Confección</title>
+  <meta charset="UTF-8">
+  <title>Prensatela Caracol | Corte y Confección</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #fff;
+      color: #222;
+    }
 
-<style>
-:root{
-  --primary:#ff66b2;
-  --secondary:#c6b7ff;
-  --bg:#fffafc;
-  --text:#2b2333;
-  --muted:#7a6f80;
-  --shadow:0 10px 25px rgba(0,0,0,.08);
-}
+    header {
+      background: #000;
+      padding: 15px;
+      text-align: center;
+    }
 
-body{
-  margin:0;
-  font-family:"Poppins",sans-serif;
-  background:var(--bg);
-  color:var(--text);
-}
+    header img {
+      max-width: 160px;
+    }
 
-.container{
-  max-width:1100px;
-  margin:0 auto;
-  padding:20px 16px;
-}
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+    }
 
-.card{
-  background:#fff;
-  border-radius:24px;
-  box-shadow:var(--shadow);
-  padding:26px;
-  margin-top:20px;
-}
+    h1 {
+      font-size: 26px;
+      margin-bottom: 10px;
+    }
 
-/* HERO */
-.hero{
-  text-align:center;
-}
+    .subtitle {
+      font-size: 16px;
+      color: #555;
+      margin-bottom: 15px;
+    }
 
-.hero h1{
-  color:var(--primary);
-  font-size:2rem;
-  margin-bottom:6px;
-}
+    .price {
+      font-size: 26px;
+      color: #c59d5f;
+      font-weight: bold;
+      margin: 20px 0;
+    }
 
-.hero p{
-  color:var(--muted);
-  margin-bottom:14px;
-}
+    /* CARRUSEL */
+    .carousel {
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      margin-bottom: 25px;
+    }
 
-.price{
-  font-size:1.9rem;
-  font-weight:700;
-  color:var(--primary);
-  margin:10px 0 18px;
-}
+    .carousel-track {
+      display: flex;
+      transition: transform 0.4s ease-in-out;
+    }
 
-.btn{
-  display:inline-block;
-  background:linear-gradient(135deg,var(--primary),var(--secondary));
-  padding:15px 32px;
-  border-radius:999px;
-  color:#fff;
-  font-weight:600;
-  text-decoration:none;
-  box-shadow:0 10px 25px rgba(255,102,178,.35);
-}
+    .carousel img {
+      width: 100%;
+      flex-shrink: 0;
+      object-fit: contain;
+      background: #f7f7f7;
+    }
 
-/* CARRUSEL */
-.carousel-container{
-  position:relative;
-  margin-top:30px;
-  background:#fff;
-  border-radius:24px;
-  box-shadow:var(--shadow);
-  padding:20px;
-}
+    .carousel-buttons {
+      display: flex;
+      justify-content: space-between;
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      transform: translateY(-50%);
+    }
 
-.carousel{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  overflow:hidden;
-}
+    .carousel-buttons button {
+      background: rgba(0,0,0,0.6);
+      color: #fff;
+      border: none;
+      font-size: 24px;
+      padding: 10px;
+      cursor: pointer;
+    }
 
-.slide{
-  display:none;
-  width:100%;
-  max-height:360px;
-  object-fit:contain;
-  border-radius:18px;
-}
+    .btn-pay {
+      display: block;
+      width: 100%;
+      background: #000;
+      color: #fff;
+      padding: 16px;
+      text-align: center;
+      font-size: 18px;
+      border-radius: 8px;
+      text-decoration: none;
+      margin-top: 25px;
+    }
 
-.slide.active{
-  display:block;
-}
+    .description, .benefits {
+      margin-top: 30px;
+    }
 
-.carousel-btn{
-  position:absolute;
-  top:50%;
-  transform:translateY(-50%);
-  background:linear-gradient(135deg,var(--primary),var(--secondary));
-  border:none;
-  color:#fff;
-  font-size:28px;
-  width:44px;
-  height:44px;
-  border-radius:50%;
-  cursor:pointer;
-  box-shadow:0 8px 20px rgba(255,102,178,.35);
-}
+    .benefits li {
+      margin-bottom: 12px;
+    }
 
-.carousel-btn.left{ left:10px; }
-.carousel-btn.right{ right:10px; }
-
-@media(max-width:600px){
-  .carousel-btn{
-    width:36px;
-    height:36px;
-    font-size:22px;
-  }
-}
-
-/* SECTIONS */
-.section{
-  background:#fff;
-  border-radius:24px;
-  padding:26px;
-  margin-top:30px;
-  box-shadow:var(--shadow);
-}
-
-.section h2{
-  color:var(--primary);
-  margin-bottom:10px;
-}
-
-.section p{
-  line-height:1.7;
-}
-
-ul{
-  padding-left:18px;
-  line-height:1.8;
-}
-
-ul li::marker{
-  color:var(--primary);
-}
-
-/* FOOTER */
-footer{
-  text-align:center;
-  margin:50px 0 20px;
-  color:var(--muted);
-  font-size:.9rem;
-}
-</style>
+    footer {
+      background: #000;
+      color: #fff;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+      font-size: 14px;
+    }
+  </style>
 </head>
 
 <body>
+
+<header>
+  <img src="costura premium logo.png" alt="Corte y Confección">
+</header>
+
 <div class="container">
 
-<!-- HERO -->
-<section class="card hero">
-  <h1>Prensatelas Caracol Profesional</h1>
-  <p>Acabados premium para quienes exigen lo mejor en sus prendas</p>
-
-  <div class="price">$44.900 CLP</div>
-
-  <a href="https://www.flow.cl/uri/5PNDkh9bm" class="btn">
-    Comprar ahora con Flow 💳
-  </a>
-</section>
-
-<!-- CARRUSEL -->
-<section class="carousel-container">
-  <button class="carousel-btn left" onclick="moveSlide(-1)">‹</button>
-
-  <div class="carousel">
-    <img src="/imag/prensatelas1.jpeg" class="slide active" alt="Prensatelas caracol vista 1">
-    <img src="/imag/prensatelas2.jpeg" class="slide" alt="Prensatelas caracol vista 2">
-    <img src="/imag/prensatelas3.jpeg" class="slide" alt="Prensatelas caracol vista 3">
+  <h1>Prensatela Caracol</h1>
+  <div class="subtitle">
+    PRENSATELA CARACOL PARA RECUBRIDORA INDUSTRIAL 6.4 ADIDAS
   </div>
 
-  <button class="carousel-btn right" onclick="moveSlide(1)">›</button>
-</section>
+  <!-- CARRUSEL -->
+  <div class="carousel">
+    <div class="carousel-track" id="track">
+      <img src="prensatelas1.jpeg" alt="Prensatela caracol vista frontal">
+      <img src="prensatelas2.jpeg" alt="Prensatela caracol en máquina">
+      <img src="prensatelas3.jpeg" alt="Detalle prensatela caracol">
+    </div>
 
-<!-- VALOR -->
-<section class="section">
-  <h2>Calidad profesional real</h2>
-  <p>
-    Este prensatelas caracol está fabricado con materiales de alta resistencia,
-    diseñados para uso intensivo en máquinas industriales.
-    No se deforma, no se quiebra y mantiene su precisión incluso en largas
-    jornadas de trabajo.
-  </p>
+    <div class="carousel-buttons">
+      <button onclick="moveSlide(-1)">‹</button>
+      <button onclick="moveSlide(1)">›</button>
+    </div>
+  </div>
 
-  <ul>
-    <li>Material metálico de alta durabilidad</li>
-    <li>No se rompe ni pierde forma</li>
-    <li>Terminaciones limpias y uniformes</li>
-    <li>Ideal para producción profesional</li>
-  </ul>
-</section>
+  <div class="price">$15.990 CLP</div>
 
-<!-- BENEFICIOS -->
-<section class="section">
-  <h2>Invertir en buenos acabados se nota</h2>
-  <p>
-    Este no es un accesorio genérico.
-    Es una herramienta pensada para costureras, talleres y marcas
-    que buscan un resultado prolijo, firme y de alta calidad en cada prenda.
-  </p>
-
-  <ul>
-    <li>Eleva el nivel visual de tus prendas</li>
-    <li>Aumenta la eficiencia en el trabajo</li>
-    <li>Resultados profesionales desde la primera pasada</li>
-  </ul>
-</section>
-
-<!-- CTA FINAL -->
-<section class="section" style="text-align:center">
-  <h2>Haz una compra inteligente</h2>
-  <p>Pago seguro con Flow · corteyconfeccion.online</p>
-
-  <a href="https://www.flow.cl/uri/5PNDkh9bm" class="btn">
-    Ir a pagar ahora 💕
+  <a class="btn-pay" href="https://www.flow.cl/uri/5PNDkh9bm" target="_blank">
+    Comprar ahora
   </a>
-</section>
 
-<footer>
-  © 2025 corteyconfeccion.online · Costurando Ando
-</footer>
+  <div class="description">
+    <p>
+      Prensatela caracol diseñado específicamente para <strong>recubridora industrial 6.4 tipo Adidas</strong>,
+      ideal para trabajar con <strong>cinta de 1 cm</strong>, logrando un guiado preciso y terminaciones limpias.
+    </p>
+  </div>
+
+  <div class="benefits">
+    <h2>Calidad profesional garantizada</h2>
+    <ul>
+      <li>✔ Fabricado con material resistente y de alta durabilidad</li>
+      <li>✔ No se quiebra ni se deforma con el uso continuo</li>
+      <li>✔ Ideal para producción industrial y trabajos exigentes</li>
+      <li>✔ Asegura acabados prolijos, parejos y profesionales</li>
+      <li>✔ Perfecto para quienes buscan lo mejor para su máquina</li>
+    </ul>
+  </div>
 
 </div>
 
-<script>
-let currentSlide = 0;
-const slides = document.querySelectorAll('.slide');
+<footer>
+  © Corte y Confección – Accesorios profesionales para costura industrial
+</footer>
 
-function moveSlide(direction){
-  slides[currentSlide].classList.remove('active');
-  currentSlide = (currentSlide + direction + slides.length) % slides.length;
-  slides[currentSlide].classList.add('active');
-}
+<script>
+  let index = 0;
+  function moveSlide(direction) {
+    const track = document.getElementById('track');
+    const slides = track.children.length;
+    index = (index + direction + slides) % slides;
+    track.style.transform = `translateX(-${index * 100}%)`;
+  }
 </script>
 
 </body>
