@@ -1,10 +1,9 @@
-
 <!doctype html>
 <html lang="es">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Prensatelas Caracol • Corte y Confección</title>
+<title>Prensatelas Caracol Profesional • Corte y Confección</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,31 +32,41 @@ body{
   padding:20px 16px;
 }
 
-.hero{
+.card{
   background:#fff;
-  padding:28px 20px;
   border-radius:24px;
   box-shadow:var(--shadow);
+  padding:26px;
   margin-top:20px;
+}
+
+/* HERO */
+.hero{
   text-align:center;
 }
 
 .hero h1{
   color:var(--primary);
   font-size:2rem;
-  margin-bottom:8px;
+  margin-bottom:6px;
+}
+
+.hero p{
+  color:var(--muted);
+  margin-bottom:14px;
 }
 
 .price{
-  font-size:1.8rem;
+  font-size:1.9rem;
   font-weight:700;
-  margin:10px 0;
+  color:var(--primary);
+  margin:10px 0 18px;
 }
 
 .btn{
   display:inline-block;
   background:linear-gradient(135deg,var(--primary),var(--secondary));
-  padding:14px 28px;
+  padding:15px 32px;
   border-radius:999px;
   color:#fff;
   font-weight:600;
@@ -65,27 +74,66 @@ body{
   box-shadow:0 10px 25px rgba(255,102,178,.35);
 }
 
-.gallery{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  gap:16px;
+/* CARRUSEL */
+.carousel-container{
+  position:relative;
   margin-top:30px;
-}
-
-.gallery img{
-  width:100%;
-  height:280px;
-  object-fit:contain;
   background:#fff;
-  border-radius:18px;
+  border-radius:24px;
   box-shadow:var(--shadow);
-  padding:12px;
+  padding:20px;
 }
 
+.carousel{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  overflow:hidden;
+}
+
+.slide{
+  display:none;
+  width:100%;
+  max-height:360px;
+  object-fit:contain;
+  border-radius:18px;
+}
+
+.slide.active{
+  display:block;
+}
+
+.carousel-btn{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  background:linear-gradient(135deg,var(--primary),var(--secondary));
+  border:none;
+  color:#fff;
+  font-size:28px;
+  width:44px;
+  height:44px;
+  border-radius:50%;
+  cursor:pointer;
+  box-shadow:0 8px 20px rgba(255,102,178,.35);
+}
+
+.carousel-btn.left{ left:10px; }
+.carousel-btn.right{ right:10px; }
+
+@media(max-width:600px){
+  .carousel-btn{
+    width:36px;
+    height:36px;
+    font-size:22px;
+  }
+}
+
+/* SECTIONS */
 .section{
   background:#fff;
   border-radius:24px;
-  padding:24px;
+  padding:26px;
   margin-top:30px;
   box-shadow:var(--shadow);
 }
@@ -95,11 +143,20 @@ body{
   margin-bottom:10px;
 }
 
+.section p{
+  line-height:1.7;
+}
+
 ul{
   padding-left:18px;
   line-height:1.8;
 }
 
+ul li::marker{
+  color:var(--primary);
+}
+
+/* FOOTER */
 footer{
   text-align:center;
   margin:50px 0 20px;
@@ -112,9 +169,10 @@ footer{
 <body>
 <div class="container">
 
-<section class="hero">
-  <h1>Prensatelas Caracol para Cintas</h1>
-  <p>Recubridor profesional para terminaciones limpias y parejas</p>
+<!-- HERO -->
+<section class="card hero">
+  <h1>Prensatelas Caracol Profesional</h1>
+  <p>Acabados premium para quienes exigen lo mejor en sus prendas</p>
 
   <div class="price">$44.900 CLP</div>
 
@@ -123,40 +181,60 @@ footer{
   </a>
 </section>
 
-<section class="gallery">
-  <img src="/imag/prensatelas1.jpeg" alt="Prensatelas caracol vista 1">
-  <img src="/imag/prensatelas2.jpeg" alt="Prensatelas caracol vista 2">
-  <img src="/imag/prensatelas3.jpeg" alt="Prensatelas caracol vista 3">
+<!-- CARRUSEL -->
+<section class="carousel-container">
+  <button class="carousel-btn left" onclick="moveSlide(-1)">‹</button>
+
+  <div class="carousel">
+    <img src="/imag/prensatelas1.jpeg" class="slide active" alt="Prensatelas caracol vista 1">
+    <img src="/imag/prensatelas2.jpeg" class="slide" alt="Prensatelas caracol vista 2">
+    <img src="/imag/prensatelas3.jpeg" class="slide" alt="Prensatelas caracol vista 3">
+  </div>
+
+  <button class="carousel-btn right" onclick="moveSlide(1)">›</button>
 </section>
 
+<!-- VALOR -->
 <section class="section">
-  <h2>¿Qué es este prensatelas?</h2>
+  <h2>Calidad profesional real</h2>
   <p>
-    El prensatelas caracol permite aplicar cintas tipo adidas o ribetes
-    de forma continua, prolija y profesional en máquinas recubridoras.
+    Este prensatelas caracol está fabricado con materiales de alta resistencia,
+    diseñados para uso intensivo en máquinas industriales.
+    No se deforma, no se quiebra y mantiene su precisión incluso en largas
+    jornadas de trabajo.
   </p>
 
   <ul>
-    <li>Terminaciones rectas y parejas</li>
-    <li>Ahorra tiempo en producción</li>
-    <li>Ideal para poleras, buzos y ropa deportiva</li>
+    <li>Material metálico de alta durabilidad</li>
+    <li>No se rompe ni pierde forma</li>
+    <li>Terminaciones limpias y uniformes</li>
+    <li>Ideal para producción profesional</li>
   </ul>
 </section>
 
+<!-- BENEFICIOS -->
 <section class="section">
-  <h2>Compatibilidad</h2>
+  <h2>Invertir en buenos acabados se nota</h2>
+  <p>
+    Este no es un accesorio genérico.
+    Es una herramienta pensada para costureras, talleres y marcas
+    que buscan un resultado prolijo, firme y de alta calidad en cada prenda.
+  </p>
+
   <ul>
-    <li>Máquinas recubridoras industriales</li>
-    <li>Modelos con sistema estándar de prensatelas</li>
-    <li>Consulta antes si tu máquina es doméstica</li>
+    <li>Eleva el nivel visual de tus prendas</li>
+    <li>Aumenta la eficiencia en el trabajo</li>
+    <li>Resultados profesionales desde la primera pasada</li>
   </ul>
 </section>
 
+<!-- CTA FINAL -->
 <section class="section" style="text-align:center">
-  <h2>Compra segura</h2>
-  <p>Pago protegido con Flow • Envíos a todo Chile</p>
+  <h2>Haz una compra inteligente</h2>
+  <p>Pago seguro con Flow · corteyconfeccion.online</p>
+
   <a href="https://www.flow.cl/uri/5PNDkh9bm" class="btn">
-    Ir a pagar 💕
+    Ir a pagar ahora 💕
   </a>
 </section>
 
@@ -165,5 +243,17 @@ footer{
 </footer>
 
 </div>
+
+<script>
+let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
+
+function moveSlide(direction){
+  slides[currentSlide].classList.remove('active');
+  currentSlide = (currentSlide + direction + slides.length) % slides.length;
+  slides[currentSlide].classList.add('active');
+}
+</script>
+
 </body>
 </html>
