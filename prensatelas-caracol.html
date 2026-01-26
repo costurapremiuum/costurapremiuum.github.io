@@ -3,148 +3,135 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Prensatela Caracol 6.4 Adidas | Corte y Confección</title>
+<title>Prensatela Caracol • Corte y Confección</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
 :root{
-  --primary:#ff66b2;
-  --secondary:#c6b7ff;
-  --bg:#fffafc;
-  --text:#2b2333;
-  --muted:#7a6f80;
-  --shadow:0 10px 25px rgba(0,0,0,.08);
+--primary:#ff66b2;
+--secondary:#c6b7ff;
+--bg:#fffafc;
+--text:#2b2333;
+--shadow:0 10px 25px rgba(0,0,0,.08);
 }
 
 body{
-  margin:0;
-  font-family:"Poppins",sans-serif;
-  background:var(--bg);
-  color:var(--text);
+margin:0;
+font-family:Poppins,sans-serif;
+background:var(--bg);
+color:var(--text);
 }
 
 .container{
-  max-width:1100px;
-  margin:0 auto;
-  padding:20px 16px;
+max-width:1100px;
+margin:auto;
+padding:20px 16px;
 }
 
 /* HERO */
 .hero{
-  background:#fff;
-  padding:28px 20px;
-  border-radius:24px;
-  box-shadow:var(--shadow);
-  margin-top:20px;
+background:#fff;
+border-radius:24px;
+padding:24px;
+box-shadow:var(--shadow);
+margin-top:20px;
 }
 
 .hero h1{
-  color:var(--primary);
-  font-size:1.9rem;
-  margin-bottom:10px;
+color:var(--primary);
+font-size:1.9rem;
+margin-bottom:10px;
 }
 
 .hero p{
-  color:var(--muted);
+color:#555;
 }
 
-/* CAROUSEL */
-.carousel-box{
-  margin-top:20px;
-  position:relative;
-}
-
+/* CARRUSEL */
 .carousel{
-  overflow:hidden;
+margin-top:20px;
+border-radius:20px;
+overflow:hidden;
+background:#fff;
+box-shadow:var(--shadow);
 }
 
-.slide{
-  display:none;
-  width:100%;
-  max-height:360px;
-  object-fit:contain;
-  border-radius:20px;
+.carousel-track{
+display:flex;
+transition:transform .4s ease;
 }
 
-.slide.active{
-  display:block;
+.carousel img{
+width:100%;
+flex-shrink:0;
+object-fit:contain;
+background:#fff;
 }
 
-.carousel-btn{
-  position:absolute;
-  top:50%;
-  transform:translateY(-50%);
-  background:linear-gradient(135deg,var(--primary),var(--secondary));
-  border:none;
-  color:#fff;
-  width:42px;
-  height:42px;
-  border-radius:50%;
-  font-size:24px;
-  cursor:pointer;
-  box-shadow:0 8px 20px rgba(255,102,178,.35);
+.carousel-nav{
+display:flex;
+justify-content:center;
+gap:10px;
+margin-top:10px;
 }
 
-.carousel-btn.left{ left:10px; }
-.carousel-btn.right{ right:10px; }
+.carousel-nav button{
+border:none;
+background:var(--primary);
+color:#fff;
+width:36px;
+height:36px;
+border-radius:50%;
+font-size:18px;
+}
 
-/* INFO */
+/* PRICE */
 .price{
-  font-size:1.8rem;
-  font-weight:700;
-  color:#ff3c8d;
-  margin:20px 0 10px;
+font-size:1.8rem;
+font-weight:700;
+color:#ff3c8d;
+margin:20px 0;
 }
 
+/* CTA */
 .btn{
-  display:inline-block;
-  background:linear-gradient(135deg,var(--primary),var(--secondary));
-  padding:14px 26px;
-  border-radius:999px;
-  color:#fff;
-  font-weight:600;
-  text-decoration:none;
-  box-shadow:0 10px 25px rgba(255,102,178,.35);
+display:inline-block;
+background:linear-gradient(135deg,var(--primary),var(--secondary));
+padding:14px 26px;
+border-radius:999px;
+color:#fff;
+font-weight:600;
+text-decoration:none;
+box-shadow:0 10px 25px rgba(255,102,178,.35);
 }
 
-/* SECTIONS */
-.section{
-  margin-top:50px;
+/* FEATURES */
+.features{
+margin-top:40px;
+background:#fff;
+border-radius:24px;
+padding:24px;
+box-shadow:var(--shadow);
 }
 
-.section h2{
-  text-align:center;
-  color:var(--primary);
-  font-size:1.7rem;
+.features ul{
+list-style:none;
+padding:0;
+line-height:1.9;
 }
 
-.card{
-  background:#fff;
-  border-radius:20px;
-  padding:20px;
-  box-shadow:var(--shadow);
-  margin-top:20px;
-}
-
-ul{
-  list-style:none;
-  padding:0;
-  line-height:1.8;
-}
-
-ul li::before{
-  content:"✔ ";
-  color:var(--primary);
+.features li::before{
+content:"✔ ";
+color:var(--primary);
+font-weight:700;
 }
 
 footer{
-  text-align:center;
-  margin:50px 0 20px;
-  color:var(--muted);
-  font-size:.9rem;
+text-align:center;
+margin:50px 0 10px;
+color:#888;
+font-size:.9rem;
 }
 </style>
 </head>
@@ -153,66 +140,56 @@ footer{
 <div class="container">
 
 <section class="hero">
-  <h1>Prensatela Caracol para Recubridora Industrial 6.4 Adidas</h1>
-  <p>Accesorio profesional para acabados limpios, rectos y de alta calidad.</p>
+<h1>Prensatela Caracol</h1>
+<p>
+PRENSATELA CARACOL PARA RECUBRIDORA INDUSTRIAL 6.4 ADIDAS<br>
+<strong>Cinta de 1 cm</strong>
+</p>
 
-  <!-- CARRUSEL -->
-  <div class="carousel-box">
-    <button class="carousel-btn left" onclick="moveSlide(-1)">‹</button>
-
-    <div class="carousel">
-      https://raw.githubusercontent.com/costurapremiuum/costurapremiuum.github.io/main/imagenes/prensatelas1.jpg
-https://raw.githubusercontent.com/costurapremiuum/costurapremiuum.github.io/main/imagenes/prensatelas2.jpg
-https://raw.githubusercontent.com/costurapremiuum/costurapremiuum.github.io/main/imagenes/prensatelas3.jpg
-    </div>
-
-    <button class="carousel-btn right" onclick="moveSlide(1)">›</button>
+<div class="carousel">
+  <div class="carousel-track" id="track">
+    <img src="https://raw.githubusercontent.com/costurapremiuum/costurapremiuum.github.io/main/imag/prensatelas1.jpeg">
+    <img src="https://raw.githubusercontent.com/costurapremiuum/costurapremiuum.github.iomain/imag/prensatelas2.jpeg">
+    <img src="https://raw.githubusercontent.com/costurapremiuum/costurapremiuum.github.io/main/imag/prensatelas3.jpeg">
   </div>
+</div>
 
-  <div class="price">$44.900 CLP</div>
+<div class="carousel-nav">
+  <button onclick="mover(-1)">‹</button>
+  <button onclick="mover(1)">›</button>
+</div>
 
-  <a href="https://www.flow.cl/uri/5PNDkh9bm" class="btn">
-    Comprar ahora
-  </a>
+<div class="price">$15.990 CLP</div>
+
+<a class="btn" href="https://www.flow.cl/uri/5PNDkh9bm" target="_blank">
+Comprar ahora
+</a>
 </section>
 
-<section class="section">
-  <h2>Descripción del producto</h2>
-  <div class="card">
-    <p><strong>PRENSATELA CARACOL PARA RECUBRIDORA INDUSTRIAL 6.4 ADIDAS</strong></p>
-    <p>Diseñado para trabajar con <strong>cinta de 1 cm</strong>, este prensatela está fabricado con material de alta resistencia, pensado para uso continuo en máquinas industriales.</p>
-    <p>No se deforma, no se rompe y mantiene un flujo de trabajo estable, logrando <strong>acabados prolijos, profesionales y uniformes</strong>.</p>
-    <p>Ideal para quienes buscan <strong>calidad real</strong> en sus máquinas y elevar el nivel final de sus prendas.</p>
-  </div>
-</section>
-
-<section class="section">
-  <h2>¿Por qué elegir este prensatela?</h2>
-  <div class="card">
-    <ul>
-      <li>Material resistente y duradero</li>
-      <li>Ideal para producción continua</li>
-      <li>Mejora el acabado de tus prendas</li>
-      <li>Estabilidad y precisión en la costura</li>
-      <li>Accesorio premium para máquinas industriales</li>
-    </ul>
-  </div>
+<section class="features">
+<h2>Calidad que se nota en cada costura</h2>
+<ul>
+<li>Fabricado con material industrial de alta calidad</li>
+<li>No se rompe ni se deforma con el uso continuo</li>
+<li>Diseñado para acabados limpios y profesionales</li>
+<li>Ideal para quienes buscan lo mejor en sus máquinas</li>
+<li>Perfecto para producción y confección exigente</li>
+</ul>
 </section>
 
 <footer>
-  © 2025 corteyconfeccion.online
+© 2025 Corte y Confección · Accesorios premium
 </footer>
 
 </div>
 
 <script>
-let currentSlide = 0;
-const slides = document.querySelectorAll('.slide');
-
-function moveSlide(dir){
-  slides[currentSlide].classList.remove('active');
-  currentSlide = (currentSlide + dir + slides.length) % slides.length;
-  slides[currentSlide].classList.add('active');
+let index=0;
+function mover(d){
+const track=document.getElementById("track");
+const total=track.children.length;
+index=(index+d+total)%total;
+track.style.transform=`translateX(-${index*100}%)`;
 }
 </script>
 
