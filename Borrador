@@ -1,0 +1,253 @@
+<!DOCTYPE html><html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Costura Premium</title>  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #fff7fb;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #ff4fa3, #ff87c5);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .hero-content {
+      max-width: 850px;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.2);
+      padding: 10px 18px;
+      border-radius: 999px;
+      margin-bottom: 20px;
+      font-size: 14px;
+      backdrop-filter: blur(10px);
+    }
+
+    h1 {
+      font-size: 58px;
+      line-height: 1.1;
+      margin-bottom: 25px;
+    }
+
+    .subtitle {
+      font-size: 22px;
+      margin-bottom: 35px;
+      opacity: 0.95;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      background: white;
+      color: #ff2d8d;
+      padding: 18px 38px;
+      border-radius: 16px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.3s;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    .cta-btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .section {
+      padding: 90px 20px;
+    }
+
+    .container {
+      max-width: 1150px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 42px;
+      margin-bottom: 60px;
+      color: #ff2d8d;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 24px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h3 {
+      margin-bottom: 15px;
+      color: #ff2d8d;
+      font-size: 24px;
+    }
+
+    .testimonials {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+    }
+
+    .testimonial {
+      background: white;
+      padding: 30px;
+      border-radius: 24px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    .testimonial strong {
+      display: block;
+      margin-top: 15px;
+      color: #ff2d8d;
+    }
+
+    .final-cta {
+      background: linear-gradient(135deg, #ff4fa3, #ff87c5);
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+    }
+
+    .final-cta h2 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+
+    .final-cta p {
+      font-size: 22px;
+      margin-bottom: 35px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 35px 20px;
+      background: #111;
+      color: #bbb;
+    }
+
+    footer a {
+      color: #ff87c5;
+      text-decoration: none;
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 40px;
+      }
+
+      .subtitle {
+        font-size: 18px;
+      }
+
+      .section-title {
+        font-size: 32px;
+      }
+
+      .final-cta h2 {
+        font-size: 36px;
+      }
+    }
+  </style></head>
+<body>  <section class="hero">
+    <div class="hero-content">
+      <div class="badge">✨ Curso Online Paso a Paso</div><h1>
+    Aprende Corte y Confección Desde Casa
+  </h1>
+
+  <p class="subtitle">
+    Descubre cómo crear tus propias prendas, incluso si empiezas completamente desde cero.
+  </p>
+
+  <a class="cta-btn" href="#comprar">
+    QUIERO VER EL CURSO
+  </a>
+</div>
+
+  </section>  <section class="section">
+    <div class="container">
+      <h2 class="section-title">¿Qué aprenderás?</h2><div class="cards">
+    <div class="card">
+      <h3>✂️ Corte y confección</h3>
+      <p>
+        Aprende técnicas paso a paso para crear prendas increíbles desde casa.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>🧵 Desde cero</h3>
+      <p>
+        No necesitas experiencia previa para comenzar.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>💻 100% Online</h3>
+      <p>
+        Accede a las clases cuando quieras y desde cualquier lugar.
+      </p>
+    </div>
+  </div>
+</div>
+
+  </section>  <section class="section" style="background:#fff0f6;">
+    <div class="container">
+      <h2 class="section-title">Resultados Reales</h2><div class="testimonials">
+    <div class="testimonial">
+      “Nunca pensé que podría aprender costura tan rápido. Ahora hago ropa para mí misma.”
+      <strong>— Alumna</strong>
+    </div>
+
+    <div class="testimonial">
+      “Las clases son fáciles de seguir y pude empezar desde cero.”
+      <strong>— Estudiante</strong>
+    </div>
+
+    <div class="testimonial">
+      “Me encantó poder aprender desde casa y a mi propio ritmo.”
+      <strong>— Alumna</strong>
+    </div>
+  </div>
+</div>
+
+  </section>  <section class="final-cta" id="comprar">
+    <h2>Empieza Hoy Mismo</h2><p>
+  Aprende costura paso a paso y transforma tu creatividad en resultados reales.
+</p>
+
+<a class="cta-btn" href="https://go.hotmart.com/">
+  ACCEDER AL CURSO
+</a>
+
+  </section>  <footer>
+    © 2026 Costura Premium · 
+    <a href="privacidad.html">Política de Privacidad</a>
+  </footer></body>
+</html>
