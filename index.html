@@ -317,9 +317,13 @@ function acceptCookies() {
   document.getElementById("cookie-banner").style.display = "none";
 }
 
-if(localStorage.getItem("cookiesAccepted") === "true") {
-  document.getElementById("cookie-banner").style.display = "none";
-}
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  if (localStorage.getItem("cookiesAccepted") === "true") {
+    document.getElementById("cookie-banner").style.display = "none";
+  }
+});
+</script>
 </script>
 
 </body>
