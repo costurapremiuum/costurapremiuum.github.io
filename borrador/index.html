@@ -1,257 +1,140 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Aprende Costura desde Cero | Costura Premium</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<title>Costura Premium • Curso Completo de Corte y Confección</title>
 
-  <style>
-    :root{
-      --pink:#ff4fa3;
-      --purple:#b78bff;
-      --bg:#fff7fb;
-      --text:#2b2333;
-      --shadow:0 10px 25px rgba(0,0,0,.08);
-    }
+<!-- GTM (ÚNICO) -->
+<script>
+(function(w,d,s,l,i){
+w[l]=w[l]||[];
+w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});
+var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+j.async=true;
+j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WKQQJZHX');
+</script>
 
-    body{
-      margin:0;
-      font-family:Poppins;
-      background:var(--bg);
-      color:var(--text);
-    }
+<!-- Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s){
+if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)
+}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
 
-    .container{
-      max-width:900px;
-      margin:auto;
-      padding:20px;
-    }
+fbq('init','4147208875361338');
+fbq('track','PageView');
+</script>
 
-    /* HERO */
-    .hero{
-      background:#fff;
-      border-radius:20px;
-      padding:25px;
-      text-align:center;
-      box-shadow:var(--shadow);
-    }
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-    .hook{
-      font-weight:700;
-      font-size:22px;
-      color:var(--pink);
-      margin-bottom:10px;
-    }
+<style>
+body{margin:0;font-family:Poppins;background:#fffafc;color:#2b2333}
+.container{max-width:1100px;margin:auto;padding:20px}
 
-    .subhook{
-      font-size:15px;
-      opacity:.85;
-    }
+/* HERO */
+.hero{
+  text-align:center;
+  background:#fff;
+  padding:30px 20px;
+  border-radius:24px;
+  box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
 
-    .btn{
-      display:inline-block;
-      padding:15px 22px;
-      border-radius:999px;
-      background:linear-gradient(135deg,var(--pink),var(--purple));
-      color:#fff;
-      text-decoration:none;
-      font-weight:600;
-      margin-top:15px;
-    }
+.hero-title{font-size:2rem;color:#ff66b2;font-weight:700}
+.btn{
+  display:inline-block;
+  padding:14px 26px;
+  border-radius:999px;
+  background:linear-gradient(135deg,#ff66b2,#c6b7ff);
+  color:#fff;
+  font-weight:600;
+  text-decoration:none;
+}
 
-    .urgency{
-      background:#ffe3f1;
-      color:#ff2f8b;
-      padding:10px;
-      border-radius:12px;
-      margin:15px 0;
-      font-weight:700;
-      animation:pulse 2s infinite;
-    }
+/* URGENCIA */
+.badge{
+  display:inline-block;
+  background:#ffe6f3;
+  color:#ff3c8d;
+  padding:10px 16px;
+  border-radius:12px;
+  font-weight:600;
+  animation:pulse 2s infinite;
+}
+@keyframes pulse{50%{transform:scale(1.05)}}
 
-    @keyframes pulse{
-      0%{transform:scale(1)}
-      50%{transform:scale(1.03)}
-      100%{transform:scale(1)}
-    }
-
-    iframe{
-      width:100%;
-      border-radius:15px;
-      margin-top:15px;
-    }
-
-    /* SECCIONES */
-    h2{
-      text-align:center;
-      margin-top:40px;
-      color:var(--pink);
-    }
-
-    .grid{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:15px;
-    }
-
-    ul{
-      list-style:none;
-      padding:0;
-      line-height:1.8;
-    }
-
-    ul li::before{
-      content:"✔ ";
-      color:var(--pink);
-    }
-
-    .card{
-      background:#fff;
-      padding:15px;
-      border-radius:15px;
-      box-shadow:var(--shadow);
-      margin-top:15px;
-    }
-
-    /* CTA FINAL */
-    .cta{
-      text-align:center;
-      margin-top:40px;
-    }
-
-    footer{
-      text-align:center;
-      font-size:13px;
-      color:#777;
-      margin-top:40px;
-    }
-
-    /* COOKIE */
-    #cookie{
-      position:fixed;
-      bottom:0;
-      left:0;
-      width:100%;
-      background:#111;
-      color:#fff;
-      padding:15px;
-      text-align:center;
-      display:none;
-      z-index:9999;
-    }
-
-    #cookie button{
-      margin-left:10px;
-      padding:8px 12px;
-      border:none;
-      cursor:pointer;
-    }
-  </style>
+/* COUNTDOWN */
+#countdown{font-weight:700;margin-top:10px}
+</style>
 </head>
 
 <body>
 
+<noscript>
+<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WKQQJZHX"
+height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+
 <div class="container">
 
-  <!-- HERO HOOK -->
-  <div class="hero">
+<div class="hero">
 
-    <div class="hook">
-      ¿Te gustaría aprender a coser y generar ingresos desde casa?
-    </div>
+  <img src="https://raw.githubusercontent.com/costurapremiuum/costurapremiuum.github.io/main/costura%20premium%20logo.png" width="160">
 
-    <div class="subhook">
-      Miles de personas están aprendiendo costura desde cero y creando prendas reales sin experiencia previa.
-    </div>
+  <h1 class="hero-title">Tu nueva vida en la costura empieza aquí</h1>
 
-    <div class="urgency">
-      🔥 Acceso limitado hoy — cupos disponibles por tiempo limitado
-    </div>
+  <p>Más de 1.100 clases paso a paso desde cero</p>
 
-    <a class="btn" href="https://go.hotmart.com/E106051689D?ap=fba1">
-      QUIERO EMPEZAR AHORA 💕
-    </a>
+  <a class="btn" href="/clase-gratis/">🎁 Ver Clase Gratis</a>
 
-    <iframe height="240"
-      src="https://www.youtube.com/embed/jN8lVzH-tGU"
-      frameborder="0" allowfullscreen></iframe>
+  <br><br>
 
-  </div>
+  <iframe width="100%" height="315"
+  src="https://www.youtube.com/embed/jN8lVzH-tGU"
+  allowfullscreen></iframe>
 
-  <!-- BENEFICIOS -->
-  <h2>Lo que vas a lograr</h2>
+  <div class="badge">🔥 80 cupos disponibles hoy</div>
 
-  <div class="grid">
+  <br><br>
 
-    <div class="card">
-      <ul>
-        <li>Aprender desde cero aunque nunca hayas cosido</li>
-        <li>Crear prendas reales paso a paso</li>
-        <li>Ahorrar dinero haciendo tu propia ropa</li>
-        <li>Acceso 24/7 desde cualquier dispositivo</li>
-      </ul>
-    </div>
+  <a class="btn"
+     href="https://go.hotmart.com/E106051689D?ap=fba1"
+     onclick="fbq('track','InitiateCheckout');">
+     Inscribirme ahora 💕
+  </a>
 
-    <div class="card">
-      <ul>
-        <li>Patrones descargables incluidos</li>
-        <li>Más de 1.100 clases organizadas</li>
-        <li>Proyectos reales para vender</li>
-        <li>Actualizaciones constantes sin pagar más</li>
-      </ul>
-    </div>
-
-  </div>
-
-  <!-- PRUEBA SOCIAL -->
-  <h2>¿Por qué funciona?</h2>
-
-  <div class="card">
-    No es teoría. Es un sistema paso a paso donde ves cómo se hace cada prenda en tiempo real.
-    Personas sin experiencia hoy están vendiendo ropa gracias a este método.
-  </div>
-
-  <!-- CTA FINAL -->
-  <div class="cta">
-    <h2>Empieza hoy o sigue esperando</h2>
-
-    <a class="btn" href="https://go.hotmart.com/E106051689D?ap=fba1">
-      ACCEDER AL CURSO 💕
-    </a>
-
-    <p style="margin-top:10px;font-size:13px;opacity:.7;">
-      Acceso inmediato después del pago
-    </p>
-  </div>
-
-  <footer>
-    <a href="privacidad.html" style="color:var(--pink);text-decoration:none;">
-      Política de Privacidad
-    </a>
-    <p>© 2026 Costura Premium</p>
-  </footer>
+  <div id="countdown"></div>
 
 </div>
 
-<!-- COOKIE -->
-<div id="cookie">
-  Usamos cookies para mejorar la experiencia.
-  <button onclick="aceptar()">Aceptar</button>
 </div>
 
 <script>
-  const c = document.getElementById("cookie");
+function countdown(){
+  const now=new Date();
+  const end=new Date();
+  end.setHours(23,59,59,999);
 
-  if(!localStorage.getItem("cookie_ok")){
-    c.style.display="block";
-  }
+  const d=end-now;
+  const h=Math.floor(d/36e5);
+  const m=Math.floor(d%36e5/6e4);
+  const s=Math.floor(d%6e4/1e3);
 
-  function aceptar(){
-    localStorage.setItem("cookie_ok","1");
-    c.style.display="none";
-  }
+  document.getElementById("countdown").innerHTML=
+  `⏳ Oferta termina hoy: ${h}h ${m}m ${s}s`;
+}
+setInterval(countdown,1000);
+countdown();
 </script>
 
 </body>
