@@ -7,7 +7,6 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-<!-- META PIXEL -->
 <script>
 !function(f,b,e,v,n,t,s){
 if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -27,42 +26,49 @@ fbq('track','PageView');
 body{
   margin:0;
   font-family:Poppins,sans-serif;
-  background:#fffafc;
+  background:#fff7fb;
   color:#2b2333;
 }
 
 .container{
-  max-width:1000px;
+  max-width:950px;
   margin:auto;
   padding:20px;
 }
 
 .hero{
   text-align:center;
-  padding:20px;
+  padding:25px 10px;
 }
 
 h1{
-  color:#ff66b2;
-  font-size:2rem;
+  font-size:2.1rem;
+  color:#ff4fa0;
+  line-height:1.2;
+}
+
+.sub{
+  font-size:1rem;
+  color:#555;
+  margin-top:10px;
 }
 
 .btn{
   display:inline-block;
-  padding:14px 26px;
-  margin-top:15px;
+  margin-top:18px;
+  padding:16px 28px;
   border-radius:999px;
-  background:linear-gradient(135deg,#ff66b2,#c6b7ff);
+  background:linear-gradient(135deg,#ff4fa0,#a855f7);
   color:white;
+  font-weight:700;
   text-decoration:none;
-  font-weight:600;
 }
 
-.video-box{
+.video{
   margin:25px 0;
-  border-radius:18px;
+  border-radius:20px;
   overflow:hidden;
-  box-shadow:0 10px 25px rgba(0,0,0,.12);
+  box-shadow:0 12px 30px rgba(0,0,0,.15);
 }
 
 iframe{
@@ -72,7 +78,7 @@ iframe{
 }
 
 @media(max-width:600px){
-  iframe{height:240px;}
+  iframe{height:230px;}
 }
 
 .section{
@@ -81,7 +87,15 @@ iframe{
 
 h2{
   text-align:center;
-  color:#ff66b2;
+  color:#ff4fa0;
+}
+
+.box{
+  background:#fff;
+  padding:20px;
+  border-radius:18px;
+  box-shadow:0 10px 25px rgba(0,0,0,.06);
+  margin-top:15px;
 }
 
 ul{
@@ -92,19 +106,21 @@ ul{
 
 li::before{
   content:"✔ ";
-  color:#ff66b2;
+  color:#ff4fa0;
+}
+
+.highlight{
+  font-weight:600;
+  color:#ff4fa0;
 }
 
 .cta{
   text-align:center;
-  margin-top:40px;
+  margin-top:45px;
 }
-
 .small{
-  text-align:center;
   font-size:.85rem;
   color:#777;
-  margin-top:10px;
 }
 </style>
 </head>
@@ -116,57 +132,101 @@ li::before{
 <!-- HERO -->
 <div class="hero">
 
-<h1>Aprende Costura desde Cero y Crea Ropa Profesional</h1>
+<h1>Deja de depender de comprar ropa… y empieza a crear la tuya</h1>
 
-<p>Más de 1.100 clases paso a paso para que empieces desde casa y crees tus propias prendas.</p>
+<p class="sub">
+Si alguna vez pensaste “me gustaría saber coser pero no sé por dónde empezar”…
+esto es exactamente para ti.
+</p>
 
 <a class="btn"
 href="https://go.hotmart.com/E106051689D?ap=fba1"
 onclick="fbq('track','InitiateCheckout');">
-🔥 Quiero entrar a Costura Premium
+🔥 Quiero aprender costura ahora
 </a>
 
 </div>
 
 <!-- VIDEO -->
-<div class="video-box">
+<div class="video">
 
 <iframe
 src="https://drive.google.com/file/d/1PbdrRkbfcbTw8Picqk0VY4d1_xqeYZdh/preview"
-allow="autoplay"
 allowfullscreen>
 </iframe>
+
+</div>
+
+<!-- DOLOR -->
+<div class="section">
+
+<h2>Tal vez te pasa esto…</h2>
+
+<div class="box">
+<ul>
+<li>Quieres aprender costura pero no sabes por dónde empezar</li>
+<li>Has visto tutoriales, pero te confundes más</li>
+<li>Te gustaría crear tu propia ropa pero sientes que “no eres buena”</li>
+<li>Dependes de comprar ropa en vez de hacerla tú</li>
+</ul>
+</div>
+
+</div>
+
+<!-- SOLUCIÓN -->
+<div class="section">
+
+<h2>La verdad es esta…</h2>
+
+<div class="box">
+
+<p>
+No es que no puedas coser.
+<br><br>
+Es que nunca te enseñaron de forma <span class="highlight">simple, guiada y paso a paso</span>.
+</p>
+
+<p>
+Costura Premium está diseñado para llevarte desde cero hasta crear prendas reales, sin complicaciones.
+</p>
+
+</div>
 
 </div>
 
 <!-- BENEFICIOS -->
 <div class="section">
 
-<h2>¿Qué incluye el curso?</h2>
+<h2>Lo que puedes lograr con este curso</h2>
 
+<div class="box">
 <ul>
-<li>Más de 1.100 clases paso a paso</li>
-<li>Desde cero hasta nivel profesional</li>
-<li>Vestidos, blusas, pantalones y más</li>
-<li>Patrones descargables</li>
-<li>Acceso 24/7 de por vida</li>
-<li>Actualizaciones constantes</li>
+<li>Crear tu propia ropa desde casa</li>
+<li>Aprender desde cero sin experiencia</li>
+<li>Hacer vestidos, blusas, pantalones y más</li>
+<li>Entender patrones de forma simple</li>
+<li>Aprender a tu ritmo, cuando quieras</li>
 </ul>
+</div>
 
 </div>
 
 <!-- CTA FINAL -->
 <div class="cta">
 
-<h2>Empieza hoy mismo</h2>
+<h2>Si llegaste hasta aquí… es por algo</h2>
+
+<p class="small">
+No es casualidad que estés leyendo esto ahora.
+</p>
 
 <a class="btn"
 href="https://go.hotmart.com/E106051689D?ap=fba1"
 onclick="fbq('track','InitiateCheckout');">
-💖 Inscribirme ahora
+💖 Sí, quiero empezar hoy
 </a>
 
-<p class="small">Acceso inmediato después del pago</p>
+<p class="small">Acceso inmediato después de la inscripción</p>
 
 </div>
 
