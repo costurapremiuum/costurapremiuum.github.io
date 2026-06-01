@@ -1,253 +1,258 @@
-<!DOCTYPE html><html lang="es">
+<!doctype html>
+<html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Costura Premium</title>  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aprende Costura desde Cero | Costura Premium</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --pink:#ff4fa3;
+      --purple:#b78bff;
+      --bg:#fff7fb;
+      --text:#2b2333;
+      --shadow:0 10px 25px rgba(0,0,0,.08);
     }
 
-    body {
-      font-family: Arial, sans-serif;
-      background: #fff7fb;
-      color: #222;
-      line-height: 1.6;
+    body{
+      margin:0;
+      font-family:Poppins;
+      background:var(--bg);
+      color:var(--text);
     }
 
-    .hero {
-      min-height: 100vh;
-      background: linear-gradient(135deg, #ff4fa3, #ff87c5);
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 40px 20px;
-      text-align: center;
+    .container{
+      max-width:900px;
+      margin:auto;
+      padding:20px;
     }
 
-    .hero-content {
-      max-width: 850px;
+    /* HERO */
+    .hero{
+      background:#fff;
+      border-radius:20px;
+      padding:25px;
+      text-align:center;
+      box-shadow:var(--shadow);
     }
 
-    .badge {
-      display: inline-block;
-      background: rgba(255,255,255,0.2);
-      padding: 10px 18px;
-      border-radius: 999px;
-      margin-bottom: 20px;
-      font-size: 14px;
-      backdrop-filter: blur(10px);
+    .hook{
+      font-weight:700;
+      font-size:22px;
+      color:var(--pink);
+      margin-bottom:10px;
     }
 
-    h1 {
-      font-size: 58px;
-      line-height: 1.1;
-      margin-bottom: 25px;
+    .subhook{
+      font-size:15px;
+      opacity:.85;
     }
 
-    .subtitle {
-      font-size: 22px;
-      margin-bottom: 35px;
-      opacity: 0.95;
+    .btn{
+      display:inline-block;
+      padding:15px 22px;
+      border-radius:999px;
+      background:linear-gradient(135deg,var(--pink),var(--purple));
+      color:#fff;
+      text-decoration:none;
+      font-weight:600;
+      margin-top:15px;
     }
 
-    .cta-btn {
-      display: inline-block;
-      background: white;
-      color: #ff2d8d;
-      padding: 18px 38px;
-      border-radius: 16px;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 18px;
-      transition: 0.3s;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    .urgency{
+      background:#ffe3f1;
+      color:#ff2f8b;
+      padding:10px;
+      border-radius:12px;
+      margin:15px 0;
+      font-weight:700;
+      animation:pulse 2s infinite;
     }
 
-    .cta-btn:hover {
-      transform: translateY(-3px);
+    @keyframes pulse{
+      0%{transform:scale(1)}
+      50%{transform:scale(1.03)}
+      100%{transform:scale(1)}
     }
 
-    .section {
-      padding: 90px 20px;
+    iframe{
+      width:100%;
+      border-radius:15px;
+      margin-top:15px;
     }
 
-    .container {
-      max-width: 1150px;
-      margin: auto;
+    /* SECCIONES */
+    h2{
+      text-align:center;
+      margin-top:40px;
+      color:var(--pink);
     }
 
-    .section-title {
-      text-align: center;
-      font-size: 42px;
-      margin-bottom: 60px;
-      color: #ff2d8d;
+    .grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:15px;
     }
 
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 25px;
+    ul{
+      list-style:none;
+      padding:0;
+      line-height:1.8;
     }
 
-    .card {
-      background: white;
-      padding: 30px;
-      border-radius: 24px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-      transition: 0.3s;
+    ul li::before{
+      content:"✔ ";
+      color:var(--pink);
     }
 
-    .card:hover {
-      transform: translateY(-5px);
+    .card{
+      background:#fff;
+      padding:15px;
+      border-radius:15px;
+      box-shadow:var(--shadow);
+      margin-top:15px;
     }
 
-    .card h3 {
-      margin-bottom: 15px;
-      color: #ff2d8d;
-      font-size: 24px;
+    /* CTA FINAL */
+    .cta{
+      text-align:center;
+      margin-top:40px;
     }
 
-    .testimonials {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 25px;
+    footer{
+      text-align:center;
+      font-size:13px;
+      color:#777;
+      margin-top:40px;
     }
 
-    .testimonial {
-      background: white;
-      padding: 30px;
-      border-radius: 24px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    /* COOKIE */
+    #cookie{
+      position:fixed;
+      bottom:0;
+      left:0;
+      width:100%;
+      background:#111;
+      color:#fff;
+      padding:15px;
+      text-align:center;
+      display:none;
+      z-index:9999;
     }
 
-    .testimonial strong {
-      display: block;
-      margin-top: 15px;
-      color: #ff2d8d;
+    #cookie button{
+      margin-left:10px;
+      padding:8px 12px;
+      border:none;
+      cursor:pointer;
     }
+  </style>
+</head>
 
-    .final-cta {
-      background: linear-gradient(135deg, #ff4fa3, #ff87c5);
-      color: white;
-      text-align: center;
-      padding: 100px 20px;
-    }
+<body>
 
-    .final-cta h2 {
-      font-size: 48px;
-      margin-bottom: 20px;
-    }
+<div class="container">
 
-    .final-cta p {
-      font-size: 22px;
-      margin-bottom: 35px;
-    }
+  <!-- HERO HOOK -->
+  <div class="hero">
 
-    footer {
-      text-align: center;
-      padding: 35px 20px;
-      background: #111;
-      color: #bbb;
-    }
-
-    footer a {
-      color: #ff87c5;
-      text-decoration: none;
-    }
-
-    @media (max-width: 768px) {
-      h1 {
-        font-size: 40px;
-      }
-
-      .subtitle {
-        font-size: 18px;
-      }
-
-      .section-title {
-        font-size: 32px;
-      }
-
-      .final-cta h2 {
-        font-size: 36px;
-      }
-    }
-  </style></head>
-<body>  <section class="hero">
-    <div class="hero-content">
-      <div class="badge">✨ Curso Online Paso a Paso</div><h1>
-    Aprende Corte y Confección Desde Casa
-  </h1>
-
-  <p class="subtitle">
-    Descubre cómo crear tus propias prendas, incluso si empiezas completamente desde cero.
-  </p>
-
-  <a class="cta-btn" href="#comprar">
-    QUIERO VER EL CURSO
-  </a>
-</div>
-
-  </section>  <section class="section">
-    <div class="container">
-      <h2 class="section-title">¿Qué aprenderás?</h2><div class="cards">
-    <div class="card">
-      <h3>✂️ Corte y confección</h3>
-      <p>
-        Aprende técnicas paso a paso para crear prendas increíbles desde casa.
-      </p>
+    <div class="hook">
+      ¿Te gustaría aprender a coser y generar ingresos desde casa?
     </div>
 
-    <div class="card">
-      <h3>🧵 Desde cero</h3>
-      <p>
-        No necesitas experiencia previa para comenzar.
-      </p>
+    <div class="subhook">
+      Miles de personas están aprendiendo costura desde cero y creando prendas reales sin experiencia previa.
     </div>
 
-    <div class="card">
-      <h3>💻 100% Online</h3>
-      <p>
-        Accede a las clases cuando quieras y desde cualquier lugar.
-      </p>
+    <div class="urgency">
+      🔥 Acceso limitado hoy — cupos disponibles por tiempo limitado
     </div>
+
+    <a class="btn" href="https://go.hotmart.com/E106051689D?ap=fba1">
+      QUIERO EMPEZAR AHORA 💕
+    </a>
+
+    <iframe height="240"
+      src="https://www.youtube.com/embed/jN8lVzH-tGU"
+      frameborder="0" allowfullscreen></iframe>
+
   </div>
-</div>
 
-  </section>  <section class="section" style="background:#fff0f6;">
-    <div class="container">
-      <h2 class="section-title">Resultados Reales</h2><div class="testimonials">
-    <div class="testimonial">
-      “Nunca pensé que podría aprender costura tan rápido. Ahora hago ropa para mí misma.”
-      <strong>— Alumna</strong>
+  <!-- BENEFICIOS -->
+  <h2>Lo que vas a lograr</h2>
+
+  <div class="grid">
+
+    <div class="card">
+      <ul>
+        <li>Aprender desde cero aunque nunca hayas cosido</li>
+        <li>Crear prendas reales paso a paso</li>
+        <li>Ahorrar dinero haciendo tu propia ropa</li>
+        <li>Acceso 24/7 desde cualquier dispositivo</li>
+      </ul>
     </div>
 
-    <div class="testimonial">
-      “Las clases son fáciles de seguir y pude empezar desde cero.”
-      <strong>— Estudiante</strong>
+    <div class="card">
+      <ul>
+        <li>Patrones descargables incluidos</li>
+        <li>Más de 1.100 clases organizadas</li>
+        <li>Proyectos reales para vender</li>
+        <li>Actualizaciones constantes sin pagar más</li>
+      </ul>
     </div>
 
-    <div class="testimonial">
-      “Me encantó poder aprender desde casa y a mi propio ritmo.”
-      <strong>— Alumna</strong>
-    </div>
   </div>
+
+  <!-- PRUEBA SOCIAL -->
+  <h2>¿Por qué funciona?</h2>
+
+  <div class="card">
+    No es teoría. Es un sistema paso a paso donde ves cómo se hace cada prenda en tiempo real.
+    Personas sin experiencia hoy están vendiendo ropa gracias a este método.
+  </div>
+
+  <!-- CTA FINAL -->
+  <div class="cta">
+    <h2>Empieza hoy o sigue esperando</h2>
+
+    <a class="btn" href="https://go.hotmart.com/E106051689D?ap=fba1">
+      ACCEDER AL CURSO 💕
+    </a>
+
+    <p style="margin-top:10px;font-size:13px;opacity:.7;">
+      Acceso inmediato después del pago
+    </p>
+  </div>
+
+  <footer>
+    <a href="privacidad.html" style="color:var(--pink);text-decoration:none;">
+      Política de Privacidad
+    </a>
+    <p>© 2026 Costura Premium</p>
+  </footer>
+
 </div>
 
-  </section>  <section class="final-cta" id="comprar">
-    <h2>Empieza Hoy Mismo</h2><p>
-  Aprende costura paso a paso y transforma tu creatividad en resultados reales.
-</p>
+<!-- COOKIE -->
+<div id="cookie">
+  Usamos cookies para mejorar la experiencia.
+  <button onclick="aceptar()">Aceptar</button>
+</div>
 
-<a class="cta-btn" href="https://go.hotmart.com/">
-  ACCEDER AL CURSO
-</a>
+<script>
+  const c = document.getElementById("cookie");
 
-  </section>  <footer>
-    © 2026 Costura Premium · 
-    <a href="privacidad.html">Política de Privacidad</a>
-  </footer></body>
+  if(!localStorage.getItem("cookie_ok")){
+    c.style.display="block";
+  }
+
+  function aceptar(){
+    localStorage.setItem("cookie_ok","1");
+    c.style.display="none";
+  }
+</script>
+
+</body>
 </html>
