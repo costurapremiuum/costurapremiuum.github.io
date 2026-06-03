@@ -1,19 +1,45 @@
+```html
 <!doctype html>
 <html lang="es">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<!-- Google Tag Manager -->
+<script>
+(function(w,d,s,l,i){
+w[l]=w[l]||[];
+w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});
+var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+j.async=true;
+j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WKQQJZHX');
+</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
 <title>Costura Premium | Aprende desde cero y transforma tu vida</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
+<!-- Meta Pixel -->
 <script>
 !function(f,b,e,v,n,t,s){
 if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
+if(!f._fbq)f._fbq=n;
+n.push=n;
+n.loaded=!0;
+n.version='2.0';
+n.queue=[];
+t=b.createElement(e);
+t.async=!0;
+t.src=v;
+s=b.getElementsByTagName(e)[0];
 s.parentNode.insertBefore(t,s)
 }(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
@@ -23,34 +49,60 @@ fbq('track','PageView');
 </script>
 
 <style>
+
+:root{
+  --primary:#ff4fa0;
+  --secondary:#a855f7;
+  --bg:#fff7fb;
+  --text:#2b2333;
+  --shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
 body{
   margin:0;
-  font-family:Poppins,sans-serif;
-  background:#fff7fb;
-  color:#2b2333;
+  font-family:'Poppins',sans-serif;
+  background:var(--bg);
+  color:var(--text);
 }
 
 .container{
-  max-width:950px;
+  max-width:1100px;
   margin:auto;
   padding:20px;
 }
 
 .hero{
   text-align:center;
-  padding:20px;
+  background:#fff;
+  padding:30px 20px;
+  border-radius:24px;
+  box-shadow:var(--shadow);
+  margin-top:20px;
 }
 
-h1{
-  font-size:2.2rem;
-  color:#ff4fa0;
+.hero-logo{
+  width:160px;
+  margin-bottom:10px;
+}
+
+.hero-subtitle{
+  font-size:.9rem;
+  letter-spacing:1px;
+  color:#a48cff;
+  font-weight:600;
+}
+
+.hero-title{
+  font-size:2.3rem;
+  color:var(--primary);
   line-height:1.2;
 }
 
 .sub{
-  font-size:1rem;
   color:#555;
-  margin-top:10px;
+  font-size:1rem;
+  max-width:700px;
+  margin:auto;
 }
 
 .btn{
@@ -58,7 +110,7 @@ h1{
   margin-top:18px;
   padding:16px 28px;
   border-radius:999px;
-  background:linear-gradient(135deg,#ff4fa0,#a855f7);
+  background:linear-gradient(135deg,var(--primary),var(--secondary));
   color:white;
   font-weight:700;
   text-decoration:none;
@@ -69,102 +121,194 @@ h1{
   border-radius:20px;
   overflow:hidden;
   box-shadow:0 12px 30px rgba(0,0,0,.15);
-  background:#000;
+  position:relative;
 }
 
-iframe{
+.video iframe{
   width:100%;
-  height:420px;
+  height:500px;
   border:none;
 }
 
-@media(max-width:600px){
-  iframe{height:230px;}
+@media(max-width:700px){
+  .video iframe{
+    height:250px;
+  }
+
+  .hero-title{
+    font-size:1.8rem;
+  }
+}
+
+.cupos-box{
+  background:#ffe6f3;
+  color:#ff3c8d;
+  padding:10px 18px;
+  border-radius:14px;
+  font-weight:600;
+  display:inline-block;
+  margin-top:20px;
+  animation:pulse 2.5s infinite;
+}
+
+@keyframes pulse{
+  0%{transform:scale(1)}
+  50%{transform:scale(1.04)}
+  100%{transform:scale(1)}
+}
+
+.countdown-box{
+  margin-top:15px;
+  font-weight:700;
+  background:#ffe6f7;
+  padding:10px 18px;
+  border-radius:14px;
+  display:inline-block;
 }
 
 .section{
-  margin-top:40px;
+  margin-top:50px;
 }
 
-h2{
+.section h2{
   text-align:center;
-  color:#ff4fa0;
+  color:var(--primary);
+  font-size:1.9rem;
 }
 
 .box{
   background:#fff;
-  padding:20px;
+  padding:25px;
   border-radius:18px;
-  box-shadow:0 10px 25px rgba(0,0,0,.06);
-  margin-top:15px;
+  box-shadow:var(--shadow);
+  margin-top:20px;
 }
 
 ul{
   list-style:none;
   padding:0;
-  line-height:1.8;
+  line-height:1.9;
 }
 
 li::before{
   content:"✔ ";
-  color:#ff4fa0;
+  color:var(--primary);
 }
 
 .highlight{
-  color:#ff4fa0;
-  font-weight:600;
+  color:var(--primary);
+  font-weight:700;
 }
 
-.cta{
+.grid-2{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+}
+
+@media(max-width:700px){
+  .grid-2{
+    grid-template-columns:1fr;
+  }
+}
+
+.certificado-container{
+  max-width:600px;
+  margin:auto;
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:var(--shadow);
+}
+
+.certificado-container img{
+  width:100%;
+}
+
+.cta-final{
   text-align:center;
-  margin-top:45px;
+  margin:70px 0;
 }
 
 .small{
-  font-size:.85rem;
+  font-size:.9rem;
   color:#777;
 }
+
+footer{
+  text-align:center;
+  font-size:.9rem;
+  color:#777;
+  margin-bottom:30px;
+}
+
+footer a{
+  color:var(--primary);
+  text-decoration:none;
+  font-weight:600;
+  margin:0 10px;
+}
+
 </style>
 </head>
 
 <body>
 
+<!-- GTM noscript -->
+<noscript>
+<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WKQQJZHX"
+height="0"
+width="0"
+style="display:none;visibility:hidden">
+</iframe>
+</noscript>
+
 <div class="container">
 
-<!-- HERO -->
-<div class="hero">
+<section class="hero">
 
-<h1>Deja de depender de comprar ropa… y empieza a crear la tuya</h1>
+<img
+src="https://raw.githubusercontent.com/costurapremiuum/costurapremiuum.github.io/main/costura%20premium%20logo.png"
+class="hero-logo">
+
+<p class="hero-subtitle">
+CURSO COMPLETO DE DISEÑO, CORTE Y CONFECCIÓN
+</p>
+
+<a href="/clase-gratis/" class="btn">
+🎁 Ver Clase Gratis + Libro Gratis
+</a>
+
+<h1 class="hero-title">
+Deja de depender de comprar ropa… y empieza a crear la tuya
+</h1>
 
 <p class="sub">
 Aprende costura desde cero con un método paso a paso que te guía hasta crear prendas reales.
 </p>
 
-<a class="btn"
-href="https://go.hotmart.com/E106051689D?ap=fba1"
-onclick="fbq('track','InitiateCheckout');">
-🔥 Quiero empezar ahora
-</a>
-
-</div>
-
-<!-- VIDEO -->
 <div class="video">
-
-<div style="position:relative; border-radius:20px; overflow:hidden;">
-
-<img src="https://images.unsplash.com/photo-1603251579431-8041402bdc32?auto=format&fit=crop&w=1200&q=80"
-style="width:100%; display:block;">
-
 <iframe
 src="https://drive.google.com/file/d/1PbdrRkbfcbTw8Picqk0VY4d1_xqeYZdh/preview"
-style="position:absolute; top:0; left:0; width:100%; height:100%;"
 allowfullscreen>
 </iframe>
-
 </div>
 
+<div class="cupos-box">
+🔥 80 cupos disponibles hoy
 </div>
+
+<br><br>
+
+<a
+href="https://go.hotmart.com/E106051689D?ap=fba1"
+class="btn"
+onclick="fbq('track','InitiateCheckout');">
+💖 Quiero empezar ahora
+</a>
+
+<p id="countdown" class="countdown-box"></p>
+
+</section>
 
 <!-- DOLOR -->
 <div class="section">
@@ -196,7 +340,9 @@ Es que necesitas un método claro, ordenado y paso a paso.
 </p>
 
 <p>
-<span class="highlight">Costura Premium</span> está diseñado exactamente para eso: llevarte desde cero hasta crear prendas completas sin confundirte en el proceso.
+<span class="highlight">Costura Premium</span>
+está diseñado exactamente para eso:
+llevarte desde cero hasta crear prendas completas sin confundirte en el proceso.
 </p>
 
 </div>
@@ -208,7 +354,8 @@ Es que necesitas un método claro, ordenado y paso a paso.
 
 <h2>Lo que puedes lograr</h2>
 
-<div class="box">
+<div class="box grid-2">
+
 <ul>
 <li>Crear ropa desde casa paso a paso</li>
 <li>Aprender desde cero sin experiencia</li>
@@ -216,11 +363,20 @@ Es que necesitas un método claro, ordenado y paso a paso.
 <li>Entender patrones de forma simple</li>
 <li>Aprender a tu ritmo</li>
 </ul>
-</div>
+
+<ul>
+<li>Más de 1.100 clases</li>
+<li>Acceso 24/7</li>
+<li>Patrones descargables</li>
+<li>Certificado incluido</li>
+<li>Actualizaciones gratis</li>
+</ul>
 
 </div>
 
-<!-- DINERO / OPORTUNIDAD -->
+</div>
+
+<!-- OPORTUNIDAD -->
 <div class="section">
 
 <h2>No es solo para tu ropa…</h2>
@@ -245,8 +401,19 @@ Muchas personas empiezan aprendiendo para ellas y luego descubren una habilidad 
 
 </div>
 
+<!-- CERTIFICADO -->
+<div class="section">
+
+<h2>Certificado incluido</h2>
+
+<div class="certificado-container">
+<img src="https://raw.githubusercontent.com/costurapremiuum/costurapremiuum.github.io/main/Certificado%20dise%C3%B1o.jpg">
+</div>
+
+</div>
+
 <!-- CTA FINAL -->
-<div class="cta">
+<div class="cta-final">
 
 <h2>Si llegaste hasta aquí… no es casualidad</h2>
 
@@ -254,17 +421,111 @@ Muchas personas empiezan aprendiendo para ellas y luego descubren una habilidad 
 Esto puede ser el inicio de algo nuevo para ti.
 </p>
 
-<a class="btn"
+<a
 href="https://go.hotmart.com/E106051689D?ap=fba1"
+class="btn"
 onclick="fbq('track','InitiateCheckout');">
+
 💖 Sí, quiero aprender costura
+
 </a>
 
-<p class="small">Acceso inmediato después de la inscripción</p>
+<p class="small">
+Acceso inmediato después de la inscripción
+</p>
 
 </div>
 
+<footer>
+
+<p>Sígueme en redes:</p>
+
+<a href="https://www.instagram.com/costuraindustrial_">
+Instagram
+</a>
+
+<a href="https://www.tiktok.com/@costurando_ando">
+TikTok
+</a>
+
+<a href="https://web.facebook.com/Costurindustrial">
+Facebook
+</a>
+
+<br><br>
+
+<a href="privacidad.html">
+Política de Privacidad
+</a>
+
+<p>© 2026 Costurando Ando</p>
+
+</footer>
+
 </div>
+
+<script>
+
+function actualizarCuentaRegresiva(){
+
+  const ahora=new Date();
+  const fin=new Date();
+
+  fin.setHours(23,59,59,999);
+
+  const d=fin-ahora;
+
+  const h=Math.floor(d/36e5);
+  const m=Math.floor(d%36e5/6e4);
+  const s=Math.floor(d%6e4/1e3);
+
+  document.getElementById("countdown").innerHTML=
+  `⏳ Oferta disponible hoy — ${h}h ${m}m ${s}s`;
+
+}
+
+setInterval(actualizarCuentaRegresiva,1000);
+actualizarCuentaRegresiva();
+
+</script>
+
+<!-- Cookies -->
+<div id="cookie-banner"
+style="display:none; position:fixed; bottom:0; left:0; width:100%; background:#111; color:white; padding:15px; text-align:center; font-size:14px; z-index:9999;">
+
+Usamos cookies y tecnologías de seguimiento para mejorar tu experiencia y analizar el tráfico del sitio.
+
+<button id="cookie-btn"
+style="margin-left:10px;padding:8px 15px;border:none;background:#fff;color:#111;cursor:pointer;border-radius:6px;">
+
+Aceptar
+
+</button>
+
+</div>
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  const banner = document.getElementById("cookie-banner");
+  const btn = document.getElementById("cookie-btn");
+
+  const accepted = localStorage.getItem("cookiesAccepted");
+
+  if (!accepted) {
+    banner.style.display = "block";
+  }
+
+  btn.addEventListener("click", function () {
+    localStorage.setItem("cookiesAccepted", "true");
+    banner.style.display = "none";
+  });
+
+});
+
+</script>
 
 </body>
 </html>
+```
