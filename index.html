@@ -3,8 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Costura Premium | Aprende la Camisa Manga Kimono - Tendencia 2026</title>
-<meta name="description" content="Aprende costura desde cero con la clase tendencia 2026: Camisa Manga Kimono. Método paso a paso + 1.100 clases + certificado.">
+<title>Costura Premium | Clase Gratis Camisa Kimono 2026</title>
 
 <!-- TikTok Pixel -->
 <script>
@@ -32,7 +31,7 @@ f.parentNode.insertBefore(j,f);
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
 <!-- Meta Pixel -->
 <script>
@@ -53,29 +52,58 @@ fbq('track','PageView');
 <style>
 :root{ --primary:#ff2d78; --secondary:#a855f7; --bg:#fff7fb; --text:#2b2333; --shadow:0 10px 25px rgba(0,0,0,.08);}
 body{ margin:0; font-family:'Poppins',sans-serif; background:var(--bg); color:var(--text);}
-.container{ max-width:1000px; margin:auto; padding:20px;}
-.hero{ text-align:center; background:#fff; padding:35px 20px; border-radius:24px; box-shadow:var(--shadow); margin-top:20px;}
-.hero-title{ font-size:2.3rem; color:var(--primary); line-height:1.2;}
-.sub{ color:#555; font-size:1.1rem; max-width:700px; margin:15px auto;}
-.btn{ display:inline-block; margin-top:18px; padding:18px 32px; border-radius:999px; background:linear-gradient(135deg,var(--primary),var(--secondary)); color:white; font-weight:700; text-decoration:none; transition:.3s; font-size:18px;}
+.container{ max-width:900px; margin:auto; padding:20px;}
+.hero{ text-align:center; background:#fff; padding:30px 20px; border-radius:24px; box-shadow:var(--shadow); margin-top:20px;}
+.hero-title{ font-size:2.1rem; color:var(--primary); line-height:1.2; margin:0 0 10px 0;}
+.sub{ color:#555; font-size:1.05rem; max-width:600px; margin:15px auto;}
+.btn{ display:inline-block; margin-top:15px; padding:18px 32px; border-radius:999px; background:linear-gradient(135deg,var(--primary),var(--secondary)); color:white; font-weight:700; text-decoration:none; transition:.3s; font-size:18px; width:90%; max-width:400px;}
 .btn:hover{ transform:scale(1.03); box-shadow:0 8px 20px rgba(255,45,120,0.4);}
-.video{ margin:30px 0; border-radius:20px; overflow:hidden; box-shadow:0 12px 30px rgba(0,0,0,.15);}
-.video iframe{ width:100%; height:500px; border:none;}
-@media(max-width:700px){.hero-title{ font-size:1.8rem;}.video iframe{ height:250px;} }
-.section{ margin-top:55px;}
-.section h2{ text-align:center; color:var(--primary); font-size:1.9rem;}
-.box{ background:#fff; padding:25px; border-radius:18px; box-shadow:var(--shadow); margin-top:20px;}
-ul{ list-style:none; padding:0; line-height:1.9;}
+.btn-dark{ background:#333; margin-top:10px; }
+
+.miniatura-clase{
+  margin:25px 0 10px 0;
+  position:relative;
+  cursor:pointer;
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:0 12px 30px rgba(0,0,0,.15);
+}
+.miniatura-clase img{ width:100%; display:block; }
+.miniatura-play{
+  position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+  background:rgba(255,45,120,0.9); width:70px; height:70px; border-radius:50%;
+  display:flex; align-items:center; justify-content:center; pointer-events:none;
+}
+.miniatura-play::after{
+  content:''; border-left:18px solid white; border-top:11px solid transparent; border-bottom:11px solid transparent; margin-left:4px;
+}
+
+.flecha-boton{ text-align:center; margin:0 0 5px 0; animation:bounce 2s infinite; }
+.flecha-boton svg{ width:45px; fill:var(--primary); }
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+  40% {transform: translateY(-12px);}
+  60% {transform: translateY(-6px);}
+}
+
+.section{ margin-top:40px;}
+.section h2{ text-align:center; color:var(--primary); font-size:1.7rem; margin-bottom:20px;}
+.box{ background:#fff; padding:20px; border-radius:18px; box-shadow:var(--shadow);}
+ul{ list-style:none; padding:0; line-height:1.8; margin:0;}
 li::before{ content:"✔ "; color:var(--primary); font-weight:700;}
-.highlight{ color:var(--primary); font-weight:700;}
-.grid-2{ display:grid; grid-template-columns:1fr 1fr; gap:20px;}
-@media(max-width:700px){.grid-2{ grid-template-columns:1fr;} }
-.certificado-container{ max-width:600px; margin:auto; border-radius:20px; overflow:hidden; box-shadow:var(--shadow);}
+
+.testimonios{ display:grid; grid-template-columns:1fr 1fr; gap:15px; }
+.testimonial{ background:#fff; padding:18px; border-radius:16px; box-shadow:var(--shadow); text-align:center; border-top:3px solid var(--primary);}
+.testimonial img{ width:60px; height:60px; border-radius:50%; object-fit:cover; margin-bottom:8px;}
+.testimonial.nombre{ font-weight:700; color:var(--primary); margin:5px 0; font-size:14px;}
+.testimonial.texto{ font-size:13px; color:#555; line-height:1.5; font-style:italic; margin:8px 0;}
+.testimonial.stars{ color:#FFD700; font-size:16px; margin:5px 0;}
+@media(max-width:700px){.testimonios{ grid-template-columns:1fr;}.hero-title{ font-size:1.7rem;} }
+
+.certificado-container{ max-width:500px; margin:20px auto 0; border-radius:16px; overflow:hidden; box-shadow:var(--shadow);}
 .certificado-container img{ width:100%;}
-.cta-final{ text-align:center; margin:70px 0;}
-.small{ font-size:.9rem; color:#777;}
-footer{ text-align:center; font-size:.9rem; color:#777; margin-bottom:30px;}
-footer a{ color:var(--primary); text-decoration:none; font-weight:600; margin:0 10px;}
+footer{ text-align:center; font-size:.85rem; color:#777; margin:40px 0 20px 0;}
+footer a{ color:var(--primary); text-decoration:none; font-weight:600; margin:0 8px;}
 </style>
 </head>
 
@@ -85,72 +113,63 @@ footer a{ color:var(--primary); text-decoration:none; font-weight:600; margin:0 
 <div class="container">
 
 <section class="hero">
-<h1 class="hero-title">De Cero a Tu Primera Prenda Tendencia 2026: Camisa Manga Kimono</h1>
-<p class="sub">La profe Isabel te enseña paso a paso cómo hacer esta camisa elegante desde cero. Sin experiencia previa.</p>
+<h1 class="hero-title">Aprende la Camisa Manga Kimono Tendencia 2026</h1>
+<p class="sub">La profe Isabel te enseña paso a paso desde cero. Descarga la clase + molde PDF gratis.</p>
 
-<div class="video">
-<iframe src="https://www.youtube.com/embed/HCZFQbfXmMY" allowfullscreen></iframe>
+<a href="/clase-gratis/" onclick="fbq('track','Lead'); ttq.track('ClickButton');">
+  <div class="miniatura-clase">
+    <img src="https://i.ytimg.com/vi/HCZFQbfXmMY/maxresdefault.jpg" alt="Clase Camisa Manga Kimono">
+    <div class="miniatura-play"></div>
+  </div>
+</a>
+
+<div class="flecha-boton">
+  <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
 </div>
 
-<a href="/clase-gratis/" class="btn" onclick="fbq('track','Lead'); ttq.track('ClickButton');"> 🎁 Descargar Clase + Molde PDF Gratis </a>
-<br><br>
-
-<a href="https://go.hotmart.com/E106051689D?ap=e4ec" class="btn" onclick="fbq('track','InitiateCheckout'); ttq.track('InitiateCheckout');">💖 Quiero Acceso al Curso Completo</a>
+<a href="/clase-gratis/" class="btn" onclick="fbq('track','Lead'); ttq.track('ClickButton');">🎁 DESCARGAR CLASE GRATIS AHORA</a>
+<a href="https://go.hotmart.com/E106051689D?ap=e4ec" class="btn btn-dark" onclick="fbq('track','InitiateCheckout'); ttq.track('InitiateCheckout');">💖 Ver Curso Completo</a>
 </section>
 
+<!-- TESTIMONIOS -->
 <div class="section">
-<h2>¿Te pasa esto cuando quieres coser?</h2>
+<h2>Ellas ya empezaron</h2>
+<div class="testimonios">
+  <div class="testimonial">
+    <img src="https://i.pravatar.cc/150?img=1" alt="María">
+    <div class="stars">★★★★★</div>
+    <p class="nombre">María G., Santiago</p>
+    <p class="texto">"Con la clase Kimono por fin entendí las mangas. Ya hice 3 para vender."</p>
+  </div>
+  <div class="testimonial">
+    <img src="https://i.pravatar.cc/150?img=5" alt="Carmen">
+    <div class="stars">★★★★★</div>
+    <p class="nombre">Carmen R., México</p>
+    <p class="texto">"Empecé de cero. En 2 meses ya hago vestidos para mis hijas. El certificado me dio clientas."</p>
+  </div>
+</div>
+
+<!-- PSICOLÓGICO CORTO -->
+<div class="section">
+<h2>¿Te pasa esto?</h2>
 <div class="box">
 <ul>
-<li>Ves una prenda hermosa en TikTok pero no sabes cómo hacer el molde</li>
-<li>Descargas patrones gratis y no calzan con tu cuerpo</li>
-<li>Empiezas a coser y terminas frustrada porque no queda como en el video</li>
-<li>Quieres aprender pero los cursos son caros o muy técnicos</li>
+<li>Ves prendas hermosas pero no sabes hacer el molde</li>
+<li>Los tutoriales de YouTube no explican paso a paso</li>
+<li>Quieres aprender pero te frustras sola</li>
+<li>Necesitas ver a alguien cosiendo en tiempo real</li>
 </ul>
 </div>
 </div>
 
+<!-- CERTIFICADO -->
 <div class="section">
-<h2>El problema no eres tú. Es el método.</h2>
-<div class="box">
-<p>Necesitas ver exactamente cómo la profe corta, cose y arma la prenda <span class="highlight">en tiempo real</span>, con el molde explicado talla por talla.</p>
-<p>En <span class="highlight">Costura Premium</span> tienes eso: 1.100 clases en video donde Isabel te muestra desde cómo enhebrar la aguja hasta hacer esta Camisa Kimono y 200 prendas más.</p>
-</div>
-
-<div class="section">
-<h2>Dentro de Costura Premium tienes:</h2>
-<div class="box grid-2">
-<ul>
-<li>Clase Camisa Kimono paso a paso</li>
-<li>Moldes descargables de S a XXL</li>
-<li>Blusas, vestidos, pantalones, chaquetas</li>
-<li>Técnica de corte y confección clara</li>
-</ul>
-<ul>
-<li>Más de 1.100 clases en video HD</li>
-<li>Acceso 24/7 de por vida</li>
-<li>Actualizaciones gratis cada mes</li>
-<li>Certificado oficial al terminar</li>
-</ul>
-</div>
-</div>
-
-<div class="section">
-<h2>Certificado incluido</h2>
+<h2>Certificado oficial incluido</h2>
 <div class="certificado-container">
 <img src="https://raw.githubusercontent.com/costurapremiuum/costurapremiuum.github.io/main/Certificado%20dise%C3%B1o.jpg">
 </div>
-</div>
-
-<div class="cta-final">
-<h2>Empieza hoy con la clase gratis</h2>
-<p class="small">Descarga el video + PDF de la Camisa Kimono. Si te gusta, tienes todo el curso adentro.</p>
-<a href="/clase-gratis/" class="btn" onclick="fbq('track','Lead');">💖 Sí, Quiero Mi Clase Gratis</a>
-<p class="small">Acceso inmediato al curso completo después de la inscripción</p>
-</div>
 
 <footer>
-<p>Sígueme en redes:</p>
 <a href="https://www.instagram.com/costuraindustrial_">Instagram</a>
 <a href="https://www.tiktok.com/@costurando_ando">TikTok</a>
 <a href="https://facebook.com/Costurindustrial">Facebook</a>
@@ -160,23 +179,5 @@ footer a{ color:var(--primary); text-decoration:none; font-weight:600; margin:0 
 </footer>
 </div>
 
-<div id="cookie-banner" style="display:none; position:fixed; bottom:0; left:0; width:100%; background:#111; color:white; padding:15px; text-align:center; font-size:14px; z-index:9999;">
-Usamos cookies y tecnologías de seguimiento para mejorar tu experiencia y analizar el tráfico del sitio.
-<button id="cookie-btn" style="margin-left:10px;padding:8px 15px;border:none;background:#fff;color:#111;cursor:pointer;border-radius:6px;">Aceptar</button>
-</div>
-
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  const banner = document.getElementById("cookie-banner");
-  const btn = document.getElementById("cookie-btn");
-  const accepted = localStorage.getItem("cookiesAccepted");
-  if (!accepted) { banner.style.display = "block"; }
-  btn.addEventListener("click", function () {
-    localStorage.setItem("cookiesAccepted", "true");
-    banner.style.display = "none";
-  });
-});
-</script>
-
 </body>
-</html>
+  </html>
