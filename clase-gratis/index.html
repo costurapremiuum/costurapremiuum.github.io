@@ -1,12 +1,11 @@
-<!-- LANDING: Clase Gratis con WhatsApp - Diseño Profesional -->
 <!doctype html>
 <html lang="es">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Clase Gratis • Costura Premium — Silvana</title>
-  <meta name="description" content="Clase gratis online de costura: aprende 60 diseños de blusas y recibe un libro en PDF de patronaje totalmente gratis.">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <title>Clase Gratis • Camisa Manga Kimono - Costura Premium</title>
+  <meta name="description" content="Clase gratis + molde PDF: Aprende a hacer una Camisa Manga Kimono elegante desde cero. Regalo de Costura Premium.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root{
       --pink:#ff2d78;
@@ -16,21 +15,18 @@
     }
     * { box-sizing: border-box; margin:0; padding:0;}
     body{font-family:'Inter',system-ui,Arial;background:var(--bg);color:var(--text);}
-    .wrap{max-width:960px;margin:40px auto;padding:20px;}
+    .wrap{max-width:720px;margin:40px auto;padding:20px;}
     header{text-align:center;margin-bottom:30px;}
-    header h1{font-size:2.4rem;color:var(--pink);}
-    .hero{display:grid;grid-template-columns:1fr 450px;gap:30px;align-items:center;}
-    @media(max-width:768px){.hero{grid-template-columns:1fr;gap:20px;}}
-    .card{background:var(--light);padding:30px;border-radius:15px;box-shadow:0 8px 25px rgba(0,0,0,0.08);}
-    .card input, .card button{width:100%;margin-bottom:15px;font-size:16px;padding:14px;border-radius:8px;border:1px solid #ddd;}
+    header h1{font-size:2.2rem;color:var(--pink);font-weight:800;line-height:1.2;}
+    .card{background:var(--light);padding:40px 30px;border-radius:15px;box-shadow:0 8px 25px rgba(0,0,0,0.08);max-width:500px;margin:0 auto;}
+    .card input, .card button{width:100%;margin-bottom:15px;font-size:16px;padding:16px;border-radius:8px;border:1px solid #ddd;}
     .card input:focus{outline:2px solid var(--pink);border-color:var(--pink);}
     .cta{background:var(--pink);color:#fff;font-weight:700;text-decoration:none;cursor:pointer;border:none;transition:all 0.3s;font-size:18px;}
-    .cta:hover{background:#e52a6c;}
-    .small{font-size:14px;color:#666;}
-    ul.benefits{list-style:none;margin:20px 0 30px 0;padding:0;}
-    ul.benefits li{margin-bottom:12px;font-size:16px;position:relative;padding-left:28px;}
-    ul.benefits li::before{content:'✔';position:absolute;left:0;color:var(--pink);}
-    iframe{width:100%;height:260px;border-radius:12px;border:none;box-shadow:0 8px 20px rgba(0,0,0,0.05);}
+    .cta:hover{background:#e52a6c;transform: translateY(-2px);box-shadow:0 6px 14px rgba(255,45,120,0.4);}
+    .small{font-size:14px;color:#666;line-height:1.5;text-align:center;}
+    ul.benefits{list-style:none;margin:30px 0;padding:0;}
+    ul.benefits li{margin-bottom:15px;font-size:16px;position:relative;padding-left:28px;text-align:left;}
+    ul.benefits li::before{content:'✔';position:absolute;left:0;color:var(--pink);font-weight:700;}
     footer{margin-top:40px;text-align:center;color:#555;font-size:14px;}
     footer span{display:block;margin-top:5px;color:#aaa;}
   </style>
@@ -38,39 +34,30 @@
 <body>
   <div class="wrap">
     <header>
-      <h1>Clase Gratis: Aprende 60 Diseños de Blusas</h1>
-      <p class="small">Regístrate ahora y recibe tu clase + libro PDF directo a tu WhatsApp (y correo opcional).</p>
+      <h1>REGALO TENDENCIA 2026:<br>Clase Camisa Manga Kimono + Molde PDF</h1>
+      <p class="small">La profe Isabel de Costura Premium te regala su clase más nueva de 24 minutos</p>
     </header>
 
-    <section class="hero">
-      <div>
-        <ul class="benefits">
-          <li>Aprende las bases del patronaje y costura</li>
-          <li>Trucos para acabados perfectos</li>
-          <li>Diseños adaptables a cualquier talla</li>
-        </ul>
+    <div class="card">
+      <ul class="benefits">
+        <li><b>Video paso a paso:</b> Clase elegante, fácil y moderna</li>
+        <li><b>PDF descargable:</b> Con molde y tabla de medidas</li>
+        <li><b>Desde cero:</b> No necesitas ser experta en costura</li>
+        <li><b>100% Gratis:</b> Te llega al correo en 2 minutos</li>
+      </ul>
 
-        <div class="card">
-          <form id="leadForm">
-            <input type="text" id="name" name="name" placeholder="Tu nombre" required />
-            <input type="email" id="email" name="email" placeholder="Email (opcional)" />
-            <input type="tel" id="whatsapp" name="whatsapp" placeholder="+56 9 1234 5678" pattern="^\+?\d{7,15}$" title="Ingresa tu número de WhatsApp, ejemplo: +56912345678" required />
-            <input type="hidden" id="source" value="landing_clase_gratis" />
-            <button type="submit" class="cta">Registrarme y recibir el libro gratis</button>
-            <p class="small">Solo toma 30 segundos. Recibirás la clase + libro PDF en tu WhatsApp (y en tu correo si lo dejas).</p>
-          </form>
-        </div>
-      </div>
-
-      <div>
-        <iframe src="https://drive.google.com/file/d/1PbdrRkbfcbTw8Picqk0VY4d1_xqeYZdh/preview" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        <p class="small" style="margin-top:10px;">Clase online gratuita de Costura Premium.</p>
-      </div>
-    </section>
+      <form id="leadForm">
+        <input type="text" id="name" name="name" placeholder="Tu nombre" required />
+        <input type="email" id="email" name="email" placeholder="Tu mejor email" required />
+        <input type="hidden" id="source" value="landing_clase_gratis" />
+        <button type="submit" class="cta">SÍ, ENVIARME LA CLASE + MOLDE GRATIS</button>
+        <p class="small">Cero spam. Puedes darte de baja cuando quieras.</p>
+      </form>
+    </div>
 
     <footer>
       Cada puntada cuenta: empieza hoy y verás resultados increíbles ✂️✨
-      <span>© 2026 Todos los derechos reservados • Silvana</span>
+      <span>© 2026 Costura Premium | Afiliada Oficial</span>
     </footer>
   </div>
 
@@ -80,12 +67,11 @@
 
       const name     = document.getElementById('name').value.trim();
       const email    = document.getElementById('email').value.trim();
-      const whatsapp = document.getElementById('whatsapp').value.trim();
       const source   = document.getElementById('source').value || 'landing_clase_gratis';
 
       const FORM_ENDPOINT = "https://script.google.com/macros/s/AKfycbzAVTFw3S9zFNG5t8YnuPItOmNf7Pk010IeS8nXPuZSQMP3G3bllS2MkiPzjrsQCnhvvQ/exec";
 
-      // Mostrar loader
+      // Loader
       const loader = document.createElement('div');
       loader.innerHTML = `
         <div style="position:fixed;top:0;left:0;width:100%;height:100%;
@@ -100,22 +86,21 @@
       `;
       document.body.appendChild(loader);
 
-      // Redirigir de inmediato
+      // Redirigir a tu página de gracias existente
       window.location.href = "https://corteyconfeccion.online/clase-gratis/gracias.html";
 
-      // Enviar datos al Sheet (sin bloquear la redirección)
+      // Enviar datos al Sheet
       const formData = new FormData();
       formData.append('name', name);
       formData.append('email', email);
-      formData.append('whatsapp', whatsapp);
       formData.append('source', source);
-
-      fetch(FORM_ENDPOINT, {method:'POST',body:formData,mode:'no-cors'})
-        .catch(err=>console.log('Error enviando datos:', err));
+      
+      fetch(FORM_ENDPOINT, {
+        method: 'POST',
+        body: formData,
+        mode: 'no-cors'
+      }).catch(err => console.error('Error:', err));
     });
   </script>
 </body>
 </html>
-
-
-
