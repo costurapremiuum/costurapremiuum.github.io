@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="es">
 <head> 
-</div>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Clase Gratis • Camisa Manga Kimono - Costura Premium</title>
@@ -13,10 +12,30 @@
       --bg:#fff;
       --text:#222;
       --light:#f8f8fb;
+      --yellow:#fff3cd;
+      --green:#d1f7e5;
     }
     * { box-sizing: border-box; margin:0; padding:0;}
     body{font-family:'Inter',system-ui,Arial;background:var(--bg);color:var(--text);}
     .wrap{max-width:720px;margin:40px auto;padding:20px;}
+    
+    /* BANNER URGENCIA */
+    .urgency-bar{
+      background:linear-gradient(90deg, var(--pink), #e52a6c);
+      color:#fff;
+      text-align:center;
+      padding:12px 20px;
+      font-weight:700;
+      font-size:15px;
+      border-radius:10px;
+      margin-bottom:25px;
+      animation:pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100%{ box-shadow:0 0 0 0 rgba(255,45,120,0.4); }
+      50%{ box-shadow:0 0 0 8px rgba(255,45,120,0); }
+    }
+    
     header{text-align:center;margin-bottom:30px;}
     header h1{font-size:2.2rem;color:var(--pink);font-weight:800;line-height:1.2;}
     .card{background:var(--light);padding:40px 30px;border-radius:15px;box-shadow:0 8px 25px rgba(0,0,0,0.08);max-width:500px;margin:0 auto;}
@@ -28,12 +47,77 @@
     ul.benefits{list-style:none;margin:30px 0;padding:0;}
     ul.benefits li{margin-bottom:15px;font-size:16px;position:relative;padding-left:28px;text-align:left;}
     ul.benefits li::before{content:'✔';position:absolute;left:0;color:var(--pink);font-weight:700;}
+    
+    /* CAJA PRECIO + URGENCIA */
+    .price-box{
+      background:var(--yellow);
+      border:2px dashed #ffc107;
+      padding:16px;
+      border-radius:8px;
+      text-align:center;
+      margin:20px 0;
+      font-weight:600;
+    }
+    .price-box .old-price{
+      text-decoration:line-through;
+      color:#888;
+      font-size:16px;
+      margin-right:8px;
+    }
+    .price-box .new-price{
+      color:var(--pink);
+      font-size:24px;
+      font-weight:800;
+    }
+    .price-box .note{
+      display:block;
+      font-size:13px;
+      color:#856404;
+      margin-top:6px;
+      font-weight:500;
+    }
+    
+    /* CAJA GARANTIA */
+    .guarantee{
+      background:var(--green);
+      border:1px solid #7dd3ae;
+      padding:16px;
+      border-radius:8px;
+      margin-top:15px;
+      display:flex;
+      align-items:flex-start;
+      gap:12px;
+      text-align:left;
+    }
+    .guarantee .icon{
+      font-size:28px;
+      line-height:1;
+    }
+    .guarantee strong{
+      display:block;
+      color:#0f5132;
+      margin-bottom:4px;
+      font-size:15px;
+    }
+    .guarantee p{
+      font-size:13px;
+      color:#0f5132;
+      line-height:1.4;
+      margin:0;
+    }
+    
     footer{margin-top:40px;text-align:center;color:#555;font-size:14px;}
     footer span{display:block;margin-top:5px;color:#aaa;}
   </style>
 </head>
 <body>
   <div class="wrap">
+    
+    <!-- BANNER URGENCIA ARRIBA -->
+    <div class="urgency-bar">
+      ⏰ OFERTA FLASH: Accede al Programa Completo HOY por $87 — Mañana sube a $99
+    </div>
+
     <header>
       <h1>REGALO TENDENCIA 2026:<br>Clase Camisa Manga Kimono + Molde PDF</h1>
       <p class="small">La profe Isabel de Costura Premium te regala su clase más nueva de 24 minutos</p>
@@ -47,6 +131,13 @@
         <li><b>100% Gratis:</b> Te llega al correo en 2 minutos</li>
       </ul>
 
+      <!-- CAJA PRECIO URGENCIA -->
+      <div class="price-box">
+        <span class="old-price">$99</span>
+        <span class="new-price">$87 HOY</span>
+        <span class="note">⚡ Precio sube mañana a medianoche. Cupos limitados.</span>
+      </div>
+
       <form id="leadForm">
         <input type="text" id="name" name="nombre" placeholder="Tu nombre" required />
         <input type="email" id="email" name="email" placeholder="Tu mejor email" required />
@@ -54,10 +145,20 @@
         <button type="submit" class="cta">SÍ, ENVIARME LA CLASE + MOLDE GRATIS</button>
         <p class="small">Cero spam. Puedes darte de baja cuando quieras.</p>
       </form>
+
+      <!-- CAJA GARANTIA -->
+      <div class="guarantee">
+        <div class="icon">🛡️</div>
+        <div>
+          <strong>Garantía Incondicional de 30 Días</strong>
+          <p>Si el programa completo no te encanta, te devolvemos el 100% de tu dinero. Sin preguntas. Riesgo cero para ti.</p>
+        </div>
+      </div>
+
     </div>
 
     <footer>
-      Cada puntada cuenta: empieza hoy y verás resultados increíbles ✂️✨
+      Cada puntada cuenta: empieza hoy y verás resultados increíbles ✂✨
       <span>© 2026 Costura Premium | Afiliada Oficial</span>
     </footer>
   </div>
@@ -89,7 +190,7 @@
 
     // Enviar datos AL SHEET PRIMERO, después redirigir
     const formData = new FormData();
-    formData.append('nombre', name);  // ← ARREGLADO: key "nombre", valor name
+    formData.append('nombre', name);
     formData.append('email', email);
     formData.append('source', source);
     
@@ -100,12 +201,10 @@
     .then(response => response.text())
     .then(data => {
       console.log('Apps Script respondió:', data);
-      // Solo redirigir cuando ya se envió
       window.location.href = "https://corteyconfeccion.online/clase-gratis/gracias.html";
     })
     .catch(err => {
       console.error('Error:', err);
-      // Redirigir igual aunque falle, pero al menos lo intentamos
       window.location.href = "https://corteyconfeccion.online/clase-gratis/gracias.html";
     });
   });
