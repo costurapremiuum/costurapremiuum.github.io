@@ -81,6 +81,82 @@
     margin-bottom: 15px;
     line-height: 1.5;
   }
+  
+  /* NUEVO: BARRA URGENCIA */
+  .urgency-bar{
+    background:linear-gradient(90deg, #ff2d78, #e52a6c);
+    color:#fff;
+    text-align:center;
+    padding:12px 15px;
+    font-weight:700;
+    font-size:14px;
+    border-radius:12px;
+    margin:20px 0 15px 0;
+    animation:pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100%{ box-shadow:0 0 0 0 rgba(255,45,120,0.4); }
+    50%{ box-shadow:0 0 0 8px rgba(255,45,120,0); }
+  }
+  
+  /* NUEVO: CAJA PRECIO */
+  .price-box{
+    background:#fff3cd;
+    border:2px dashed #ffc107;
+    padding:16px;
+    border-radius:12px;
+    text-align:center;
+    margin:15px 0;
+    font-weight:600;
+  }
+  .price-box .old-price{
+    text-decoration:line-through;
+    color:#888;
+    font-size:16px;
+    margin-right:8px;
+  }
+  .price-box .new-price{
+    color:#ff2d78;
+    font-size:28px;
+    font-weight:800;
+  }
+  .price-box .note{
+    display:block;
+    font-size:13px;
+    color:#856404;
+    margin-top:6px;
+    font-weight:500;
+  }
+  
+  /* NUEVO: GARANTIA */
+  .guarantee{
+    background:#d1f7e5;
+    border:1px solid #7dd3ae;
+    padding:14px;
+    border-radius:10px;
+    margin-top:15px;
+    display:flex;
+    align-items:flex-start;
+    gap:10px;
+    text-align:left;
+  }
+  .guarantee .icon{
+    font-size:24px;
+    line-height:1;
+  }
+  .guarantee strong{
+    display:block;
+    color:#0f5132;
+    margin-bottom:3px;
+    font-size:14px;
+  }
+  .guarantee p{
+    font-size:12px;
+    color:#0f5132;
+    line-height:1.4;
+    margin:0;
+  }
+  
   .social-btn {
     display: inline-flex;
     align-items: center;
@@ -125,7 +201,7 @@
     </p>
 
     <a class="download-btn" href="https://youtu.be/HCZFQbfXmMY" target="_blank">
-      ▶️ PASO 1: Ver Clase Camisa Manga Kimono
+      ▶ PASO 1: Ver Clase Camisa Manga Kimono
     </a>
 
     <a class="download-btn pdf" href="https://drive.google.com/file/d/1Y2owzj2hWoQdWptMh3e8RyUSjezlCEbO/view?usp=sharing" target="_blank">
@@ -138,13 +214,35 @@
         Esta es solo 1 de las 1.100 clases de Costura Premium.<br>
         Accede a todas con moldes talla S a XXL + certificado oficial.
       </p>
-      <a class="download-btn" href="https://go.hotmart.com/E106051689D?ap=e4ec" target="_blank">
+      
+      <!-- NUEVO: URGENCIA -->
+      <div class="urgency-bar">
+        ⏰ OFERTA EXCLUSIVA: Solo para nuevas alumnas
+      </div>
+      
+      <!-- NUEVO: PRECIO -->
+      <div class="price-box">
+        <span class="old-price">$99</span>
+        <span class="new-price">$87 HOY</span>
+        <span class="note">⚡ Mañana sube a $99. Cupos limitados.</span>
+      </div>
+      
+      <a class="download-btn" href="https://go.hotmart.com/E106051689D?ap=e4ec" target="_blank" onclick="fbq('track','InitiateCheckout');">
         Ver Curso Completo con Descuento
       </a>
+      
+      <!-- NUEVO: GARANTIA -->
+      <div class="guarantee">
+        <div class="icon">🛡️</div>
+        <div>
+          <strong>Garantía Incondicional de 30 Días</strong>
+          <p>Si no te encanta el programa completo, te devolvemos 100% de tu dinero. Sin preguntas.</p>
+        </div>
+      </div>
     </div>
 
     <p style="margin-top:30px; font-size:14px; color:#666;">Sígueme para más tips de costura:</p>
-    <a class="social-btn" href="https://web.facebook.com/Costurindustrial" target="_blank">
+    <a class="social-btn" href="https://facebook.com/Costurindustrial" target="_blank">
       <img src="https://cdn-icons-png.flaticon.com/512/145/145802.png" alt="Facebook"> Facebook
     </a>
     <a class="social-btn" href="https://www.instagram.com/costuraindustrial_" target="_blank">
