@@ -82,9 +82,9 @@
     line-height: 1.5;
   }
   
-  /* NUEVO: BARRA URGENCIA */
+  /* BARRA URGENCIA */
   .urgency-bar{
-    background:linear-gradient(90deg, #ff2d78, #e52a6c);
+    background:linear-gradient(90deg, #28a745, #20c997);
     color:#fff;
     text-align:center;
     padding:12px 15px;
@@ -95,40 +95,64 @@
     animation:pulse 2s infinite;
   }
   @keyframes pulse {
-    0%, 100%{ box-shadow:0 0 0 0 rgba(255,45,120,0.4); }
-    50%{ box-shadow:0 0 0 8px rgba(255,45,120,0); }
+    0%, 100%{ box-shadow:0 0 0 0 rgba(40,167,69,0.4); }
+    50%{ box-shadow:0 0 0 8px rgba(40,167,69,0); }
   }
   
-  /* NUEVO: CAJA PRECIO */
+  /* CAJA PRECIO LATAM */
   .price-box{
     background:#fff3cd;
-    border:2px dashed #ffc107;
-    padding:16px;
+    border:3px solid #28a745;
+    padding:18px;
     border-radius:12px;
     text-align:center;
     margin:15px 0;
     font-weight:600;
   }
-  .price-box .old-price{
-    text-decoration:line-through;
-    color:#888;
-    font-size:16px;
-    margin-right:8px;
-  }
   .price-box .new-price{
-    color:#ff2d78;
+    color:#155724;
     font-size:28px;
     font-weight:800;
+    display:block;
+    margin-bottom:8px;
   }
   .price-box .note{
     display:block;
     font-size:13px;
     color:#856404;
-    margin-top:6px;
+    margin-top:8px;
     font-weight:500;
+    line-height:1.5;
   }
   
-  /* NUEVO: GARANTIA */
+  /* BOTON VERDE CHECKOUT */
+  .checkout-btn{
+    display: block;
+    margin: 15px auto;
+    padding: 20px;
+    max-width: 320px;
+    background: #28a745;
+    color: #fff;
+    font-weight: 800;
+    font-size: 18px;
+    border-radius: 12px;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(40,167,69,0.4);
+    transition: all 0.3s ease;
+  }
+  .checkout-btn:hover {
+    background: #218838;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(40,167,69,0.5);
+  }
+  .checkout-btn span{
+    display:block;
+    font-size:13px;
+    font-weight:500;
+    margin-top:4px;
+  }
+  
+  /* GARANTIA */
   .guarantee{
     background:#d1f7e5;
     border:1px solid #7dd3ae;
@@ -155,6 +179,27 @@
     color:#0f5132;
     line-height:1.4;
     margin:0;
+  }
+  
+  /* WHATSAPP AYUDA */
+  .whatsapp-help{
+    background:#e7f3ff;
+    padding:14px;
+    border-radius:10px;
+    margin-top:15px;
+    text-align:center;
+  }
+  .whatsapp-help p{
+    margin:0 0 8px 0;
+    font-size:14px;
+    font-weight:700;
+    color:#0066cc;
+  }
+  .whatsapp-help a{
+    color:#0066cc;
+    font-weight:700;
+    text-decoration:underline;
+    font-size:14px;
   }
   
   .social-btn {
@@ -196,7 +241,7 @@
     <h1>¡Registro Exitoso! 💖</h1>
     <p class="sub">
       <b>¡Tu regalo ya está aquí!</b><br>
-      También te envié todo a tu correo, si no lo ves revisa spam o promociones para que lo guardes.<br>
+      También te envié todo a tu correo. Si no lo ves, revisa spam o promociones.<br>
       Descarga ahora tu clase + molde:
     </p>
 
@@ -215,29 +260,42 @@
         Accede a todas con moldes talla S a XXL + certificado oficial.
       </p>
       
-      <!-- NUEVO: URGENCIA -->
+      <!-- URGENCIA VERDE -->
       <div class="urgency-bar">
-        ⏰ OFERTA EXCLUSIVA: Solo para nuevas alumnas
+        ✅ ACCESO INMEDIATO ACTIVADO
       </div>
       
-      <!-- NUEVO: PRECIO -->
+      <!-- PRECIO LATAM -->
       <div class="price-box">
-        <span class="old-price">$99</span>
-        <span class="new-price">$87 HOY</span>
-        <span class="note">⚡ Mañana sube a $99. Cupos limitados.</span>
+        <span class="new-price">$75 USD</span>
+        <span class="note">
+          Hotmart cobra automático en tu moneda:<br>
+          🇻🇪 Bolívares | 🇲🇽 ~$1,380 MXN | 🇦🇷 Pesos ARS<br>
+          🇨🇱 $86.646 CLP | 🇨🇴 ~$300,000 COP | 🇵🇪 ~S/280 PEN
+        </span>
       </div>
       
-      <a class="download-btn" href="https://go.hotmart.com/E106051689D?ap=8fe0" target="_blank" onclick="fbq('track','InitiateCheckout');">
-        Ver Curso Completo con Descuento
+      <!-- BOTON CHECKOUT DIRECTO - CAMBIA TU LINK AQUÍ -->
+      <a class="checkout-btn" href="https://go.hotmart.com/E106051689D?ap=8fe0" target="_blank" onclick="fbq('track','InitiateCheckout');">
+        VER PRECIO EXACTO EN MI MONEDA →
+        <span>Pago seguro con Hotmart | Acceso de por vida</span>
       </a>
       
-      <!-- NUEVO: GARANTIA -->
+      <!-- GARANTIA -->
       <div class="guarantee">
-        <div class="icon">🛡️</div>
+        <div class="icon">🛡</div>
         <div>
           <strong>Garantía Incondicional de 30 Días</strong>
           <p>Si no te encanta el programa completo, te devolvemos 100% de tu dinero. Sin preguntas.</p>
         </div>
+      </div>
+      
+      <!-- WHATSAPP PARA VENEZUELA/ARGENTINA -->
+      <div class="whatsapp-help">
+        <p>🇻🇪🇦🇷🇧🇴 ¿Tu tarjeta no pasa o no tienes dólares?</p>
+        <a href="https://wa.me/56926290002?text=Profe%20Isabel,%20soy%20de%20[país].%20¿Qué%20otras%20formas%20de%20pago%20tienes%20para%20Costura%20Premium?" target="_blank">
+          Escríbeme por WhatsApp y lo solucionamos →
+        </a>
       </div>
     </div>
 
