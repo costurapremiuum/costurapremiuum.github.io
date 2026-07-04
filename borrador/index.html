@@ -15,7 +15,7 @@
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { 
-            font-family: 'Segoe UI', system-ui, sans-serif; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
             line-height: 1.6; 
             color: var(--dark);
             background: var(--light);
@@ -75,7 +75,7 @@
         .card h3 { margin: 10px 0; font-size: 1.3rem; }
         .price { font-size: 1.8rem; font-weight: 700; color: var(--primary); margin: 15px 0; }
         .btn-block { width: 100%; text-align: center; background: var(--primary); color: white; }
-        .features { display: flex; gap: 15px; margin: 15px 0; font-size: 0.9rem; opacity: 0.8; }
+        .features { display: flex; gap: 15px; margin: 15px 0; font-size: 0.9rem; opacity: 0.8; flex-wrap: wrap; }
         .features span::before { content: "✓ "; color: var(--success); font-weight: 700; }
         .testimonial {
             background: white;
@@ -94,6 +94,14 @@
             border-bottom: 3px solid var(--primary);
             display: inline-block;
         }
+        .link-secondary { 
+            display: block; 
+            text-align: center; 
+            margin-top: 10px; 
+            color: var(--primary); 
+            font-size: 0.9rem;
+            text-decoration: none;
+        }
         @media (max-width: 768px) {
             .hero h1 { font-size: 2rem; }
             .grid { grid-template-columns: 1fr; }
@@ -101,11 +109,11 @@
     </style>
 </head>
 <body>
-    <!-- HERO: Solo promesa + CTA -->
+    <!-- HERO -->
     <section class="hero">
         <div class="container">
             <h1>De Hobby a Ingresos: Aprende Costura que se Vende</h1>
-            <p>+15 cursos online desde cero hasta alta costura. Certificado incluido. Garantía 7 días.</p>
+            <p>+15 cursos online desde cero hasta alta costura. Certificado incluido. Garantía 7 días Hotmart.</p>
             <a href="#cursos" class="btn btn-primary">Ver Cursos Ahora</a>
         </div>
     </section>
@@ -122,7 +130,7 @@
                 <div class="testimonial">
                     <div class="stars">★★★★★</div>
                     <p>"70,000 mujeres no pueden estar equivocadas. 100% recomendado"</p>
-                    <strong>- Profesora Irene Villagómez</strong>
+                    <strong>- Prof. Irene Villagómez</strong>
                 </div>
                 <div class="testimonial">
                     <div class="stars">★★★★★</div>
@@ -133,7 +141,7 @@
         </div>
     </section>
 
-    <!-- CURSOS: Organizamos en 3 niveles para no saturar -->
+    <!-- CURSOS -->
     <section id="cursos" class="section">
         <div class="container">
             <h2 class="section-title">Elige Tu Camino en la Costura</h2>
@@ -142,7 +150,6 @@
             <div class="category">
                 <h3>1. Para Empezar Desde Cero $14-$25</h3>
                 <div class="grid">
-                    <!-- CURSO 1: CAMISETAS -->
                     <div class="card">
                         <img src="img/camisetas.jpg" alt="Emprende con Camisetas">
                         <div class="card-body">
@@ -154,11 +161,10 @@
                             </div>
                             <p>Tu primera marca de ropa. Camisetas + pantalón básico + cómo vender por internet.</p>
                             <div class="price">$14.00 USD</div>
-                            <a href="LINK-HOTMART-CAMISETAS" class="btn btn-block">Quiero Empezar Ahora</a>
+                            <a href="https://go.hotmart.com/Q106562159L?ap=14e1" class="btn btn-block" target="_blank">Quiero Empezar Ahora</a>
                         </div>
                     </div>
 
-                    <!-- CURSO 2: CAMISAS NIÑO -->
                     <div class="card">
                         <img src="img/camisas-nino.jpg" alt="Camisas para Niño">
                         <div class="card-body">
@@ -170,11 +176,10 @@
                             </div>
                             <p>Camisas clásicas para niños. Perfecto para mamás que cosen para sus hijos.</p>
                             <div class="price">$15.00 USD</div>
-                            <a href="LINK-HOTMART-CAMISAS-NINO" class="btn btn-block">Quiero Empezar Ahora</a>
+                            <a href="https://go.hotmart.com/V104028170U?ap=0d7d" class="btn btn-block" target="_blank">Quiero Empezar Ahora</a>
                         </div>
                     </div>
 
-                    <!-- CURSO 3: ROPA DEPORTIVA -->
                     <div class="card">
                         <img src="img/deportiva.jpg" alt="Ropa Deportiva">
                         <div class="card-body">
@@ -186,7 +191,7 @@
                             </div>
                             <p>Leggings, tops y shorts. El nicho que más crece en 2026.</p>
                             <div class="price">$14.00 USD</div>
-                            <a href="LINK-HOTMART-DEPORTIVA" class="btn btn-block">Quiero Empezar Ahora</a>
+                            <a href="https://go.hotmart.com/P102624264C?ap=9cb0" class="btn btn-block" target="_blank">Quiero Empezar Ahora</a>
                         </div>
                     </div>
                 </div>
@@ -196,7 +201,6 @@
             <div class="category">
                 <h3>2. Especialización Profesional $29-$79</h3>
                 <div class="grid">
-                    <!-- CURSO 4: LENCERÍA -->
                     <div class="card">
                         <img src="img/lenceria.jpg" alt="Lencería Íntima">
                         <div class="card-body">
@@ -208,11 +212,10 @@
                             </div>
                             <p>De enhebrar máquina hasta tanga, bikini y cachetero. El nicho más rentable.</p>
                             <div class="price">$39.99 USD</div>
-                            <a href="LINK-HOTMART-LENCERIA" class="btn btn-block">Especializarme Ahora</a>
+                            <a href="https://go.hotmart.com/P75653648Y?ap=5f2c" class="btn btn-block" target="_blank">Especializarme Ahora</a>
                         </div>
                     </div>
 
-                    <!-- CURSO 5: PIJAMAS -->
                     <div class="card">
                         <img src="img/pijamas.jpg" alt="Pijamas Premium">
                         <div class="card-body">
@@ -224,15 +227,14 @@
                             </div>
                             <p>Pijamas para toda la familia. Vende todo el año, no solo en invierno.</p>
                             <div class="price">$29.99 USD</div>
-                            <a href="LINK-HOTMART-PIJAMAS" class="btn btn-block">Especializarme Ahora</a>
+                            <a href="https://go.hotmart.com/L101965484C?ap=2c9b" class="btn btn-block" target="_blank">Especializarme Ahora</a>
                         </div>
                     </div>
 
-                    <!-- CURSO 6: COSTURA INFANTIL -->
                     <div class="card">
                         <img src="img/infantil.jpg" alt="Costura Infantil">
                         <div class="card-body">
-                            <span class="badge">Premium</span>
+                            <span class="badge">Mayor Ganancia</span>
                             <h3>Costura Infantil Premium</h3>
                             <div class="features">
                                 <span>Intermedio</span>
@@ -240,11 +242,11 @@
                             </div>
                             <p>Diseña ropa para tus hijos. De jogger a pantalón urbano. Ahorra y emprende.</p>
                             <div class="price">$79.99 USD</div>
-                            <a href="LINK-HOTMART-INFANTIL" class="btn btn-block">Especializarme Ahora</a>
+                            <a href="https://go.hotmart.com/R82849870U?ap=9dab" class="btn btn-block" target="_blank">Especializarme Ahora</a>
+                            <a href="https://go.hotmart.com/R82849870U?ap=8db0" class="link-secondary" target="_blank">Ver clase gratis</a>
                         </div>
                     </div>
 
-                    <!-- CURSO 7: TRAJES DE BAÑO -->
                     <div class="card">
                         <img src="img/trajebano.jpg" alt="Trajes de Baño">
                         <div class="card-body">
@@ -256,13 +258,12 @@
                             </div>
                             <p>Bikinis, enteros y salidas de baño. Alta demanda Oct-Mar.</p>
                             <div class="price">$69.99 USD</div>
-                            <a href="LINK-HOTMART-TRAJEBAÑO" class="btn btn-block">Especializarme Ahora</a>
+                            <a href="https://go.hotmart.com/I103391374H?ap=5ff6" class="btn btn-block" target="_blank">Especializarme Ahora</a>
                         </div>
                     </div>
 
-                    <!-- CURSO 8: DISEÑO MODA -->
                     <div class="card">
-                        <img src="img/diseno-moda.jpg" alt="Diseño de Moda">
+                        <img src="img/diseno.jpg" alt="Diseño de Moda">
                         <div class="card-body">
                             <span class="badge">4.8★ Creativo</span>
                             <h3>Diseño de Moda Premium</h3>
@@ -272,11 +273,10 @@
                             </div>
                             <p>Figurines, color, 7 estilos universales. Crea tu propia colección.</p>
                             <div class="price">$29.99 USD</div>
-                            <a href="LINK-HOTMART-DISENO" class="btn btn-block">Especializarme Ahora</a>
+                            <a href="https://go.hotmart.com/A106562256Q?ap=9850" class="btn btn-block" target="_blank">Especializarme Ahora</a>
                         </div>
                     </div>
 
-                    <!-- CURSO 9: MANTENIMIENTO -->
                     <div class="card">
                         <img src="img/mantenimiento.jpg" alt="Mantenimiento Máquinas">
                         <div class="card-body">
@@ -288,7 +288,7 @@
                             </div>
                             <p>Repara tu máquina tú misma. No más técnicos caros. Curso obligatorio.</p>
                             <div class="price">$39.99 USD</div>
-                            <a href="LINK-HOTMART-MANTENIMIENTO" class="btn btn-block">Especializarme Ahora</a>
+                            <a href="https://go.hotmart.com/B75653655X?ap=4c6b" class="btn btn-block" target="_blank">Especializarme Ahora</a>
                         </div>
                     </div>
                 </div>
@@ -298,7 +298,6 @@
             <div class="category">
                 <h3>3. Sastrería y Nichos Premium</h3>
                 <div class="grid">
-                    <!-- CURSO 10: COSTURA GOLD -->
                     <div class="card">
                         <img src="img/gold.jpg" alt="Costura Premium Gold">
                         <div class="card-body">
@@ -310,11 +309,11 @@
                             </div>
                             <p>Para costureras que quieren cobrar premium. Técnicas de alta costura.</p>
                             <div class="price">$75.00 USD</div>
-                            <a href="LINK-HOTMART-GOLD" class="btn btn-block">Nivel Experto</a>
+                            <a href="https://go.hotmart.com/E106051689D?ap=8fe0" class="btn btn-block" target="_blank">Nivel Experto</a>
+                            <a href="https://go.hotmart.com/E106051689D?ap=7b7b" class="link-secondary" target="_blank">Ver clase gratis</a>
                         </div>
                     </div>
 
-                    <!-- CURSO 11: MASCULINA -->
                     <div class="card">
                         <img src="img/masculina.jpg" alt="Línea Masculina">
                         <div class="card-body">
@@ -326,11 +325,10 @@
                             </div>
                             <p>Sastrería masculina desde cero. Camisas, pantalones y chaquetas de hombre.</p>
                             <div class="price">$19.99 USD</div>
-                            <a href="LINK-HOTMART-MASCULINA" class="btn btn-block">Nivel Experto</a>
+                            <a href="https://go.hotmart.com/O57813170D?ap=2cdc" class="btn btn-block" target="_blank">Nivel Experto</a>
                         </div>
                     </div>
 
-                    <!-- CURSO 12: IMPLEMENTOS -->
                     <div class="card">
                         <img src="img/implementos.jpg" alt="Implementos Deportivos">
                         <div class="card-body">
@@ -342,33 +340,60 @@
                             </div>
                             <p>Cose TRX, colchonetas, chalecos de peso. Vende a entrenadores y gimnasios.</p>
                             <div class="price">$59.99 USD</div>
-                            <a href="LINK-HOTMART-IMPLEMENTOS" class="btn btn-block">Nivel Experto</a>
+                            <a href="https://go.hotmart.com/Q82963163C?ap=b715" class="btn btn-block" target="_blank">Nivel Experto</a>
+                            <a href="https://go.hotmart.com/Q82963163C?ap=e9d3" class="link-secondary" target="_blank">Ver con 50% descuento</a>
                         </div>
                     </div>
                 </div>
             </div>
 
-        </div>
-    </section>
+            <!-- NIVEL 4: MEMBRESÍAS -->
+            <div class="category">
+                <h3>4. Membresías - Acceso Total</h3>
+                <div class="grid">
+                    <div class="card">
+                        <img src="img/maestria.jpg" alt="Maestría Costura">
+                        <div class="card-body">
+                            <span class="badge">Mejor Valor</span>
+                            <h3>Maestría Costura Premium 12M</h3>
+                            <div class="features">
+                                <span>Acceso total</span>
+                                <span>12 meses</span>
+                            </div>
+                            <p>Accede a todos los cursos + actualizaciones. Soporte 1:1 por un año.</p>
+                            <div class="price">$132.65 USD</div>
+                            <a href="https://go.hotmart.com/T98463803P?ap=0ba5" class="btn btn-block" target="_blank">Suscribirme 12 Meses</a>
+                        </div>
+                    </div>
 
-    <!-- GARANTÍA -->
-    <section class="section" style="background: white; text-align: center;">
-        <div class="container">
-            <h2 class="section-title">Compra Sin Riesgo</h2>
-            <p style="font-size: 1.2rem; max-width: 700px; margin: 0 auto 30px;">
-                Todos los cursos tienen <strong>Garantía Hotmart de 7 días</strong>. Si no es lo que esperabas, te devuelven el 100% de tu dinero. Sin preguntas.
-            </p>
-            <img src="img/garantia-hotmart.png" alt="Garantía" style="max-width: 200px;">
-        </div>
-    </section>
+                    <div class="card">
+                        <img src="img/maestria.jpg" alt="Maestría Costura">
+                        <div class="card-body">
+                            <span class="badge">Más Económico</span>
+                            <h3>Maestría Costura Premium 24M</h3>
+                            <div class="features">
+                                <span>Acceso total</span>
+                                <span>24 meses</span>
+                            </div>
+                            <p>El plan más barato por mes. Todos los cursos por 2 años.</p>
+                            <div class="price">$64.99 USD</div>
+                            <a href="https://go.hotmart.com/T98463803P?ap=cab3" class="btn btn-block" target="_blank">Suscribirme 24 Meses</a>
+                        </div>
+                    </div>
 
-    <!-- FOOTER -->
-    <footer class="footer">
-        <div class="container">
-            <p><strong>Premium Academy</strong> - Academia Online de Costura</p>
-            <p style="opacity: 0.7; margin-top: 10px;">© 2026. Afiliado autorizado Hotmart. Los resultados pueden variar.</p>
-        </div>
-    </footer>
-
-</body>
-</html>
+                    <div class="card">
+                        <img src="img/blusas.jpg" alt="Blusas Premium">
+                        <div class="card-body">
+                            <span class="badge">Mensual</span>
+                            <h3>Blusas Premium</h3>
+                            <div class="features">
+                                <span>Mensual</span>
+                                <span>Cancela cuando quieras</span>
+                            </div>
+                            <p>Nuevas blusas cada mes. Patrones + clase en vivo.</p>
+                            <div class="price">$66.99 USD</div>
+                            <a href="https://go.hotmart.com/V82152744C?ap=a0b8" class="btn btn-block" target="_blank">Suscribirme Mensual</a>
+                        </div>
+                    </div>
+                </div>
+         
