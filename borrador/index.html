@@ -3,473 +3,251 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Corte y Confección - Academia Online</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <title>Costura Flix | Academia de Costura Online</title>
+    <!-- Tailwind CSS para un diseño ultra rápido y moderno -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        :root {
-            --primary: #E91E63;
-            --primary-dark: #C2185B;
-            --dark: #1A1A2E;
-            --light: #F8F9FA;
-            --success: #10B981;
-            --warning: #F59E0B;
-            --gray-600: #475569;
-            --gray-100: #F1F5F9;
+        body {
+            background-color: #141414;
+            color: #ffffff;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
         }
-        * { margin: 0; padding: 0; box-sizing: border-box }
-        body { 
-            font-family: 'Inter', sans-serif; 
-            color: var(--dark);
-            background: #FEFEFE;
-        }
-        h1, h2, h3, h4 { font-family: 'Outfit', sans-serif; font-weight: 700 }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px }
-        
-        /* HEADER */
-        .header {
-            background: white;
-            padding: 20px 0;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        .header .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .logo { 
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-family: 'Outfit', sans-serif; 
-            font-weight: 900; 
-            font-size: 1.4rem; 
-            color: var(--dark);
-        }
-        .logo-icon { color: var(--primary); font-size: 1.8rem }
-        .logo span { display: block; font-size: 0.75rem; font-weight: 400; color: var(--gray-600); margin-top: -5px }
-        .menu { font-size: 1.8rem; cursor: pointer }
-        
-        /* HERO */
-        .hero {
-            background: linear-gradient(135deg, #FFE5F1 0%, #F3E5F5 50%, #E8EAF6 100%);
-            padding: 60px 20px 100px;
-            position: relative;
-        }
-        .hero-card {
-            background: white;
-            border-radius: 24px;
-            padding: 0;
-            box-shadow: 0 20px 60px rgba(233,30,99,0.15);
-            overflow: hidden;
-            position: relative;
-            min-height: 400px;
-            background: linear-gradient(135deg, rgba(233,30,99,0.1) 0%, rgba(156,39,176,0.1) 100%);
-        }
-        .badge-rating {
-            position: absolute;
-            top: 20px;
-            right: 0;
-            background: var(--warning);
-            color: var(--dark);
-            padding: 10px 20px;
-            border-radius: 50px 0 0 50px;
-            font-weight: 700;
-            font-size: 0.9rem;
-        }
-        .stat-float {
-            position: absolute;
-            bottom: -30px;
-            left: 30px;
-            background: white;
-            padding: 20px 30px;
-            border-radius: 16px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        .stat-icon {
-            width: 50px;
-            height: 50px;
-            background: #E8F5E9;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-        }
-        .stat-num { font-family: 'Outfit', sans-serif; font-size: 2rem; font-weight: 900; color: var(--dark) }
-        .stat-label { color: var(--gray-600); font-size: 0.9rem }
-        
-        .hero-content {
-            padding: 60px 30px 40px;
-            text-align: center;
-        }
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: #FCE4EC;
-            color: var(--primary);
-            padding: 8px 18px;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin-bottom: 25px;
-        }
-        .hero h1 { 
-            font-size: 3rem; 
-            line-height: 1.1; 
-            margin-bottom: 20px;
-            font-weight: 900;
-        }
-        .hero h1 span { color: var(--primary) }
-        .hero-desc { 
-            color: var(--gray-600); 
-            font-size: 1.1rem; 
-            margin-bottom: 35px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        /* TOP 3 SLIDER */
-        .top-section {
-            padding: 80px 20px 40px;
-            background: var(--light);
-        }
-        .section-header {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            background: white;
-            padding: 15px 25px;
-            border-radius: 15px;
-            margin-bottom: 30px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-        }
-        .section-header h3 { font-size: 1rem; color: var(--gray-600); font-weight: 600 }
-        .top-badge {
-            background: #FFF3E0;
-            color: #E65100;
-            padding: 6px 14px;
-            border-radius: 8px;
-            font-size: 0.8rem;
-            font-weight: 700;
-        }
-        .top-card {
-            background: white;
-            border-radius: 20px;
-            padding: 25px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
-            display: flex;
-            gap: 20px;
-            align-items: center;
-        }
-        .top-card img { 
-            width: 100px; 
-            height: 100px; 
-            object-fit: cover; 
-            border-radius: 12px;
-            background: var(--gray-100);
-        }
-        .top-info h4 { font-size: 1.3rem; margin-bottom: 10px }
-        .top-price { font-size: 2rem; font-weight: 900; color: var(--dark); font-family: 'Outfit', sans-serif }
-        .top-earning { 
-            background: #E8F5E9;
-            color: #1B5E20;
-            padding: 6px 12px;
-            border-radius: 8px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            display: inline-block;
-            margin-top: 8px;
-        }
-        .dots { display: flex; gap: 8px; justify-content: center; margin-top: 20px }
-        .dot { width: 8px; height: 8px; border-radius: 50%; background: #DDD }
-        .dot.active { width: 30px; border-radius: 10px; background: var(--primary) }
-        
-        .btn-main {
-            width: 100%;
-            background: var(--primary);
-            color: white;
-            padding: 18px;
-            border-radius: 15px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 1.1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            margin-top: 25px;
-            box-shadow: 0 10px 30px rgba(233,30,99,0.3);
-        }
-        .btn-outline {
-            width: 100%;
-            background: white;
-            color: var(--dark);
-            padding: 18px;
-            border-radius: 15px;
-            text-decoration: none;
-            font-weight: 600;
-            text-align: center;
-            display: block;
-            margin-top: 12px;
-            border: 2px solid #E5E7EB;
-        }
-        
-        /* COURSE CARDS */
-        .section { padding: 60px 20px }
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 25px;
-        }
-        .card {
-            background: white;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
-            position: relative;
-        }
-        .card-badge-left {
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            background: white;
-            color: var(--primary);
-            padding: 8px 16px;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: 700;
-            z-index: 10;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        .card-badge-right {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: var(--success);
-            color: white;
-            padding: 8px 16px;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: 700;
-            z-index: 10;
-        }
-        .card img { 
-            width: 100%; 
-            height: 200px; 
+        /* TRUCO CRO: Forzar proporciones tipo Netflix y recortar logos del productor */
+        .netflix-card-img {
+            aspect-ratio: 16 / 9;
             object-fit: cover;
-            background: var(--gray-100);
+            object-position: center 20%; /* Ajusta el eje vertical para centrar la acción y descartar bordes conflictivos */
+            transform: scale(1.08); /* Pequeño zoom para dejar fuera de pantalla los textos de las esquinas */
+            transition: transform 0.3s ease;
         }
-        .card-body { padding: 25px }
-        .card h3 { font-size: 1.4rem; margin-bottom: 10px }
-        .stars { color: #FBBF24; font-size: 1rem; margin-bottom: 15px }
-        .stars span { color: var(--gray-600); font-size: 0.9rem; margin-left: 8px }
-        .price-row {
-            display: flex;
-            align-items: baseline;
-            gap: 10px;
-            margin: 20px 0 15px;
+        .card-container:hover .netflix-card-img {
+            transform: scale(1.15);
         }
-        .price { font-size: 2.2rem; font-weight: 900; color: var(--dark); font-family: 'Outfit', sans-serif }
-        .price-old { font-size: 1.1rem; color: var(--gray-600); text-decoration: line-through }
-        .discount { 
-            background: #FEE2E2; 
-            color: #DC2626; 
-            padding: 4px 10px; 
-            border-radius: 6px; 
-            font-size: 0.85rem; 
-            font-weight: 700;
+        /* Desvanecimiento oscuro inferior para que el texto resalte */
+        .card-gradient {
+            background: linear-gradient(to top, rgba(20,20,20,1) 0%, rgba(20,20,20,0.7) 40%, rgba(0,0,0,0) 100%);
         }
-        .ig-tag {
-            background: var(--gray-100);
-            padding: 12px;
-            border-radius: 10px;
-            margin: 15px 0;
-            font-size: 0.9rem;
-        }
-        .ig-tag strong { color: var(--dark) }
-        .ig-tag span { color: var(--primary); font-weight: 600 }
-        .btn-checkout {
-            width: 100%;
-            background: var(--primary);
-            color: white;
-            padding: 16px;
-            border-radius: 12px;
-            text-decoration: none;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            margin-top: 15px;
-        }
-        .link-free {
-            display: block;
-            text-align: center;
-            margin-top: 12px;
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.95rem;
-        }
-        
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2.2rem }
-            .grid { grid-template-columns: 1fr }
-        }
+        /* Ocultar barra de scroll en los contenedores horizontales */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
 </head>
-<body>
-    <!-- HEADER -->
-    <header class="header">
-        <div class="container">
-            <div class="logo">
-                <span class="logo-icon">✂️</span>
-                <div>
-                    Corte y Confección
-                    <span>Academia Online</span>
-                </div>
-            </div>
-            <div class="menu">☰</div>
-        </div>
-    </header>
+<body class="overflow-x-hidden antialiased">
 
-    <!-- HERO -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-card">
-                <span class="badge-rating">Rating</span>
-                <div class="stat-float">
-                    <div class="stat-icon">👥</div>
-                    <div>
-                        <div class="stat-num">12,450+</div>
-                        <div class="stat-label">Estudiantes Activas</div>
+    <!-- NAV BAR -->
+    <nav class="fixed top-0 z-50 w-full bg-gradient-to-b from-black/80 to-transparent px-4 md:px-12 py-4 flex items-center justify-between">
+        <div class="flex items-center gap-8">
+            <span class="text-red-600 font-black text-2xl md:text-3xl tracking-wider cursor-pointer">COSTURA FLIX</span>
+            <div class="hidden md:flex items-center gap-5 text-sm text-gray-300">
+                <a href="#" class="hover:text-white transition font-medium text-white">Inicio</a>
+                <a href="#principales" class="hover:text-white transition">Más Vendidos</a>
+                <a href="#especializaciones" class="hover:text-white transition">Especializaciones</a>
+            </div>
+        </div>
+        <div class="text-sm font-medium border border-gray-500 px-3 py-1 rounded bg-black/40 hover:bg-white hover:text-black transition cursor-pointer">
+            Mi Cuenta
+        </div>
+    </nav>
+
+    <!-- HERO SECTION (CURSO PRINCIPAL / MAESTRÍA) -->
+    <div class="relative w-full h-[85vh] md:h-[90vh] flex items-center bg-[#1a1a1a] px-4 md:px-12 pt-20 border-b-8 border-[#222]">
+        <!-- Imagen de fondo simulada con degradados (Reemplazar src con tu portada principal si deseas) -->
+        <div class="absolute inset-0 z-0 bg-cover bg-center opacity-30" style="background-image: url('1000179087.png');"></div>
+        <div class="absolute inset-0 z-10 bg-gradient-to-r from-[#141414] via-[#141414]/80 to-transparent"></div>
+        <div class="absolute inset-0 z-10 bg-gradient-to-t from-[#141414] to-transparent"></div>
+
+        <!-- Contenido del Hero -->
+        <div class="relative z-20 max-w-2xl space-y-4 md:space-y-6">
+            <span class="inline-block bg-red-600 text-white font-bold text-xs px-2 py-1 rounded tracking-widest uppercase">Suscripción Mensual Oficial</span>
+            <h1 class="text-3xl md:text-6xl font-black tracking-tight leading-none text-white">Maestría en Corte y Confección a la Medida</h1>
+            <p class="text-gray-300 text-sm md:text-lg max-w-xl leading-relaxed">
+                El ecosistema definitivo de aprendizaje. Accede a todos nuestros programas especializados desde lo más básico hasta técnicas avanzadas de alta costura con actualizaciones constantes.
+            </p>
+            <div class="flex items-center gap-3 pt-2">
+                <!-- ENLACE DIRECTO DE COMPRA (Ajustar href con tu hotlink) -->
+                <a href="TU_ENLACE_HOTMART_CURSO_1" target="_blank" class="bg-white text-black font-bold px-6 py-3 rounded md:text-lg flex items-center gap-2 hover:bg-white/90 transition shadow-lg">
+                    <span>▶</span> Inscribirse Ya ($29.99/mes)
+                </a>
+                <a href="#principales" class="bg-gray-500/60 text-white font-bold px-5 py-3 rounded md:text-lg hover:bg-gray-500/40 transition">
+                    Ver Catálogo
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECCIÓN DE CURSOS (FILAS TIPO NETFLIX) -->
+    <main class="relative z-30 -mt-12 md:-mt-20 space-y-12 pb-24">
+
+        <!-- FILA 1: PROGRAMAS PRINCIPALES Y TENDENCIAS -->
+        <section id="principales" class="space-y-3 px-4 md:px-12">
+            <h2 class="text-sm md:text-xl font-bold text-gray-200 tracking-wide">Tendencias Populares en Confección</h2>
+            
+            <!-- Grid Responsivo optimizado para móviles y pantallas grandes -->
+            <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+
+                <!-- TARJETA: Costura Premium -->
+                <div class="card-container group bg-[#181818] rounded-md overflow-hidden border border-zinc-800 flex flex-col justify-between shadow-xl">
+                    <div class="w-full overflow-hidden relative aspect-video">
+                        <img src="1000179094_2.png" alt="Costura Premium" class="netflix-card-img w-full h-full">
+                        <div class="card-gradient absolute inset-0"></div>
                     </div>
-                </div>
-            </div>
-            
-            <div class="hero-content">
-                <div class="hero-badge">
-                    🏆 Academia #1 en Costura Online
-                </div>
-                <h1>Transforma tu Pasión en<br><span>Ingresos Reales</span></h1>
-                <p class="hero-desc">Aprende costura profesional con 15 cursos especializados. Nuestras alumnas generan desde $150 hasta $1,500 USD/mes cosiendo desde casa.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- TOP 3 -->
-    <section class="top-section">
-        <div class="container">
-            <div class="section-header">
-                <span>📈</span>
-                <h3>TOP 3 CURSOS ALTO TICKET</h3>
-            </div>
-            
-            <div class="top-card">
-                <img src="img/implementos.jpg" alt="Implementos Deportivos">
-                <div class="top-info">
-                    <span class="top-badge">TOP 3 - ALTO TICKET</span>
-                    <h4>Implementos Deportivos</h4>
-                    <div class="top-price">$41.99</div>
-                    <span class="top-earning">Ganancia estimada: $1,000+/mes con contratos B2B</span>
-                </div>
-            </div>
-            
-            <div class="dots">
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot active"></span>
-            </div>
-            
-            <a href="#cursos" class="btn-main">Ver Todos los Cursos →</a>
-            <a href="#comisiones" class="btn-outline">Tabla de Ganancias</a>
-        </div>
-    </section>
-
-    <!-- CURSOS -->
-    <section id="cursos" class="section">
-        <div class="container">
-            <div class="grid">
-                
-                <!-- CURSO 1 -->
-                <div class="card">
-                    <span class="card-badge-left">30% Estudiantes</span>
-                    <span class="card-badge-right">PRINCIPIANTE</span>
-                    <img src="img/camisas-nino.jpg" alt="Camisas Niño">
-                    <div class="card-body">
-                        <h3>Camisas Niño</h3>
-                        <div class="stars">★★★★★ <span>4.9 (189)</span></div>
-                        <div class="price-row">
-                            <div class="price">$4.50</div>
-                            <div class="price-old">$6.43</div>
-                            <span class="discount">-30%</span>
+                    <div class="p-3 space-y-2 relative z-10 bg-[#181818]">
+                        <h3 class="font-bold text-xs md:text-sm line-clamp-1 text-white">Costura Premium (Desde Cero)</h3>
+                        <div class="flex items-center justify-between text-[10px] md:text-xs">
+                            <span class="text-green-400 font-bold">98% Recomendado</span>
+                            <span class="bg-zinc-700 text-white px-1.5 py-0.5 rounded font-bold">$75.00 USD</span>
                         </div>
-                        <div class="ig-tag">
-                            <strong>IG sugerido:</strong> <span>@ropainfantildiy @mamaemprende</span>
-                        </div>
-                        <a href="https://go.hotmart.com/V104028170U?ap=0d7d" class="btn-checkout" target="_blank">
-                            🛒 Ir al Checkout
+                        <a href="TU_ENLACE_HOTMART_CURSO_11" target="_blank" class="block w-full bg-red-600 hover:bg-red-700 text-white text-center font-bold text-xs py-2 rounded transition mt-1">
+                            Ver Curso
                         </a>
-                        <a href="#" class="link-free">Ver Clase Gratuita →</a>
                     </div>
                 </div>
 
-                <!-- CURSO 2 -->
-                <div class="card">
-                    <span class="card-badge-left">30% Estudiantes</span>
-                    <span class="card-badge-right">PRINCIPIANTE</span>
-                    <img src="img/deportiva.jpg" alt="Ropa Deportiva">
-                    <div class="card-body">
-                        <h3>Ropa Deportiva</h3>
-                        <div class="stars">★★★★★ <span>4.7 (312)</span></div>
-                        <div class="price-row">
-                            <div class="price">$4.20</div>
-                            <div class="price-old">$6.00</div>
-                            <span class="discount">-30%</span>
+                <!-- TARJETA: Diseño de Moda Premium -->
+                <div class="card-container group bg-[#181818] rounded-md overflow-hidden border border-zinc-800 flex flex-col justify-between shadow-xl">
+                    <div class="w-full overflow-hidden relative aspect-video">
+                        <img src="1000179125_2.png" alt="Diseño de Moda" class="netflix-card-img w-full h-full">
+                        <div class="card-gradient absolute inset-0"></div>
+                    </div>
+                    <div class="p-3 space-y-2 relative z-10 bg-[#181818]">
+                        <h3 class="font-bold text-xs md:text-sm line-clamp-1 text-white">Diseño de Moda Premium</h3>
+                        <div class="flex items-center justify-between text-[10px] md:text-xs">
+                            <span class="text-green-400 font-bold">96% Coincidencia</span>
+                            <span class="bg-zinc-700 text-white px-1.5 py-0.5 rounded font-bold">$29.99 USD</span>
                         </div>
-                        <div class="ig-tag">
-                            <strong>IG sugerido:</strong> <span>@fitnesscostura @activewear_diy</span>
-                        </div>
-                        <a href="https://go.hotmart.com/P102624264C?ap=9cb0" class="btn-checkout" target="_blank">
-                            🛒 Ir al Checkout
+                        <a href="TU_ENLACE_HOTMART_CURSO_10" target="_blank" class="block w-full bg-red-600 hover:bg-red-700 text-white text-center font-bold text-xs py-2 rounded transition mt-1">
+                            Ver Curso
                         </a>
-                        <a href="#" class="link-free">Ver Clase Gratuita →</a>
                     </div>
                 </div>
 
-                <!-- CURSO 3 -->
-                <div class="card">
-                    <span class="card-badge-left">80% Estudiantes</span>
-                    <span class="card-badge-right">INTERMEDIO</span>
-                    <img src="img/lenceria.jpg" alt="Lencería Íntima">
-                    <div class="card-body">
-                        <h3>Lencería Íntima Premium</h3>
-                        <div class="stars">★★★★★ <span>4.6 (580)</span></div>
-                        <div class="price-row">
-                            <div class="price">$39.99</div>
+                <!-- TARJETA: Costura de Implementos Deportivos -->
+                <div class="card-container group bg-[#181818] rounded-md overflow-hidden border border-zinc-800 flex flex-col justify-between shadow-xl">
+                    <div class="w-full overflow-hidden relative aspect-video">
+                        <img src="1000179086_2.webp" alt="Implementos Deportivos" class="netflix-card-img w-full h-full">
+                        <div class="card-gradient absolute inset-0"></div>
+                    </div>
+                    <div class="p-3 space-y-2 relative z-10 bg-[#181818]">
+                        <h3 class="font-bold text-xs md:text-sm line-clamp-1 text-white">Implementos Deportivos</h3>
+                        <div class="flex items-center justify-between text-[10px] md:text-xs">
+                            <span class="text-green-400 font-bold">97% Coincidencia</span>
+                            <span class="bg-zinc-700 text-white px-1.5 py-0.5 rounded font-bold">$59.99 USD</span>
                         </div>
-                        <div class="ig-tag">
-                            <strong>Ganancia promedio:</strong> <span>$800-$1,500/mes</span>
-                        </div>
-                        <a href="https://go.hotmart.com/P75653648Y?ap=5f2c" class="btn-checkout" target="_blank">
-                            🛒 Ir al Checkout
+                        <a href="TU_ENLACE_HOTMART_CURSO_14" target="_blank" class="block w-full bg-red-600 hover:bg-red-700 text-white text-center font-bold text-xs py-2 rounded transition mt-1">
+                            Ver Curso
                         </a>
-                        <a href="#" class="link-free">Ver Clase Gratuita →</a>
+                    </div>
+                </div>
+
+                <!-- TARJETA: Emprende con Camisetas -->
+                <div class="card-container group bg-[#181818] rounded-md overflow-hidden border border-zinc-800 flex flex-col justify-between shadow-xl">
+                    <div class="w-full overflow-hidden relative aspect-video">
+                        <img src="1000179129_2.webp" alt="Emprende con Camisetas" class="netflix-card-img w-full h-full">
+                        <div class="card-gradient absolute inset-0"></div>
+                    </div>
+                    <div class="p-3 space-y-2 relative z-10 bg-[#181818]">
+                        <h3 class="font-bold text-xs md:text-sm line-clamp-1 text-white">Emprende con Camisetas</h3>
+                        <div class="flex items-center justify-between text-[10px] md:text-xs">
+                            <span class="text-green-400 font-bold">94% Coincidencia</span>
+                            <span class="bg-zinc-700 text-white px-1.5 py-0.5 rounded font-bold">$14.00 USD</span>
+                        </div>
+                        <a href="TU_ENLACE_HOTMART_CURSO_2" target="_blank" class="block w-full bg-red-600 hover:bg-red-700 text-white text-center font-bold text-xs py-2 rounded transition mt-1">
+                            Ver Curso
+                        </a>
                     </div>
                 </div>
 
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- FILA 2: LÍNEAS DE ESPECIALIZACIÓN -->
+        <section id="especializaciones" class="space-y-3 px-4 md:px-12">
+            <h2 class="text-sm md:text-xl font-bold text-gray-200 tracking-wide">Especialidades Altamente Rentables</h2>
+            
+            <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+
+                <!-- TARJETA: Lencería Íntima Premium -->
+                <div class="card-container group bg-[#181818] rounded-md overflow-hidden border border-zinc-800 flex flex-col justify-between shadow-xl">
+                    <div class="w-full overflow-hidden relative aspect-video">
+                        <img src="1000179110.webp" alt="Lencería Íntima Premium" class="netflix-card-img w-full h-full">
+                        <div class="card-gradient absolute inset-0"></div>
+                    </div>
+                    <div class="p-3 space-y-2 relative z-10 bg-[#181818]">
+                        <h3 class="font-bold text-xs md:text-sm line-clamp-1 text-white">Lencería Íntima Premium</h3>
+                        <div class="flex items-center justify-between text-[10px] md:text-xs">
+                            <span class="text-green-400 font-bold">95% Coincidencia</span>
+                            <span class="bg-zinc-700 text-white px-1.5 py-0.5 rounded font-bold">$39.99 USD</span>
+                        </div>
+                        <a href="TU_ENLACE_HOTMART_CURSO_6" target="_blank" class="block w-full bg-red-600 hover:bg-red-700 text-white text-center font-bold text-xs py-2 rounded transition mt-1">
+                            Ver Curso
+                        </a>
+                    </div>
+                </div>
+
+                <!-- TARJETA: Camisas de Niño Sin Estrés -->
+                <div class="card-container group bg-[#181818] rounded-md overflow-hidden border border-zinc-800 flex flex-col justify-between shadow-xl">
+                    <div class="w-full overflow-hidden relative aspect-video">
+                        <img src="1000179132_2.webp" alt="Camisas de Niño" class="netflix-card-img w-full h-full">
+                        <div class="card-gradient absolute inset-0"></div>
+                    </div>
+                    <div class="p-3 space-y-2 relative z-10 bg-[#181818]">
+                        <h3 class="font-bold text-xs md:text-sm line-clamp-1 text-white">Camisas de Niño Sin Estrés</h3>
+                        <div class="flex items-center justify-between text-[10px] md:text-xs">
+                            <span class="text-green-400 font-bold">92% Coincidencia</span>
+                            <span class="bg-zinc-700 text-white px-1.5 py-0.5 rounded font-bold">$15.00 USD</span>
+                        </div>
+                        <a href="TU_ENLACE_HOTMART_CURSO_3" target="_blank" class="block w-full bg-red-600 hover:bg-red-700 text-white text-center font-bold text-xs py-2 rounded transition mt-1">
+                            Ver Curso
+                        </a>
+                    </div>
+                </div>
+
+                <!-- TARJETA: Costura Premium Línea Masculina -->
+                <div class="card-container group bg-[#181818] rounded-md overflow-hidden border border-zinc-800 flex flex-col justify-between shadow-xl">
+                    <div class="w-full overflow-hidden relative aspect-video">
+                        <img src="1000179091_2.webp" alt="Línea Masculina Premium" class="netflix-card-img w-full h-full">
+                        <div class="card-gradient absolute inset-0"></div>
+                    </div>
+                    <div class="p-3 space-y-2 relative z-10 bg-[#181818]">
+                        <h3 class="font-bold text-xs md:text-sm line-clamp-1 text-white">Costura Línea Masculina</h3>
+                        <div class="flex items-center justify-between text-[10px] md:text-xs">
+                            <span class="text-green-400 font-bold">93% Coincidencia</span>
+                            <span class="bg-zinc-700 text-white px-1.5 py-0.5 rounded font-bold">$19.99 USD</span>
+                        </div>
+                        <a href="TU_ENLACE_HOTMART_CURSO_12" target="_blank" class="block w-full bg-red-600 hover:bg-red-700 text-white text-center font-bold text-xs py-2 rounded transition mt-1">
+                            Ver Curso
+                        </a>
+                    </div>
+                </div>
+
+                <!-- TARJETA: Ropa Deportiva Premium -->
+                <div class="card-container group bg-[#181818] rounded-md overflow-hidden border border-zinc-800 flex flex-col justify-between shadow-xl">
+                    <div class="w-full overflow-hidden relative aspect-video">
+                        <img src="1000179144_2.jpg" alt="Ropa Deportiva Premium" class="netflix-card-img w-full h-full">
+                        <div class="card-gradient absolute inset-0"></div>
+                    </div>
+                    <div class="p-3 space-y-2 relative z-10 bg-[#181818]">
+                        <h3 class="font-bold text-xs md:text-sm line-clamp-1 text-white">Ropa Deportiva Premium</h3>
+                        <div class="flex items-center justify-between text-[10px] md:text-xs">
+                            <span class="text-green-400 font-bold">90% Coincidencia</span>
+                            <span class="bg-zinc-700 text-white px-1.5 py-0.5 rounded font-bold">$14.00 USD</span>
+                        </div>
+                        <a href="TU_ENLACE_HOTMART_CURSO_5" target="_blank" class="block w-full bg-red-600 hover:bg-red-700 text-white text-center font-bold text-xs py-2 rounded transition mt-1">
+                            Ver Curso
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER DE MARCA -->
+    <footer class="bg-[#141414] text-zinc-600 text-xs text-center py-8 border-t border-zinc-900 space-y-2">
+        <p>© 2026 Costura Flix. Todos los derechos reservados.</p>
+        <p class="max-w-md mx-auto text-[10px] px-4">Esta plataforma comercializa accesos directos autorizados a programas de formación técnica en costura y diseño.</p>
+    </footer>
 
 </body>
 </html>
