@@ -3,396 +3,473 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Premium Academy - Cursos de Costura Online</title>
-    <meta name="description" content="Aprende costura desde cero y genera ingresos. +15 cursos: Lencería, Pijamas, Costura Infantil. Certificado incluido.">
+    <title>Corte y Confección - Academia Online</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #E84393;
-            --dark: #2D3436;
+            --primary: #E91E63;
+            --primary-dark: #C2185B;
+            --dark: #1A1A2E;
             --light: #F8F9FA;
-            --success: #00B894;
-            --warning: #FDCB6E;
-            --info: #0984E3;
+            --success: #10B981;
+            --warning: #F59E0B;
+            --gray-600: #475569;
+            --gray-100: #F1F5F9;
         }
         * { margin: 0; padding: 0; box-sizing: border-box }
         body { 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-            line-height: 1.6; 
+            font-family: 'Inter', sans-serif; 
             color: var(--dark);
-            background: var(--light);
+            background: #FEFEFE;
         }
+        h1, h2, h3, h4 { font-family: 'Outfit', sans-serif; font-weight: 700 }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px }
+        
+        /* HEADER */
+        .header {
+            background: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo { 
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Outfit', sans-serif; 
+            font-weight: 900; 
+            font-size: 1.4rem; 
+            color: var(--dark);
+        }
+        .logo-icon { color: var(--primary); font-size: 1.8rem }
+        .logo span { display: block; font-size: 0.75rem; font-weight: 400; color: var(--gray-600); margin-top: -5px }
+        .menu { font-size: 1.8rem; cursor: pointer }
+        
+        /* HERO */
         .hero {
-            background: linear-gradient(135deg, var(--primary) 0%, #6C5CE7 100%);
-            color: white;
-            padding: 80px 20px;
-            text-align: center;
+            background: linear-gradient(135deg, #FFE5F1 0%, #F3E5F5 50%, #E8EAF6 100%);
+            padding: 60px 20px 100px;
+            position: relative;
         }
-        .hero h1 { font-size: 2.5rem; margin-bottom: 15px; line-height: 1.2 }
-        .hero p { font-size: 1.2rem; margin-bottom: 30px; opacity: 0.9 }
-        .btn {
-            display: inline-block;
-            padding: 15px 35px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            transition: 0.3s;
-            cursor: pointer;
-            border: none;
+        .hero-card {
+            background: white;
+            border-radius: 24px;
+            padding: 0;
+            box-shadow: 0 20px 60px rgba(233,30,99,0.15);
+            overflow: hidden;
+            position: relative;
+            min-height: 400px;
+            background: linear-gradient(135deg, rgba(233,30,99,0.1) 0%, rgba(156,39,176,0.1) 100%);
         }
-        .btn-primary {
+        .badge-rating {
+            position: absolute;
+            top: 20px;
+            right: 0;
             background: var(--warning);
             color: var(--dark);
+            padding: 10px 20px;
+            border-radius: 50px 0 0 50px;
+            font-weight: 700;
+            font-size: 0.9rem;
         }
-        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.2) }
-        .section { padding: 60px 0 }
-        .section-title { text-align: center; font-size: 2rem; margin-bottom: 50px }
+        .stat-float {
+            position: absolute;
+            bottom: -30px;
+            left: 30px;
+            background: white;
+            padding: 20px 30px;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .stat-icon {
+            width: 50px;
+            height: 50px;
+            background: #E8F5E9;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+        .stat-num { font-family: 'Outfit', sans-serif; font-size: 2rem; font-weight: 900; color: var(--dark) }
+        .stat-label { color: var(--gray-600); font-size: 0.9rem }
+        
+        .hero-content {
+            padding: 60px 30px 40px;
+            text-align: center;
+        }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #FCE4EC;
+            color: var(--primary);
+            padding: 8px 18px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 25px;
+        }
+        .hero h1 { 
+            font-size: 3rem; 
+            line-height: 1.1; 
+            margin-bottom: 20px;
+            font-weight: 900;
+        }
+        .hero h1 span { color: var(--primary) }
+        .hero-desc { 
+            color: var(--gray-600); 
+            font-size: 1.1rem; 
+            margin-bottom: 35px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* TOP 3 SLIDER */
+        .top-section {
+            padding: 80px 20px 40px;
+            background: var(--light);
+        }
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: white;
+            padding: 15px 25px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+        .section-header h3 { font-size: 1rem; color: var(--gray-600); font-weight: 600 }
+        .top-badge {
+            background: #FFF3E0;
+            color: #E65100;
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+        .top-card {
+            background: white;
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+        .top-card img { 
+            width: 100px; 
+            height: 100px; 
+            object-fit: cover; 
+            border-radius: 12px;
+            background: var(--gray-100);
+        }
+        .top-info h4 { font-size: 1.3rem; margin-bottom: 10px }
+        .top-price { font-size: 2rem; font-weight: 900; color: var(--dark); font-family: 'Outfit', sans-serif }
+        .top-earning { 
+            background: #E8F5E9;
+            color: #1B5E20;
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 8px;
+        }
+        .dots { display: flex; gap: 8px; justify-content: center; margin-top: 20px }
+        .dot { width: 8px; height: 8px; border-radius: 50%; background: #DDD }
+        .dot.active { width: 30px; border-radius: 10px; background: var(--primary) }
+        
+        .btn-main {
+            width: 100%;
+            background: var(--primary);
+            color: white;
+            padding: 18px;
+            border-radius: 15px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 25px;
+            box-shadow: 0 10px 30px rgba(233,30,99,0.3);
+        }
+        .btn-outline {
+            width: 100%;
+            background: white;
+            color: var(--dark);
+            padding: 18px;
+            border-radius: 15px;
+            text-decoration: none;
+            font-weight: 600;
+            text-align: center;
+            display: block;
+            margin-top: 12px;
+            border: 2px solid #E5E7EB;
+        }
+        
+        /* COURSE CARDS */
+        .section { padding: 60px 20px }
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 25px;
         }
         .card {
             background: white;
-            border-radius: 15px;
+            border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-            transition: 0.3s;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+            position: relative;
         }
-        .card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.15) }
-        .card img { width: 100%; height: 200px; object-fit: cover; background: #eee }
-        .card-body { padding: 25px }
-        .badge {
-            display: inline-block;
+        .card-badge-left {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: white;
+            color: var(--primary);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            z-index: 10;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .card-badge-right {
+            position: absolute;
+            top: 15px;
+            right: 15px;
             background: var(--success);
             color: white;
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.8rem;
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
             font-weight: 700;
-            margin-bottom: 10px;
+            z-index: 10;
         }
-        .badge-star { background: var(--warning); color: var(--dark) }
-        .badge-info { background: var(--info); color: white }
-        .card h3 { margin: 10px 0; font-size: 1.3rem }
-        .price { font-size: 1.8rem; font-weight: 700; color: var(--primary); margin: 15px 0 5px }
-        .ganancia {
-            background: #E8F5E9;
-            color: #2E7D32;
-            padding: 8px 12px;
-            border-radius: 8px;
+        .card img { 
+            width: 100%; 
+            height: 200px; 
+            object-fit: cover;
+            background: var(--gray-100);
+        }
+        .card-body { padding: 25px }
+        .card h3 { font-size: 1.4rem; margin-bottom: 10px }
+        .stars { color: #FBBF24; font-size: 1rem; margin-bottom: 15px }
+        .stars span { color: var(--gray-600); font-size: 0.9rem; margin-left: 8px }
+        .price-row {
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+            margin: 20px 0 15px;
+        }
+        .price { font-size: 2.2rem; font-weight: 900; color: var(--dark); font-family: 'Outfit', sans-serif }
+        .price-old { font-size: 1.1rem; color: var(--gray-600); text-decoration: line-through }
+        .discount { 
+            background: #FEE2E2; 
+            color: #DC2626; 
+            padding: 4px 10px; 
+            border-radius: 6px; 
+            font-size: 0.85rem; 
+            font-weight: 700;
+        }
+        .ig-tag {
+            background: var(--gray-100);
+            padding: 12px;
+            border-radius: 10px;
+            margin: 15px 0;
             font-size: 0.9rem;
-            font-weight: 600;
-            margin-bottom: 15px;
         }
-        .btn-block { width: 100%; text-align: center; background: var(--primary); color: white }
-        .features { display: flex; gap: 15px; margin: 15px 0; font-size: 0.9rem; opacity: 0.8; flex-wrap: wrap }
-        .features span::before { content: "✓ "; color: var(--success); font-weight: 700 }
-        .testimonial {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-        }
-        .stars { color: var(--warning); font-size: 1.2rem; margin-bottom: 10px }
-        .footer { background: var(--dark); color: white; padding: 40px 20px; text-align: center }
-        .category { margin-bottom: 60px }
-        .category h3 { 
-            font-size: 1.5rem; 
-            margin-bottom: 30px; 
-            padding-bottom: 10px;
-            border-bottom: 3px solid var(--primary);
-            display: inline-block;
-        }
-        .link-secondary { 
-            display: block; 
-            text-align: center; 
-            margin-top: 10px; 
-            color: var(--primary); 
-            font-size: 0.9rem;
+        .ig-tag strong { color: var(--dark) }
+        .ig-tag span { color: var(--primary); font-weight: 600 }
+        .btn-checkout {
+            width: 100%;
+            background: var(--primary);
+            color: white;
+            padding: 16px;
+            border-radius: 12px;
             text-decoration: none;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 15px;
         }
-        .stats { 
-            background: white; 
-            padding: 20px; 
-            border-radius: 15px; 
+        .link-free {
+            display: block;
             text-align: center;
-            margin-bottom: 20px;
+            margin-top: 12px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
         }
-        .stats strong { font-size: 2rem; color: var(--primary); display: block }
+        
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2rem }
+            .hero h1 { font-size: 2.2rem }
             .grid { grid-template-columns: 1fr }
         }
     </style>
 </head>
 <body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <span class="logo-icon">✂️</span>
+                <div>
+                    Corte y Confección
+                    <span>Academia Online</span>
+                </div>
+            </div>
+            <div class="menu">☰</div>
+        </div>
+    </header>
+
+    <!-- HERO -->
     <section class="hero">
         <div class="container">
-            <h1>De Hobby a Ingresos: Aprende Costura que se Vende</h1>
-            <p>+2,400 estudiantes ya generan ingresos desde casa. Certificado incluido. Garantía 7 días.</p>
-            <a href="#cursos" class="btn btn-primary">Ver Cursos Ahora</a>
-        </div>
-    </section>
-
-    <!-- PRUEBA SOCIAL CON NÚMEROS -->
-    <section class="section" style="background: white;">
-        <div class="container">
-            <div class="grid">
-                <div class="stats">
-                    <strong>+2,400</strong>
-                    Estudiantes activas
+            <div class="hero-card">
+                <span class="badge-rating">Rating</span>
+                <div class="stat-float">
+                    <div class="stat-icon">👥</div>
+                    <div>
+                        <div class="stat-num">12,450+</div>
+                        <div class="stat-label">Estudiantes Activas</div>
+                    </div>
                 </div>
-                <div class="stats">
-                    <strong>4.8★</strong>
-                    Valoración promedio
+            </div>
+            
+            <div class="hero-content">
+                <div class="hero-badge">
+                    🏆 Academia #1 en Costura Online
                 </div>
-                <div class="stats">
-                    <strong>$400 USD</strong>
-                    Ganancia promedio/mes de alumnas
-                </div>
+                <h1>Transforma tu Pasión en<br><span>Ingresos Reales</span></h1>
+                <p class="hero-desc">Aprende costura profesional con 15 cursos especializados. Nuestras alumnas generan desde $150 hasta $1,500 USD/mes cosiendo desde casa.</p>
             </div>
         </div>
     </section>
 
+    <!-- TOP 3 -->
+    <section class="top-section">
+        <div class="container">
+            <div class="section-header">
+                <span>📈</span>
+                <h3>TOP 3 CURSOS ALTO TICKET</h3>
+            </div>
+            
+            <div class="top-card">
+                <img src="img/implementos.jpg" alt="Implementos Deportivos">
+                <div class="top-info">
+                    <span class="top-badge">TOP 3 - ALTO TICKET</span>
+                    <h4>Implementos Deportivos</h4>
+                    <div class="top-price">$41.99</div>
+                    <span class="top-earning">Ganancia estimada: $1,000+/mes con contratos B2B</span>
+                </div>
+            </div>
+            
+            <div class="dots">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot active"></span>
+            </div>
+            
+            <a href="#cursos" class="btn-main">Ver Todos los Cursos →</a>
+            <a href="#comisiones" class="btn-outline">Tabla de Ganancias</a>
+        </div>
+    </section>
+
+    <!-- CURSOS -->
     <section id="cursos" class="section">
         <div class="container">
-            <h2 class="section-title">Cursos Más Rentables para Emprender</h2>
-
-            <div class="category">
-                <h3>1. Para Empezar Desde Cero</h3>
-                <div class="grid">
-                    <div class="card">
-                        <img src="img/camisetas.jpg" alt="Emprende con Camisetas">
-                        <div class="card-body">
-                            <span class="badge badge-star">5.0★ 312 estudiantes</span>
-                            <h3>Emprende con Camisetas</h3>
-                            <div class="features"><span>Principiante</span><span>Marketing incluido</span></div>
-                            <p>Tu primera marca de ropa. Camisetas + pantalón básico + cómo vender por internet.</p>
-                            <div class="price">$14.00 USD</div>
-                            <div class="ganancia">Alumnas generan $150-$300/mes</div>
-                            <a href="https://go.hotmart.com/Q106562159L?ap=14e1" class="btn btn-block" target="_blank">Quiero Empezar Ahora</a>
+            <div class="grid">
+                
+                <!-- CURSO 1 -->
+                <div class="card">
+                    <span class="card-badge-left">30% Estudiantes</span>
+                    <span class="card-badge-right">PRINCIPIANTE</span>
+                    <img src="img/camisas-nino.jpg" alt="Camisas Niño">
+                    <div class="card-body">
+                        <h3>Camisas Niño</h3>
+                        <div class="stars">★★★★★ <span>4.9 (189)</span></div>
+                        <div class="price-row">
+                            <div class="price">$4.50</div>
+                            <div class="price-old">$6.43</div>
+                            <span class="discount">-30%</span>
                         </div>
-                    </div>
-
-                    <div class="card">
-                        <img src="img/camisas-nino.jpg" alt="Camisas para Niño">
-                        <div class="card-body">
-                            <span class="badge badge-star">5.0★ 198 estudiantes</span>
-                            <h3>Camisas para Niño</h3>
-                            <div class="features"><span>Principiante</span><span>Patronaje</span></div>
-                            <p>Camisas clásicas para niños. Perfecto para mamás que cosen para sus hijos.</p>
-                            <div class="price">$15.00 USD</div>
-                            <div class="ganancia">Ahorra $200/mes en ropa infantil</div>
-                            <a href="https://go.hotmart.com/V104028170U?ap=0d7d" class="btn btn-block" target="_blank">Quiero Empezar Ahora</a>
+                        <div class="ig-tag">
+                            <strong>IG sugerido:</strong> <span>@ropainfantildiy @mamaemprende</span>
                         </div>
-                    </div>
-
-                    <div class="card">
-                        <img src="img/deportiva.jpg" alt="Ropa Deportiva">
-                        <div class="card-body">
-                            <span class="badge badge-star">5.0★ 421 estudiantes</span>
-                            <h3>Ropa Deportiva Premium</h3>
-                            <div class="features"><span>Principiante</span><span>Fitness</span></div>
-                            <p>Leggings, tops y shorts. El nicho que más crece en 2026.</p>
-                            <div class="price">$14.00 USD</div>
-                            <div class="ganancia">Alumnas venden desde $25 por prenda</div>
-                            <a href="https://go.hotmart.com/P102624264C?ap=9cb0" class="btn btn-block" target="_blank">Quiero Empezar Ahora</a>
-                        </div>
+                        <a href="https://go.hotmart.com/V104028170U?ap=0d7d" class="btn-checkout" target="_blank">
+                            🛒 Ir al Checkout
+                        </a>
+                        <a href="#" class="link-free">Ver Clase Gratuita →</a>
                     </div>
                 </div>
-            </div>
 
-            <div class="category">
-                <h3>2. Especialización Profesional</h3>
-                <div class="grid">
-                    <div class="card">
-                        <img src="img/lenceria.jpg" alt="Lencería Íntima">
-                        <div class="card-body">
-                            <span class="badge">4.6★ 580 estudiantes</span>
-                            <h3>Lencería Íntima Premium</h3>
-                            <div class="features"><span>Intermedio</span><span>31 Clases</span></div>
-                            <p>De enhebrar máquina hasta tanga, bikini y cachetero. El nicho más rentable.</p>
-                            <div class="price">$39.99 USD</div>
-                            <div class="ganancia">Alumnas facturan $800-$1,500/mes</div>
-                            <a href="https://go.hotmart.com/P75653648Y?ap=5f2c" class="btn btn-block" target="_blank">Especializarme Ahora</a>
+                <!-- CURSO 2 -->
+                <div class="card">
+                    <span class="card-badge-left">30% Estudiantes</span>
+                    <span class="card-badge-right">PRINCIPIANTE</span>
+                    <img src="img/deportiva.jpg" alt="Ropa Deportiva">
+                    <div class="card-body">
+                        <h3>Ropa Deportiva</h3>
+                        <div class="stars">★★★★★ <span>4.7 (312)</span></div>
+                        <div class="price-row">
+                            <div class="price">$4.20</div>
+                            <div class="price-old">$6.00</div>
+                            <span class="discount">-30%</span>
                         </div>
-                    </div>
-
-                    <div class="card">
-                        <img src="img/pijamas.jpg" alt="Pijamas Premium">
-                        <div class="card-body">
-                            <span class="badge">4.9★ 340 estudiantes</span>
-                            <h3>Pijamas Premium</h3>
-                            <div class="features"><span>Intermedio</span><span>Familia</span></div>
-                            <p>Pijamas para toda la familia. Vende todo el año, no solo en invierno.</p>
-                            <div class="price">$29.99 USD</div>
-                            <div class="ganancia">Ganancia promedio $400-$600/mes</div>
-                            <a href="https://go.hotmart.com/L101965484C?ap=2c9b" class="btn btn-block" target="_blank">Especializarme Ahora</a>
+                        <div class="ig-tag">
+                            <strong>IG sugerido:</strong> <span>@fitnesscostura @activewear_diy</span>
                         </div>
-                    </div>
-
-                    <div class="card">
-                        <img src="img/infantil.jpg" alt="Costura Infantil">
-                        <div class="card-body">
-                            <span class="badge badge-info">+180 estudiantes</span>
-                            <h3>Costura Infantil Premium</h3>
-                            <div class="features"><span>Intermedio</span><span>Patrones desde cero</span></div>
-                            <p>Diseña ropa para tus hijos. De jogger a pantalón urbano. Ahorra y emprende.</p>
-                            <div class="price">$79.99 USD</div>
-                            <div class="ganancia">Ahorra $200/mes + vende desde $40/prenda</div>
-                            <a href="https://go.hotmart.com/R82849870U?ap=9dab" class="btn btn-block" target="_blank">Especializarme Ahora</a>
-                            <a href="https://go.hotmart.com/R82849870U?ap=8db0" class="link-secondary" target="_blank">Ver clase gratis</a>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <img src="img/trajebano.jpg" alt="Trajes de Baño">
-                        <div class="card-body">
-                            <span class="badge badge-info">+95 estudiantes</span>
-                            <h3>Trajes de Baño Premium</h3>
-                            <div class="features"><span>Intermedio</span><span>Lycra y tela</span></div>
-                            <p>Bikinis, enteros y salidas de baño. Alta demanda Oct-Mar.</p>
-                            <div class="price">$69.99 USD</div>
-                            <div class="ganancia">Temporada alta: $1,200-$2,000/mes</div>
-                            <a href="https://go.hotmart.com/I103391374H?ap=5ff6" class="btn btn-block" target="_blank">Especializarme Ahora</a>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <img src="img/diseno.jpg" alt="Diseño de Moda">
-                        <div class="card-body">
-                            <span class="badge">4.8★ 210 estudiantes</span>
-                            <h3>Diseño de Moda Premium</h3>
-                            <div class="features"><span>Creativo</span><span>Marca propia</span></div>
-                            <p>Figurines, color, 7 estilos universales. Crea tu propia colección.</p>
-                            <div class="price">$29.99 USD</div>
-                            <div class="ganancia">Lanza tu marca con inversión mínima</div>
-                            <a href="https://go.hotmart.com/A106562256Q?ap=9850" class="btn btn-block" target="_blank">Especializarme Ahora</a>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <img src="img/mantenimiento.jpg" alt="Mantenimiento Máquinas">
-                        <div class="card-body">
-                            <span class="badge">4.8★ 450 estudiantes</span>
-                            <h3>Mantenimiento de Máquinas</h3>
-                            <div class="features"><span>Técnico</span><span>Ahorra dinero</span></div>
-                            <p>Repara tu máquina tú misma. No más técnicos caros. Curso obligatorio.</p>
-                            <div class="price">$39.99 USD</div>
-                            <div class="ganancia">Ahorra $150 por cada reparación</div>
-                            <a href="https://go.hotmart.com/B75653655X?ap=4c6b" class="btn btn-block" target="_blank">Especializarme Ahora</a>
-                        </div>
+                        <a href="https://go.hotmart.com/P102624264C?ap=9cb0" class="btn-checkout" target="_blank">
+                            🛒 Ir al Checkout
+                        </a>
+                        <a href="#" class="link-free">Ver Clase Gratuita →</a>
                     </div>
                 </div>
-            </div>
 
-            <div class="category">
-                <h3>3. Sastrería y Nichos Premium</h3>
-                <div class="grid">
-                    <div class="card">
-                        <img src="img/gold.jpg" alt="Costura Premium Gold">
-                        <div class="card-body">
-                            <span class="badge badge-info">+120 estudiantes</span>
-                            <h3>Costura Premium Gold</h3>
-                            <div class="features"><span>Avanzado</span><span>Sastrería</span></div>
-                            <p>Para costureras que quieren cobrar premium. Técnicas de alta costura.</p>
-                            <div class="price">$75.00 USD</div>
-                            <div class="ganancia">Cobra $80-$150 por prenda a medida</div>
-                            <a href="https://go.hotmart.com/E106051689D?ap=8fe0" class="btn btn-block" target="_blank">Nivel Experto</a>
-                            <a href="https://go.hotmart.com/E106051689D?ap=7b7b" class="link-secondary" target="_blank">Ver clase gratis</a>
+                <!-- CURSO 3 -->
+                <div class="card">
+                    <span class="card-badge-left">80% Estudiantes</span>
+                    <span class="card-badge-right">INTERMEDIO</span>
+                    <img src="img/lenceria.jpg" alt="Lencería Íntima">
+                    <div class="card-body">
+                        <h3>Lencería Íntima Premium</h3>
+                        <div class="stars">★★★★★ <span>4.6 (580)</span></div>
+                        <div class="price-row">
+                            <div class="price">$39.99</div>
                         </div>
-                    </div>
-
-                    <div class="card">
-                        <img src="img/masculina.jpg" alt="Línea Masculina">
-                        <div class="card-body">
-                            <span class="badge badge-star">5.0★ 89 estudiantes</span>
-                            <h3>Línea Masculina</h3>
-                            <div class="features"><span>90 Clases</span><span>40 Horas</span></div>
-                            <p>Sastrería masculina desde cero. Camisas, pantalones y chaquetas de hombre.</p>
-                            <div class="price">$19.99 USD</div>
-                            <div class="ganancia">Nicho sin competencia: $500+/mes</div>
-                            <a href="https://go.hotmart.com/O57813170D?ap=2cdc" class="btn btn-block" target="_blank">Nivel Experto</a>
+                        <div class="ig-tag">
+                            <strong>Ganancia promedio:</strong> <span>$800-$1,500/mes</span>
                         </div>
-                    </div>
-
-                    <div class="card">
-                        <img src="img/implementos.jpg" alt="Implementos Deportivos">
-                        <div class="card-body">
-                            <span class="badge badge-info">+60 estudiantes</span>
-                            <h3>Implementos Deportivos</h3>
-                            <div class="features"><span>Marroquinería</span><span>Vende a Gyms</span></div>
-                            <p>Cose TRX, colchonetas, chalecos de peso. Vende a entrenadores y gimnasios.</p>
-                            <div class="price">$59.99 USD</div>
-                            <div class="ganancia">Contratos B2B desde $1,000/mes</div>
-                            <a href="https://go.hotmart.com/Q82963163C?ap=b715" class="btn btn-block" target="_blank">Nivel Experto</a>
-                            <a href="https://go.hotmart.com/Q82963163C?ap=e9d3" class="link-secondary" target="_blank">Ver con 50% descuento</a>
-                        </div>
+                        <a href="https://go.hotmart.com/P75653648Y?ap=5f2c" class="btn-checkout" target="_blank">
+                            🛒 Ir al Checkout
+                        </a>
+                        <a href="#" class="link-free">Ver Clase Gratuita →</a>
                     </div>
                 </div>
-            </div>
 
-            <div class="category">
-                <h3>4. Membresías - Acceso Total</h3>
-                <div class="grid">
-                    <div class="card">
-                        <img src="img/maestria.jpg" alt="Maestría Costura">
-                        <div class="card-body">
-                            <span class="badge">Mejor Valor</span>
-                            <h3>Maestría Costura Premium 12M</h3>
-                            <div class="features"><span>Acceso total</span><span>12 meses</span></div>
-                            <p>Accede a todos los cursos + actualizaciones. Soporte 1:1 por un año.</p>
-                            <div class="price">$132.65 USD</div>
-                            <div class="ganancia">Incluye cursos por valor de $600+</div>
-                            <a href="https://go.hotmart.com/T98463803P?ap=0ba5" class="btn btn-block" target="_blank">Suscribirme 12 Meses</a>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <img src="img/maestria.jpg" alt="Maestría Costura">
-                        <div class="card-body">
-                            <span class="badge">Más Económico</span>
-                            <h3>Maestría Costura Premium 24M</h3>
-                            <div class="features"><span>Acceso total</span><span>24 meses</span></div>
-                            <p>El plan más barato por mes. Todos los cursos por 2 años.</p>
-                            <div class="price">$64.99 USD</div>
-                            <div class="ganancia">Solo $2.70/mes por acceso total</div>
-                            <a href="https://go.hotmart.com/T98463803P?ap=cab3" class="btn btn-block" target="_blank">Suscribirme 24 Meses</a>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <img src="img/blusas.jpg" alt="Blusas Premium">
-                        <div class="card-body">
-                            <span class="badge">Mensual</span>
-                            <h3>Blusas Premium</h3>
-                            <div class="features"><span>Mensual</span><span>Cancela cuando quieras</span></div>
-                            <p>Nuevas blusas cada mes. Patrones + clase en vivo.</p>
-                            <div class="price">$66.99 USD</div>
-                            <div class="ganancia">1 blusa vendida paga la mensualidad</div>
-                            <a href="https://go.hotmart.com/V82152744C?ap=a0b8" class="btn btn-block" target="_blank">Suscribirme Mensual</a>
-                        </div>
-                    </div>
-                </div>
             </div>
-
         </div>
     </section>
 
-    <section class="section" style="background: white; text-align: center;">
-        <div class="container">
-            <h2 class="section-title">Compra Sin Riesgo</h2>
-            <p style="font-size: 1.2rem; max-width: 700px; margin: 0 auto;">
-                Todos los cursos tienen <strong>Garantía Hotmart de 7 días</strong>. Si no es lo que esperabas, te devuelven el 100% de tu dinero.
-            </p>
-        </div>
-    </section>
-
-    <footer class="footer">
-        <div class="container">
-            <p><strong>Premium Academy</strong> - Academia Online de Costura</p>
-            <p style="opacity: 0.7; margin-top: 10px;">© 2026. Certificado incluido en todos los cursos.</p>
-        </div>
-    </footer>
 </body>
 </html>
